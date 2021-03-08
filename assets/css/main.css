@@ -18,11 +18,17 @@ b {
   font-weight: 700;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .wrap {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1306px 1fr;
-      grid-template-columns: 1fr 1306px 1fr;
+  -ms-grid-columns: 1fr minmax(auto, 1340px) 1fr;
+      grid-template-columns: 1fr minmax(auto, 1340px) 1fr;
+  grid-column-gap: 20px;
   grid-auto-flow: row;
 }
 
@@ -45,6 +51,8 @@ b {
 }
 
 .midge--fish {
+  width: 160px;
+  height: 77px;
   top: 6%;
   left: 22%;
 }
@@ -52,19 +60,27 @@ b {
 .midge--trees {
   top: 40%;
   left: 3%;
+  width: 160px;
+  height: 113px;
 }
 
 .midge--circle-striped {
   top: 65%;
   left: -10px;
+  width: 279px;
+  height: 279px;
 }
 
 .midge--pattern-1 {
   top: 17%;
   left: 35%;
+  width: 160px;
+  height: 119px;
 }
 
 .midge--pattern-2 {
+  width: 123px;
+  height: 123px;
   bottom: 3%;
   right: 13%;
 }
@@ -72,24 +88,34 @@ b {
 .midge--waves {
   top: 16%;
   right: 3%;
+  width: 159px;
+  height: 77px;
 }
 
 .midge--cross-1 {
   top: 13%;
   right: 36%;
+  width: 42px;
+  height: 41px;
 }
 
 .midge--cross-2 {
   bottom: 16%;
   left: 21%;
+  width: 42px;
+  height: 41px;
 }
 
 .midge--arrows-1 {
   bottom: 38%;
   right: -5%;
+  width: 189px;
+  height: 50px;
 }
 
 .midge--arrows-2 {
+  width: 189px;
+  height: 50px;
   bottom: -2%;
   left: 34%;
 }
@@ -134,6 +160,7 @@ b {
 
 .screen {
   position: relative;
+  overflow: hidden;
 }
 
 .screen--1 {
@@ -201,16 +228,37 @@ b {
   height: 57px;
 }
 
-.rectangle--left {
+.rectangle {
+  height: 70vh;
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-transform: skew(-20deg);
+          transform: skew(-20deg);
   position: absolute;
-  left: 0;
+}
+
+.rectangle__pattern {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  bottom: 0;
+  right: -100%;
+  background: url("../img/rectangle-bg.png") #F9B22A center;
+  -webkit-transform: skew(20deg);
+          transform: skew(20deg);
+}
+
+.rectangle--left {
+  width: 65vw;
+  left: -200px;
   top: 220px;
 }
 
 .rectangle--right {
-  position: absolute;
-  right: 0;
+  width: 22vw;
+  right: -200px;
   top: 220px;
+  z-index: 3;
 }
 
 .symbols {

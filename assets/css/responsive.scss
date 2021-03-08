@@ -1,0 +1,113 @@
+// colors var
+$clr_main: #690969;
+$clr_accent--y: #F9B22A;
+$clr_accent--b: #5C9BF3;
+$clr_accent--p: #FC4FC6;
+
+@media all and (max-width: 500px) {
+	.midge {
+		&--fish {
+			width: 4em;
+			left: 0;
+			top: 15%;
+		}
+		&--trees {
+			display: none;
+		}
+	
+		&--circle-striped {
+			display: none;
+		}
+	
+		&--pattern-1 {
+			width: 4em;
+		}
+	
+		&--pattern-2 {
+			display: none;
+		}
+	
+		&--waves {
+			display: none;
+		}
+	
+		&--cross-1 {
+			width: 1em;
+			right: 20%;
+			top: 18%;
+		}
+	
+		&--cross-2 {
+			display: none;
+		}
+	
+		&--arrows-1 {
+			display: none;
+		}
+	
+		&--arrows-2 {
+			width: 5em;
+			left: 20%;
+			bottom: 20%;
+		}
+	}
+	.screen__logo {
+		max-width: 70%;
+	}
+	.stick {
+		height: 2px;
+		&--pink {
+			display: none;
+		}
+		&--1 {
+			display: none;
+		}
+		&--2 {
+			top: 10%;
+			left: -5%;
+			width: 100px;
+		}
+		&--blue {
+			width: 350px;
+			bottom: 20%;
+			right: -60%;
+			left: unset;
+		}
+	}
+
+	.menu, .symbols {
+		display: none;
+	}
+	.rectangle {
+		height: 100vh;
+		transform: skew(0);
+		border-radius: 0;
+		&__pattern {
+			left: 0;
+			right: 0;
+			transform: skew(0);
+		}
+	}
+	.rectangle--left {
+		width: 100vw;
+		left: 0;
+	}
+	.rectangle--right {
+		display: none;
+	}	
+	.info {
+		&__title {
+			&--1 {
+				font-size: 18px;
+				font-weight: 600;
+			}
+			&--2 {
+				font-size: 20px;
+				padding: 15px 10px 0 10px;
+			}
+		}
+		&__text {
+			width: auto;
+		}
+	}
+}

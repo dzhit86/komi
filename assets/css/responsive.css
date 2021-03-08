@@ -1,1 +1,95 @@
-/* No CSS *//*# sourceMappingURL=responsive.css.map */
+@media all and (max-width: 500px) {
+  .midge--fish {
+    width: 4em;
+    left: 0;
+    top: 15%;
+  }
+  .midge--trees {
+    display: none;
+  }
+  .midge--circle-striped {
+    display: none;
+  }
+  .midge--pattern-1 {
+    width: 4em;
+  }
+  .midge--pattern-2 {
+    display: none;
+  }
+  .midge--waves {
+    display: none;
+  }
+  .midge--cross-1 {
+    width: 1em;
+    right: 20%;
+    top: 18%;
+  }
+  .midge--cross-2 {
+    display: none;
+  }
+  .midge--arrows-1 {
+    display: none;
+  }
+  .midge--arrows-2 {
+    width: 5em;
+    left: 20%;
+    bottom: 20%;
+  }
+  .screen__logo {
+    max-width: 70%;
+  }
+  .stick {
+    height: 2px;
+  }
+  .stick--pink {
+    display: none;
+  }
+  .stick--1 {
+    display: none;
+  }
+  .stick--2 {
+    top: 10%;
+    left: -5%;
+    width: 100px;
+  }
+  .stick--blue {
+    width: 350px;
+    bottom: 20%;
+    right: -60%;
+    left: unset;
+  }
+  .menu, .symbols {
+    display: none;
+  }
+  .rectangle {
+    height: 100vh;
+    -webkit-transform: skew(0);
+            transform: skew(0);
+    border-radius: 0;
+  }
+  .rectangle__pattern {
+    left: 0;
+    right: 0;
+    -webkit-transform: skew(0);
+            transform: skew(0);
+  }
+  .rectangle--left {
+    width: 100vw;
+    left: 0;
+  }
+  .rectangle--right {
+    display: none;
+  }
+  .info__title--1 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .info__title--2 {
+    font-size: 20px;
+    padding: 15px 10px 0 10px;
+  }
+  .info__text {
+    width: auto;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */
