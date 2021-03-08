@@ -13,6 +13,7 @@ $clr_main: #690969;
 $clr_accent--y: #F9B22A;
 $clr_accent--b: #5C9BF3;
 $clr_accent--p: #FC4FC6;
+$clr_accent--g: #52920C;
 
 
 // other var
@@ -44,9 +45,23 @@ img {
 	display: grid;
 	grid-template-columns: 1fr minmax(auto, 1340px) 1fr;
 	grid-column-gap: 20px;
-	grid-auto-flow: row;
+	grid-auto-flow: row;	
+	&--h-100 {
+		height: 100%;
+	}
+	&--center {
+		align-content: center;
+	}
+	&--end {
+		align-content: end;
+	}
 	&__item {
 		grid-column: 2/3;
+		&--right {
+			width: 60%;
+			margin-left: auto;
+			
+		}
 	}
 }
 
@@ -175,6 +190,9 @@ img {
 	background: $clr_main;
 }
 .screen--2 {
+	background: $clr_main;
+}
+.screen--3 {
 	background: $clr_main;
 }
 
@@ -318,9 +336,8 @@ img {
 
 }
 
-// 2 screen
-.rectangle {
 
+.rectangle {
 	height: 70vh;
 	border-radius: $rad_rect;
 	overflow: hidden;
@@ -335,18 +352,22 @@ img {
 		background: url("../img/rectangle-bg.png") $clr_accent--y center;
 		transform: skew(20deg);
 	}
+	&--left {
+		width: 65vw;
+		left: -200px;
+		top: 220px;
+	}
+	&--right {
+		width: 22vw;
+		right: -200px;
+		top: 220px;
+		z-index: 3;
+	}
+	&--r2 {
+		width: 75vw;
+	}
 }
-.rectangle--left {
-	width: 65vw;
-	left: -200px;
-	top: 220px;
-}
-.rectangle--right {
-	width: 22vw;
-	right: -200px;
-	top: 220px;
-	z-index: 3;
-}
+
 .symbols {
 	position: absolute;
 	top: 130px;
@@ -355,11 +376,12 @@ img {
 
 .info {
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	overflow-x: auto;
+	overflow-y: auto;
+	margin-bottom: 100px;
 	&__title {
 		color: #fff;
 		text-transform: uppercase;
@@ -376,11 +398,24 @@ img {
 			padding: 15px 10px 0 10px;
 			border-radius: $rad_rect;
 		}
+		&--3 {
+			@extend .info__title--2;
+			font-size: 40px;
+		}
 		&--blue {
 			background: $clr_accent--b;
+			
 		}
 		&--pink {
 			background: $clr_accent--p;
+		}
+		&--united {
+			line-height: 1.4em;
+			span {
+				display: inline-block;
+				padding: 15px 10px 0 10px;
+			}
+			
 		}
 	}
 	&__text {
@@ -395,7 +430,185 @@ img {
 	}
 }
 
+.map {
+	position: absolute;
+	top: 0;
+	z-index: 4;
+	left: 0;
+	width: 945px;
+	height: 1035px;
+	max-height: 100%;
+	background: url('../img/map/map.png') no-repeat center;
+	background-size: cover;
 
+	&__name {
+		text-align: center;
+		font-size: 20px;
+		font-weight: 600;
+	}
+	&__item {
+		position: absolute;
+		z-index: 5;
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: $clr_accent--y;
+		}
+	}
+	&__vorkuta {
+		top: 50px;
+		right: 70px;
+		&::after {
+			top: -10px;
+			right: -10px;
+		}
+		svg {
+			width: 94px;
+			height: 47px;
+		}
+	}
+	&__inta {
+		top: 100px;
+		right: 170px;
+		&::after {
+			bottom: -20px;
+			right: 40px;
+		}
+		svg {
+			width: 94px;
+			height: 94px;
+		}
+	}
+	&__usinsk {
+		top: 160px;
+		left: 440px;
+		&::after {
+			bottom: 20px;
+			right: -20px;
+		}
+		svg {
+			width: 72px;
+			height: 79px;
+		}
+	}
+	&__pechora {
+		top: 300px;
+		left: 400px;
+		&::after {
+			top: 10px;
+			right: -20px;
+		}
+		svg {
+			width: 93px;
+			height: 72px;
+		}
+	}
+	&__vuktyl {
+		top: 400px;
+		right: 300px;
+		&::after {
+			bottom: 20px;
+			left: -10px;
+		}
+		svg {
+			width: 98px;
+			height: 62px;
+		}
+	}
+	&__uhta {
+		top: 400px;
+		left: 290px;
+		&::after {
+			bottom: -20px;
+			right: -10px;
+		}
+		svg {
+			width: 83px;
+			height: 87px;
+		}
+	}
+	&__sosnogorsk {
+		bottom: 300px;
+		right: 380px;
+		&::after {
+			top: -10px;
+			left: -40px;
+		}
+		svg {
+			width: 80px;
+			height: 73px;
+		}
+	}
+	&__syktyvkar {
+		bottom: 280px;
+		left: 220px;
+		&::after {
+			left: 20px;
+			bottom: -30px;
+		}
+		color: $clr_accent--y;
+		svg {
+			width: 49px;
+			height: 94px;
+		}
+		.map__name {
+			position: relative;
+			left: -35px;
+		}
+	}
+	&__tree {
+		width: 160px;
+		height: 113px;
+		position: absolute;
+		z-index: 5;
+		path {
+			fill: $clr_accent--g;
+		}
+		&--1 {
+			top: 260px;
+			right: 200px;
+			width: 60px;
+			height: 42px;
+		}
+		&--2 {
+			top: 200px;
+			left: 200px;
+			width: 90px;
+			height: 63px;
+			path {
+				opacity: 1;
+			}
+		}
+		&--3 {
+			top: 520px;
+			left: 130px;
+			width: 60px;
+			height: 42px;
+		}
+		&--4 {
+			bottom: 130px;
+			left: 180px;
+			width: 60px;
+			height: 42px;
+			path {
+				opacity: 1;
+			}
+		}
+		&--5 {
+			bottom: 100px;
+			left: 100px;
+			width: 42px;
+			height: 30px;
+			path {
+				opacity: .8;
+			}
+		}
+	}
+}
 
 .sonp-navigation-menu {
 	display: none;
