@@ -21,6 +21,7 @@ $rad_rect: 4px;
 // fonts
 body {
 	font-family: Montserrat, serif;
+	position: relative;
 }
 
 // misc
@@ -33,6 +34,9 @@ b {
 img {
 	max-width: 100%;
 	height: auto;
+}
+.fixed {
+	overflow: hidden;
 }
 
 // grids
@@ -206,6 +210,114 @@ img {
 	}
 }
 
+// mobile menu
+.mob-menu {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	height: 100vh;
+	width: 100%;
+	background: $clr_main;
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: all .5s;
+	overflow-y: auto;
+	&__list {
+		height: auto;
+		margin: 0;
+		padding: 60px 20px;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&__item {
+		margin-bottom: 40px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__link {
+		text-decoration: none;
+		font-weight: 500;
+		color: #fff;
+		font-size: 16px;
+		transition: color .3s;
+		&:hover {
+			color: $clr_accent--y;
+		}
+	}
+	&__soc {
+		padding: 30px 20px;
+		display: flex;
+	}
+	&__icon {
+		text-decoration: none;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: 20px;
+	}
+}
+
+// btn burger
+.btn-burger {
+	display: none;
+	width: 35px;
+	height: 20px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 6;
+	&__line {
+		height: 3px;
+		width: 100%;
+		position: absolute;
+		right: 0;
+		background: #fff;
+		transition: all 0.3s;
+  }
+  	&__line--1 {
+		top: 0;
+	}
+	&__line--2 {
+		top: 50%;
+		width: 100%;
+		transform: translateY(-50%);
+  }
+  &__line--3 {
+		bottom: 0;
+  }
+  &__line--4 {
+		top: 50%;
+		width: 50%;
+		opacity: 0;
+		transform: translateY(-50%);
+	}
+	&--cross {
+		.btn-burger__line--1, 
+		.btn-burger__line--3 {
+		  opacity: 0;
+		}
+		.btn-burger__line--2 {
+			transform: rotateZ(45deg);
+			width: 100%;
+		 }
+		.btn-burger__line--4 {
+			width: 100%;
+			transform: rotateZ(-45deg);
+			opacity: 1;
+		 }
+	}
+
+}
+
 // 2 screen
 .rectangle {
 
@@ -247,6 +359,7 @@ img {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	overflow-x: auto;
 	&__title {
 		color: #fff;
 		text-transform: uppercase;
@@ -287,3 +400,5 @@ img {
 .sonp-navigation-menu {
 	display: none;
 }
+
+// animate
