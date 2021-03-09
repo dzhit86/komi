@@ -9,6 +9,8 @@
 }
 
 // colors var
+$clr_text: #242424;
+$clr_black: #020015;
 $clr_main: #690969;
 $clr_accent--y: #F9B22A;
 $clr_accent--b: #5C9BF3;
@@ -19,10 +21,13 @@ $clr_accent--g: #52920C;
 // other var
 $rad_rect: 4px;
 
-// fonts
+* {
+	box-sizing: border-box;
+}
 body {
 	font-family: Montserrat, serif;
 	position: relative;
+	color: $clr_text;
 }
 
 // misc
@@ -39,6 +44,20 @@ img {
 .fixed {
 	overflow: hidden;
 }
+.yellow {
+	color: $clr_accent--y;
+}
+.pointer {
+	&--none {
+		pointer-events: none;
+	}
+	&--active {
+		pointer-events: auto;
+	}
+}
+.pb150 {
+	padding-bottom: 150px;
+}
 
 // grids
 .wrap {
@@ -46,6 +65,7 @@ img {
 	grid-template-columns: 1fr minmax(auto, 1340px) 1fr;
 	grid-column-gap: 20px;
 	grid-auto-flow: row;	
+	position: relative;
 	&--h-100 {
 		height: 100%;
 	}
@@ -59,8 +79,7 @@ img {
 		grid-column: 2/3;
 		&--right {
 			width: 60%;
-			margin-left: auto;
-			
+			margin-left: auto;			
 		}
 	}
 }
@@ -195,6 +214,10 @@ img {
 .screen--3 {
 	background: $clr_main;
 }
+.screen--4 {
+	background: url("../img/pattern-1.png") $clr_main center;
+}
+
 
 // menu
 .menu {
@@ -336,6 +359,44 @@ img {
 
 }
 
+.ark {
+	position: absolute;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 120px;
+	&--bottom {
+		bottom: 0;
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+		background: url("../img/pattern-1.png") $clr_black repeat top center;
+		mask: url("../img/mask-ark.svg");
+	}
+	&__eclipse {
+		width: 300px;
+		height: 300px;
+		background: url("../img/pattern-1.png") $clr_black repeat top center;
+		border-radius: 50%;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: -150px;
+		cursor: pointer;
+	}
+	&__arrow {
+		width: 52px;
+		height: 98px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		path {
+			fill: $clr_accent--y;
+		}
+	}
+}
 
 .rectangle {
 	height: 70vh;
@@ -610,8 +671,129 @@ img {
 	}
 }
 
-.sonp-navigation-menu {
-	display: none;
+.dude {
+	position: absolute;
+	&--main {
+		top: 40%;
+		transform: translateY(-50%);
+		left: 100px;
+		width: 780px;
+		height: 780px;
+		&:hover {
+			.dude--main-1 {
+				opacity: 0;
+			}
+		}
+		&-1 {
+			width: 100%;
+			height: 100%;
+			background: url("../img/dude/dude-main.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+			transition: all .2s;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 4;
+
+		}
+		&-2 {
+			width: 100%;
+			height: 100%;
+			background: url("../img/dude/dude-main--wink.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+			transition: all .2s;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 3;
+		}
+	}
+
+	&--1 {
+		width: 235px;
+		height: 235px;
+		top: 40px;
+		right: 450px;
+		background: url("../img/dude/dude-1.png") no-repeat center center;
+		background-size: contain;
+	}
+	&--2 {
+		width: 135px;
+		height: 135px;
+		top: 150px;
+		right: 120px;
+		background: url("../img/dude/dude-2.png") no-repeat center center;
+		background-size: contain;
+	}
+	&--3 {
+		width: 245px;
+		height: 245px;
+		bottom: 100px;
+		right: 40px;
+		background: url("../img/dude/dude-3.png") no-repeat center center;
+		background-size: contain;
+	}
 }
 
+.info-comment {
+	width: 750px;
+	height: 350px;
+	max-width: 100%;
+	position: relative;
+	transform: translateY(-50%);
+	&__outer {
+		transform: skewX(-12deg);
+		background: #E7E7E7;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
+		padding: 4px;
+		position: relative;
+		z-index: 3;
+		&::after {
+			content: '';
+			display: block;
+			width: 100px;
+			height: 75px;
+			background: url("../img/angle-comment.png") no-repeat center center;
+			background-size: contain;
+			position: absolute;
+			left: -35px;
+			transform: rotate(-5deg);
+			top: 50px;
+			z-index: 4;
+		}
+	}
+	&__inner {
+		background: #fff;
+		position: relative;
+		z-index: 5;
+		width: 100%;
+		height: 100%;
+		padding: 35px 80px;
+	}
+	&__content {
+		transform: skewX(12deg);
+	}
+	&__text {
+		font-size: 20px;
+		font-weight: 700;
+		a {
+			text-decoration: none;
+			color: $clr_text;
+			border-bottom: 1px solid rgba($color: $clr_text, $alpha: .3);
+			transition: all .3s;
+			&:hover {
+				border-color: rgba($color: $clr_text, $alpha: 1);;
+			}
+		}
+	}
+}
 // animate

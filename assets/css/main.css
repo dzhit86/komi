@@ -6,9 +6,15 @@
   font-weight: 400;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   font-family: Montserrat, serif;
   position: relative;
+  color: #242424;
 }
 
 p {
@@ -28,6 +34,22 @@ img {
   overflow: hidden;
 }
 
+.yellow {
+  color: #F9B22A;
+}
+
+.pointer--none {
+  pointer-events: none;
+}
+
+.pointer--active {
+  pointer-events: auto;
+}
+
+.pb150 {
+  padding-bottom: 150px;
+}
+
 .wrap {
   display: -ms-grid;
   display: grid;
@@ -35,6 +57,7 @@ img {
       grid-template-columns: 1fr minmax(auto, 1340px) 1fr;
   grid-column-gap: 20px;
   grid-auto-flow: row;
+  position: relative;
 }
 
 .wrap--h-100 {
@@ -206,6 +229,10 @@ img {
 
 .screen--3 {
   background: #690969;
+}
+
+.screen--4 {
+  background: url("../img/pattern-1.png") #690969 center;
 }
 
 .menu {
@@ -401,6 +428,53 @@ img {
   -webkit-transform: rotateZ(-45deg);
           transform: rotateZ(-45deg);
   opacity: 1;
+}
+
+.ark {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+}
+
+.ark--bottom {
+  bottom: 0;
+}
+
+.ark__img {
+  width: 100%;
+  height: 100%;
+  background: url("../img/pattern-1.png") #020015 repeat top center;
+  -webkit-mask: url("../img/mask-ark.svg");
+          mask: url("../img/mask-ark.svg");
+}
+
+.ark__eclipse {
+  width: 300px;
+  height: 300px;
+  background: url("../img/pattern-1.png") #020015 repeat top center;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: -150px;
+  cursor: pointer;
+}
+
+.ark__arrow {
+  width: 52px;
+  height: 98px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.ark__arrow path {
+  fill: #F9B22A;
 }
 
 .rectangle {
@@ -732,7 +806,153 @@ img {
   opacity: .8;
 }
 
-.sonp-navigation-menu {
-  display: none;
+.dude {
+  position: absolute;
+}
+
+.dude--main {
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 100px;
+  width: 780px;
+  height: 780px;
+}
+
+.dude--main:hover .dude--main-1 {
+  opacity: 0;
+}
+
+.dude--main-1 {
+  width: 100%;
+  height: 100%;
+  background: url("../img/dude/dude-main.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.dude--main-2 {
+  width: 100%;
+  height: 100%;
+  background: url("../img/dude/dude-main--wink.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.dude--1 {
+  width: 235px;
+  height: 235px;
+  top: 40px;
+  right: 450px;
+  background: url("../img/dude/dude-1.png") no-repeat center center;
+  background-size: contain;
+}
+
+.dude--2 {
+  width: 135px;
+  height: 135px;
+  top: 150px;
+  right: 120px;
+  background: url("../img/dude/dude-2.png") no-repeat center center;
+  background-size: contain;
+}
+
+.dude--3 {
+  width: 245px;
+  height: 245px;
+  bottom: 100px;
+  right: 40px;
+  background: url("../img/dude/dude-3.png") no-repeat center center;
+  background-size: contain;
+}
+
+.info-comment {
+  width: 750px;
+  height: 350px;
+  max-width: 100%;
+  position: relative;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.info-comment__outer {
+  -webkit-transform: skewX(-12deg);
+          transform: skewX(-12deg);
+  background: #E7E7E7;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 4px;
+  padding: 4px;
+  position: relative;
+  z-index: 3;
+}
+
+.info-comment__outer::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 75px;
+  background: url("../img/angle-comment.png") no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  left: -35px;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  top: 50px;
+  z-index: 4;
+}
+
+.info-comment__inner {
+  background: #fff;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  padding: 35px 80px;
+}
+
+.info-comment__content {
+  -webkit-transform: skewX(12deg);
+          transform: skewX(12deg);
+}
+
+.info-comment__text {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.info-comment__text a {
+  text-decoration: none;
+  color: #242424;
+  border-bottom: 1px solid rgba(36, 36, 36, 0.3);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.info-comment__text a:hover {
+  border-color: #242424;
 }
 /*# sourceMappingURL=main.css.map */
