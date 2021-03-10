@@ -169,6 +169,7 @@ img {
 		z-index: 5;
 	}
 }
+
 .cross {
 	position: absolute;
 	&__item {
@@ -249,13 +250,52 @@ img {
 				background: $clr_accent--b;
 				color: #fff;
 			}
+			&.title-w {
+				color: #fff;
+			}
 		}
+
 	}
 	&__subtitle {
 		text-align: center;
 		font-size: 24px;
 	}
 }
+.arc-screen {
+	width: 100%;
+	height: 220px;
+	position: absolute;	
+	mask-size: cover;
+	left: 0;
+	right: 0;
+	mask: url("../img/mask-ark-top.svg") no-repeat top center;
+	top: -200px;
+	&--eclipse {
+		mask: url("../img/mask-ark-top-eclipse.svg") no-repeat top center;
+		height: 320px;
+		top: -300px;
+	}
+	&--purple {
+		background: url("../img/pattern-1.png") $clr_main -100% 100%;
+	}
+	&--black {
+		background: url("../img/pattern-1.png") $clr_black center 100%;
+	}
+	&--white {
+		background: #fff;
+	}
+	&__arrow {
+		width: 52px;
+		height: 98px;
+		position: absolute;
+		top: 48px;
+		left: calc(50% - 26px);
+		path {
+			fill: $clr_accent--y;
+		}
+	}
+}
+
 .screen--1 {
 	display: flex;
 	align-items: center;
@@ -272,11 +312,23 @@ img {
 }
 .screen--4 {
 	padding-top: 500px;
+	padding-bottom: 200px;
 	background: url("../img/pattern-1.png") $clr_main center;
 }
 .screen--5 {
 	background: url("../img/pattern-1.png") $clr_black repeat top center;
+	padding-bottom: 400px;
+}
+.screen--6 {
+	.screen__title {
+		margin-top:0;
+	}
+}
+.screen--8 {
 	padding-bottom: 300px;
+}
+.screen--9 {
+	background: url("../img/pattern-1.png") $clr_main center;
 }
 
 //midges
@@ -540,47 +592,7 @@ img {
 	height: 59px;
 }
 
-.ark {
-	position: absolute;
-	right: 0;
-	left: 0;
-	width: 100%;
-	height: 120px;
-	&--bottom {
-		bottom: 0;
-	}
-	&__img {
-		width: 100%;
-		height: 100%;		
-		background: #fff;
-		mask: url("../img/mask-ark.svg");
-	}
-	&__eclipse {
-		width: 200px;
-		height: 200px;		
-		border-radius: 50%;
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		bottom: 10px;
-		cursor: pointer;
-		background: #fff;
-	}
-	&--black {
-		background: url("../img/pattern-1.png") $clr_black repeat top center;
-	}
-	&__arrow {
-		width: 52px;
-		height: 98px;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		path {
-			fill: $clr_accent--y;
-		}
-	}
-}
+
 
 .rectangle {
 	height: 70vh;
@@ -904,24 +916,24 @@ img {
 	&--1 {
 		width: 235px;
 		height: 235px;
-		top: 40px;
-		right: 450px;
+		top: 4%;
+		right: 20%;
 		background: url("../img/dude/dude-1.png") no-repeat center center;
 		background-size: contain;
 	}
 	&--2 {
 		width: 135px;
 		height: 135px;
-		top: 150px;
-		right: 120px;
+		top: 15%;
+		right: 4%;
 		background: url("../img/dude/dude-2.png") no-repeat center center;
 		background-size: contain;
 	}
 	&--3 {
 		width: 245px;
 		height: 245px;
-		bottom: 100px;
-		right: 40px;
+		bottom: 35%;
+		right: 1%;
 		background: url("../img/dude/dude-3.png") no-repeat center center;
 		background-size: contain;
 	}
