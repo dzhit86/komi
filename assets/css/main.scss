@@ -136,6 +136,9 @@ img {
 			width: 60%;
 			margin-left: auto;			
 		}
+		&--left {
+			width: 50%;			
+		}
 	}
 }
 
@@ -933,5 +936,130 @@ img {
 	}
 }
 
+.slider-projects-main {
+	height: 600px;
+	&__item {
+		outline: none;
+		&--yellow {
+			background: $clr_accent--y;
+		}
+		&--purple {
+			background: $clr_main
+		}
+		&--pink {
+			background: $clr_accent--p;
+			.slider-projects-main__title--pink {
+				span {
+					background: $clr_accent--y;
+					box-shadow: -10px 0 0 $clr_accent--y, 10px 0 0 $clr_accent--y;
+				}
+			}
+		}
+	}
+
+	&__wrap {
+		display: grid;
+		grid-template-columns: 1fr minmax(auto, 670px) minmax(auto, 670px) 1fr;
+	}
+	&__info {
+		grid-column: 2/3;
+		padding: 100px 0;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+	}
+	&__img {
+		grid-column: 3/5;
+		height: 600px;
+		width: 100%;
+		object-fit: cover;
+		mask: url('../img/mask-vert.svg');
+		mask-repeat: no-repeat;
+		mask-size: cover;
+	}
+	&__tag {
+		display: inline-block;
+		font-family: Reykjavik, serif;
+		color: #fff;
+		margin-bottom: 40px;
+		font-size: 13px;
+		padding: 6px 10px 4px;
+		line-height: 1em;
+		background: $clr_accent--b;
+		border-radius: 4px;
+	}
+	&__title {
+		display: block;
+		margin-bottom: 30px;
+		&--pink, &--blue {			
+			font-size: 46px;
+			line-height: 1.2em;
+			padding-left: 10px;
+			span {
+				display: inline;
+				color: #fff;
+				font-weight: 700;
+				background: $clr_accent--p;
+				box-shadow: -10px 0 0 $clr_accent--p, 10px 0 0 $clr_accent--p;
+				border-radius: 4px;
+				padding: 5px 0;
+			}
+		}
+		&--blue {
+			font-size: 44px;
+			text-transform: uppercase;
+			span {
+				background: $clr_accent--b;
+				box-shadow: -10px 0 0 $clr_accent--b, 10px 0 0 $clr_accent--b;
+			}
+		}
+
+	}
+	&__text {
+		margin-top: 40px;
+		font-weight: 400;
+		font-size: 24px;
+		color: #fff;
+	}
+}
+
+.slider-projects-nav {
+	background: #fff;
+	&__item {
+		position: relative;
+		cursor: pointer;
+		margin: 0;
+		padding: 0;
+		&::after {
+			transition: all .3s;
+			content: '';
+			display: block;
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(255,255,255,.7);
+		}
+		&:hover {
+			&::after {
+				background: rgba(255,255,255, .3);
+			}
+		}
+		&.slick-current {
+			&::after {
+				background: rgba(255,255,255, 0);
+			}
+			outline: none;
+		}
+		outline: none;
+	}
+	&__img {		
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+	}
+}
 
 // animate

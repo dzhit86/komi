@@ -32,6 +32,23 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.slider-projects-main').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.slider-projects-nav'
+	});
+	$('.slider-projects-nav').slick({
+		slidesToShow: 6,
+		slidesToScroll: 1,
+		asNavFor: '.slider-projects-main',
+		dots: false,
+		arrows: false,
+		focusOnSelect: true
+	});
+
+
 
 });
 
