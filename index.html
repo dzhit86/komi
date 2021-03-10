@@ -6,7 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="assets/css/normalize.css">
-	<link rel="stylesheet" href="assets/css/onepage-scroll.css">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 	<link rel="stylesheet" href="assets/css/main.css">
 	<link rel="stylesheet" href="assets/css/responsive.css" +>
@@ -36,8 +35,8 @@
 			<a href="#" class="mob-menu__icon" target="_blank"><img src="assets/img/social/tiktok.svg" alt=""></a>
 		</div>
 	</nav>
-	<div class="scroll">
-		<section style="display: none;" class="screenb screen--1">
+	<div class="container">
+		<section class="screen screen--1">
 			<div class="screen__logo">
 				<img src="assets/img/logo.svg" alt="">
 			</div>
@@ -177,9 +176,18 @@
 				<div class="stick stick--blue"></div>
 				<div class="stick stick--pink"></div>
 			</div>
+			<svg class="mouse" viewBox="0 0 41 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M23.4375 0H17.1875C12.6307 0.00508466 8.26197 1.78785 5.03981 4.95719C1.81765 8.12653 0.0051694 12.4236 0 16.9057V41.4959C0.00501284 45.598 1.52402 49.5588 4.27471 52.6421C7.02539 55.7254 10.8206 57.7215 14.9551 58.2595C15.1605 58.3539 15.3846 58.4025 15.6113 58.4016H23.4375C27.9943 58.3966 32.363 56.6138 35.5852 53.4445C38.8074 50.2751 40.6198 45.978 40.625 41.4959V16.9057C40.6198 12.4236 38.8074 8.12653 35.5852 4.95719C32.363 1.78785 27.9943 0.00508466 23.4375 0ZM37.5 41.4959C37.4957 45.1631 36.0127 48.6788 33.3764 51.2719C30.7401 53.865 27.1658 55.3237 23.4375 55.3279H17.1875C13.4592 55.3237 9.88485 53.865 7.24855 51.2719C4.61225 48.6788 3.12929 45.1631 3.125 41.4959V27.6639H37.5V41.4959ZM37.5 24.5902H3.125V16.9057C3.12929 13.2386 4.61225 9.72281 7.24855 7.12972C9.88485 4.53664 13.4592 3.07799 17.1875 3.07377H23.4375C27.1658 3.07799 30.7401 4.53664 33.3764 7.12972C36.0127 9.72281 37.4957 13.2386 37.5 16.9057V24.5902Z"
+					fill="white" />
+				<path
+					d="M17.1875 21.5163H23.4375C23.8519 21.5163 24.2493 21.3544 24.5424 21.0662C24.8354 20.7779 25 20.387 25 19.9794V7.68435C25 7.27674 24.8354 6.88582 24.5424 6.5976C24.2493 6.30938 23.8519 6.14746 23.4375 6.14746H17.1875C16.7731 6.14746 16.3757 6.30938 16.0826 6.5976C15.7896 6.88582 15.625 7.27674 15.625 7.68435V19.9794C15.625 20.387 15.7896 20.7779 16.0826 21.0662C16.3757 21.3544 16.7731 21.5163 17.1875 21.5163ZM18.75 9.22123H21.875V18.4425H18.75V9.22123Z"
+					fill="white" />
+				<rect x="17" y="8" width="7" height="12.7869" fill="white" />
+			</svg>
 		</section>
 
-		<section style="display: none;" class="screenb screen--2">
+		<section class="screen screen--2">
 			<div class="wrap">
 				<nav class="menu wrap__item">
 					<ul class="menu__list">
@@ -224,7 +232,7 @@
 
 		</section>
 
-		<section style="display: none;" class="screenb screen--3">
+		<section class="screen screen--3">
 
 			<div class="map">
 				<div class="map__item map__vorkuta">
@@ -567,7 +575,7 @@
 			</div>
 		</section>
 
-		<section style="display: none;" class="screenb screen--4">
+		<section class="screen screen--4">
 			<div class="dude dude--main">
 				<div class="dude--main-1"></div>
 				<div class="dude--main-2"></div>
@@ -624,9 +632,11 @@
 
 		</section>
 
-		<section style="display: none;" class="screenb screen--5">
+		<section class="screen screen--5">
 			<div class="wrap">
-				<div class="screen__title screen__title--yellow wrap__item">Мы идём в 100коми</div>
+				<div class="screen__title wrap__item">
+					<span class="title-yellow">Мы идём в 100коми</span>
+				</div>
 				<div class="peoples wrap__item">
 					<div class="peoples__item">
 						<img src="assets/img/peoples/people-start.jpg" alt="" class="peoples__img">
@@ -847,6 +857,12 @@
 		</section>
 
 		<section class="screen screen--6">
+			<div class="wrap">
+				<div class="screen__title wrap__item">
+					<span class="title-blue">Релизованные</span>
+					<span>Командой проекты</span>
+				</div>
+			</div>
 
 			<div class="slider-projects-main">
 				<div class="slider-projects-main__item slider-projects-main__item--yellow">
@@ -1009,14 +1025,10 @@
 			</div>
 		</section>
 
-	</div>
-
-
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="assets/js/jquery.onepage-scroll.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	<script src="assets/js/main.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script src="assets/js/main.js"></script>
 </body>
 
 </html>

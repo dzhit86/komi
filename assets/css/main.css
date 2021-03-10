@@ -34,6 +34,10 @@ img {
   overflow: hidden;
 }
 
+.container {
+  overflow: hidden;
+}
+
 .yellow {
   color: #F9B22A;
 }
@@ -148,7 +152,7 @@ img {
 }
 
 .wrap__item--right {
-  width: 60%;
+  width: 55%;
   margin-left: auto;
 }
 
@@ -162,6 +166,7 @@ img {
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 1;
 }
 
 .midge {
@@ -278,27 +283,52 @@ img {
 
 .screen {
   position: relative;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .screen__title {
-  text-transform: uppercase;
-  line-height: 1em;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  display: inline-block;
-  color: #fff;
-  padding: 10px 10px 0;
-  margin: 80px 0;
-  font-size: 70px;
-  font-family: Reykjavik, serif;
+  justify-self: center;
+  margin: 100px 0;
   text-align: center;
   -webkit-transform: rotateZ(-5deg);
           transform: rotateZ(-5deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.screen__title--yellow {
+.screen__title span {
+  color: #242424;
+  display: inline-block;
+  text-transform: uppercase;
+  line-height: 1em;
+  font-size: 70px;
+  font-family: Reykjavik, serif;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.screen__title span:last-child {
+  margin-bottom: 0;
+}
+
+.screen__title span.title-yellow {
+  padding: 15px 20px 0;
   background: #F9B22A;
+  color: #fff;
+}
+
+.screen__title span.title-blue {
+  padding: 15px 20px 0;
+  background: #5C9BF3;
+  color: #fff;
 }
 
 .screen--1 {
@@ -316,18 +346,22 @@ img {
 
 .screen--2 {
   background: #690969;
+  padding-bottom: 250px;
 }
 
 .screen--3 {
+  padding-top: 300px;
   background: #690969;
 }
 
 .screen--4 {
+  padding-top: 500px;
   background: url("../img/pattern-1.png") #690969 center;
 }
 
 .screen--5 {
   background: url("../img/pattern-1.png") #020015 repeat top center;
+  padding-bottom: 300px;
 }
 
 .menu {
@@ -525,6 +559,14 @@ img {
   opacity: 1;
 }
 
+.mouse {
+  position: absolute;
+  left: calc(50% - 41px);
+  bottom: 60px;
+  width: 41px;
+  height: 59px;
+}
+
 .ark {
   position: absolute;
   right: 0;
@@ -534,7 +576,7 @@ img {
 }
 
 .ark--bottom {
-  bottom: -50px;
+  bottom: 0;
 }
 
 .ark__img {
@@ -669,12 +711,13 @@ img {
 }
 
 .info__title--united {
-  line-height: 1.4em;
+  line-height: 1.2em;
 }
 
 .info__title--united span {
+  line-height: 1em;
   display: inline-block;
-  padding: 15px 10px 0 10px;
+  padding: 15px 20px 0 20px;
 }
 
 .info__text {
@@ -683,7 +726,7 @@ img {
   background: #fff;
   padding: 20px;
   border-radius: 4px;
-  margin-top: 35px;
+  margin-top: 25px;
   font-weight: 500;
   font-size: 16px;
 }
@@ -692,7 +735,7 @@ img {
   position: absolute;
   top: 0;
   z-index: 4;
-  left: 0;
+  left: 3%;
   width: 945px;
   height: 1035px;
   max-height: 100%;
@@ -722,8 +765,8 @@ img {
 }
 
 .map__vorkuta {
-  top: 50px;
-  right: 70px;
+  top: 11%;
+  right: 9%;
 }
 
 .map__vorkuta::after {
@@ -737,8 +780,8 @@ img {
 }
 
 .map__inta {
-  top: 100px;
-  right: 170px;
+  top: 12%;
+  right: 22%;
 }
 
 .map__inta::after {
@@ -752,8 +795,8 @@ img {
 }
 
 .map__usinsk {
-  top: 160px;
-  left: 440px;
+  top: 18%;
+  left: 46%;
 }
 
 .map__usinsk::after {
@@ -767,8 +810,8 @@ img {
 }
 
 .map__pechora {
-  top: 300px;
-  left: 400px;
+  top: 32%;
+  left: 43%;
 }
 
 .map__pechora::after {
@@ -782,8 +825,8 @@ img {
 }
 
 .map__vuktyl {
-  top: 400px;
-  right: 300px;
+  top: 43%;
+  right: 32%;
 }
 
 .map__vuktyl::after {
@@ -797,8 +840,8 @@ img {
 }
 
 .map__uhta {
-  top: 400px;
-  left: 290px;
+  top: 43%;
+  left: 31%;
 }
 
 .map__uhta::after {
@@ -812,8 +855,8 @@ img {
 }
 
 .map__sosnogorsk {
-  bottom: 300px;
-  right: 380px;
+  bottom: 33%;
+  right: 40%;
 }
 
 .map__sosnogorsk::after {
@@ -827,8 +870,8 @@ img {
 }
 
 .map__syktyvkar {
-  bottom: 280px;
-  left: 220px;
+  bottom: 31%;
+  left: 26%;
   color: #F9B22A;
 }
 
@@ -859,15 +902,19 @@ img {
 }
 
 .map__tree--1 {
-  top: 260px;
-  right: 200px;
+  top: 30%;
+  right: 25%;
   width: 60px;
   height: 42px;
 }
 
+.map__tree--1 path {
+  opacity: .8;
+}
+
 .map__tree--2 {
-  top: 200px;
-  left: 200px;
+  top: 25%;
+  left: 23%;
   width: 90px;
   height: 63px;
 }
@@ -877,15 +924,15 @@ img {
 }
 
 .map__tree--3 {
-  top: 520px;
-  left: 130px;
+  top: 53%;
+  left: 15%;
   width: 60px;
   height: 42px;
 }
 
 .map__tree--4 {
-  bottom: 130px;
-  left: 180px;
+  bottom: 17%;
+  left: 20%;
   width: 60px;
   height: 42px;
 }
@@ -895,8 +942,8 @@ img {
 }
 
 .map__tree--5 {
-  bottom: 100px;
-  left: 100px;
+  bottom: 14%;
+  left: 12%;
   width: 42px;
   height: 30px;
 }
@@ -910,10 +957,10 @@ img {
 }
 
 .dude--main {
-  top: 40%;
+  top: 35%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  left: 100px;
+  left: 10%;
   width: 780px;
   height: 780px;
 }
