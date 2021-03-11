@@ -77,13 +77,15 @@ body {
 // socail
 i {
 	&.icon {
-		display: inline-block;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		padding: 10px;
 		&__social {
 			width: 40px;
 			height: 40px;
 			border-radius: 50%;
-			background: rgba(255, 255, 255, 0.4);
+			background: #676673;
 			&--blue {
 				background: $clr_accent--b;
 			}
@@ -343,6 +345,15 @@ img {
 }
 .screen--9 {
 	background: url("../img/pattern-1.png") $clr_main center;
+}
+.screen--10 {
+	min-height: unset;
+	padding: 100px 0;
+}
+.screen--11 {
+	background: $clr_main;
+	min-height: unset;
+	padding: 50px 0;
 }
 
 //midges
@@ -605,8 +616,6 @@ img {
 	width: 41px;
 	height: 59px;
 }
-
-
 
 .rectangle {
 	height: 70vh;
@@ -1328,6 +1337,8 @@ img {
 		font-size: 16px;
 		line-height: 1.5em;
 		margin-top: 10px;
+		display: flex;
+		align-items: center;
 	}
 	&__label {
 		top: -15px;
@@ -1356,7 +1367,7 @@ img {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 100px;
-
+	justify-items: end;
 	&__title {
 		font-size: 46px;
 		line-height: 1.2em;
@@ -1471,5 +1482,78 @@ img {
 	}
 	&__back {
 		transform: rotateY(-180deg);
+	}
+}
+
+.use-logo {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-items: center;
+	grid-gap: 100px;
+	&__img {
+		border-radius: 50%;
+		width: 390px;
+		height: 390px;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__logo {
+		width: 180px;
+		padding: 12px 22px;
+		background: $clr_accent--y;
+		border-radius: 100px;
+		margin-bottom: 25px;
+	}
+	&__title {
+		text-transform: uppercase;
+		color: #fff;
+		line-height: 1em;
+		font-size: 50px;
+		font-family: Reykjavik, serif;
+		margin-bottom: 25px;
+	}
+}
+
+.footer {
+	padding: 80px 0;
+	background: $clr_black;
+	&__wrap{
+		display: grid;
+		grid-template-columns: 220px 1fr 220px;
+		grid-gap: 100px;
+		justify-items: center;
+		align-items: center;
+	}
+	&__logo {
+		width: 220px;
+		p {
+			margin-top: 15px;
+			font-style: italic;
+			color: #fff;
+			font-size: 20px;
+		}
+	}
+	&__message {
+		color: #fff;
+		text-align: center;
+		font-size: 28px;
+		line-height: 1.5em;
+	}
+	&__contacts {
+		p {
+			font-weight: 500;
+			font-size: 18px;
+			color: #fff;
+			line-height: 1.2em;
+		}
+	}
+	&__soc {
+		display: grid;
+		grid-auto-flow: column;
+		grid-gap: 15px;
 	}
 }
