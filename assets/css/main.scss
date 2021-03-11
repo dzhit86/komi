@@ -1023,8 +1023,8 @@ img {
 
 .peoples {
 	display: grid;
-	grid-gap: 20px;
-	grid-template-columns: repeat(auto-fit, 170px);
+	grid-gap: 20px;	
+	grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
 
 	&__item {
 		border-radius: 4px;

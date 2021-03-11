@@ -30,7 +30,21 @@ $(document).ready(function () {
 		dots: false,
 		arrows: false,
 		focusOnSelect: true,
-		centerMode: true
+		centerMode: true,
+		responsive: [
+			{
+				breakpoint: 1025,
+				settings: {
+					slidesToShow: 4
+				}
+			},
+			{
+				breakpoint: 801,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+		]
 	});
 
 

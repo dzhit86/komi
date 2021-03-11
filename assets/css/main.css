@@ -1243,8 +1243,8 @@ img {
   display: -ms-grid;
   display: grid;
   grid-gap: 20px;
-  -ms-grid-columns: (170px)[auto-fit];
-      grid-template-columns: repeat(auto-fit, 170px);
+  -ms-grid-columns: (minmax(170px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
 }
 
 .peoples__item {
