@@ -14,6 +14,8 @@ $(document).ready(function () {
 		});
 	});
 
+	// Слайдеры
+
 	$('.slider-projects-main').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -30,6 +32,7 @@ $(document).ready(function () {
 		focusOnSelect: true,
 		centerMode: true
 	});
+
 
 
 });
@@ -71,3 +74,35 @@ $(window).resize(function (params) {
 		$('.mob-menu').css('transform', 'translateX(100%)');
 	}
 });
+
+(function () {
+
+	function scrollHorizontally(e) {
+
+		var scrollPos = this.scrollLeft;  // Сколько прокручено по горизонтали, до прокрутки (не перемещать эту строку!)
+
+		// Горизонтальная прокрутка
+		e = window.event || e;
+		var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+		this.scrollLeft -= (delta * 100); // Multiplied by 10
+
+		var widthElem = this.scrollWidth; // Ширина всего элемента
+		var widthBrowser = document.documentElement.clientWidth;  // Ширина окна минус размер вертикального скролла
+
+
+		// Прокрутка вверх, но элемент уже в крайней левой позиции, то двигаемся вверх
+		if ((delta == 1) && (this.scrollLeft == 0)) return;
+		// Прокрутка вниз, но элемент виден полностью. Или элемент до конца прокручен в правый край
+		if ((widthBrowser >= widthElem) || (scrollPos == this.scrollLeft)) return;
+
+		e.preventDefault(); // запрещает прокрутку по вертикали
+
+	}
+
+	var elems = document.querySelectorAll('.slider-attractions');
+	for (var a = 0; a < elems.length; a++) {
+		elems[a].addEventListener("mousewheel", scrollHorizontally, false);     // IE9, Chrome, Safari, Opera
+		elems[a].addEventListener("DOMMouseScroll", scrollHorizontally, false); // Firefox
+	}
+
+})();

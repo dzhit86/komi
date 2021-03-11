@@ -417,6 +417,7 @@ img {
 
 .screen--9 {
   background: url("../img/pattern-1.png") #690969 center;
+  padding-bottom: 100px;
 }
 
 .screen--10 {
@@ -1475,6 +1476,232 @@ img {
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.slider-attractions {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 40%;
+  overflow: hidden;
+  padding: 50px 0 150px;
+  position: relative;
+}
+
+.slider-attractions__img {
+  width: 600px;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slider-attractions__item:nth-child(1) {
+  -webkit-transform: rotateZ(-15deg);
+          transform: rotateZ(-15deg);
+}
+
+.slider-attractions__item:nth-child(1) .slider-attractions__img {
+  -webkit-mask: url("../img/sliders/attractions/masks/mask-1.svg");
+          mask: url("../img/sliders/attractions/masks/mask-1.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.slider-attractions__item:nth-child(1) .slider-attractions__info {
+  -webkit-transform: rotateZ(15deg);
+          transform: rotateZ(15deg);
+}
+
+.slider-attractions__item:nth-child(2) {
+  -webkit-transform: rotateZ(15deg);
+          transform: rotateZ(15deg);
+}
+
+.slider-attractions__item:nth-child(2) .slider-attractions__img {
+  -webkit-mask: url("../img/sliders/attractions/masks/mask-2.svg");
+          mask: url("../img/sliders/attractions/masks/mask-2.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.slider-attractions__item:nth-child(2) .slider-attractions__info {
+  -webkit-transform: rotateZ(-15deg);
+          transform: rotateZ(-15deg);
+}
+
+.slider-attractions__item:nth-child(3) {
+  -webkit-transform: rotateZ(-10deg);
+          transform: rotateZ(-10deg);
+}
+
+.slider-attractions__item:nth-child(3) .slider-attractions__img {
+  -webkit-mask: url("../img/sliders/attractions/masks/mask-3.svg");
+          mask: url("../img/sliders/attractions/masks/mask-3.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.slider-attractions__item:nth-child(3) .slider-attractions__info {
+  -webkit-transform: rotateZ(10deg);
+          transform: rotateZ(10deg);
+}
+
+.slider-attractions__item:nth-child(4) {
+  -webkit-transform: rotateZ(25deg);
+          transform: rotateZ(25deg);
+}
+
+.slider-attractions__item:nth-child(4) .slider-attractions__img {
+  -webkit-mask: url("../img/sliders/attractions/masks/mask-4.svg");
+          mask: url("../img/sliders/attractions/masks/mask-4.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.slider-attractions__item:nth-child(4) .slider-attractions__info {
+  -webkit-transform: rotateZ(-25deg);
+          transform: rotateZ(-25deg);
+}
+
+.slider-attractions__item:nth-child(5) {
+  -webkit-transform: rotateZ(-25deg);
+          transform: rotateZ(-25deg);
+}
+
+.slider-attractions__item:nth-child(5) .slider-attractions__img {
+  -webkit-mask: url("../img/sliders/attractions/masks/mask-5.svg");
+          mask: url("../img/sliders/attractions/masks/mask-5.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.slider-attractions__item:nth-child(5) .slider-attractions__info {
+  -webkit-transform: rotateZ(25deg);
+          transform: rotateZ(25deg);
+}
+
+.slider-attractions__item:nth-child(6) {
+  -webkit-transform: rotateZ(10deg);
+          transform: rotateZ(10deg);
+}
+
+.slider-attractions__item:nth-child(6) .slider-attractions__img {
+  -webkit-mask: url("../img/sliders/attractions/masks/mask-6.svg");
+          mask: url("../img/sliders/attractions/masks/mask-6.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.slider-attractions__item:nth-child(6) .slider-attractions__info {
+  -webkit-transform: rotateZ(-10deg);
+          transform: rotateZ(-10deg);
+}
+
+.slider-attractions__item:nth-child(7) {
+  -webkit-transform: rotateZ(-10deg);
+          transform: rotateZ(-10deg);
+}
+
+.slider-attractions__item:nth-child(7) .slider-attractions__img {
+  -webkit-mask: url("../img/sliders/attractions/masks/mask-7.svg");
+          mask: url("../img/sliders/attractions/masks/mask-7.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.slider-attractions__item:nth-child(7) .slider-attractions__info {
+  -webkit-transform: rotateZ(10deg);
+          transform: rotateZ(10deg);
+}
+
+.slider-attractions__item:nth-child(8) {
+  -webkit-transform: rotateZ(15deg);
+          transform: rotateZ(15deg);
+}
+
+.slider-attractions__item:nth-child(8) .slider-attractions__img {
+  -webkit-mask: url("../img/sliders/attractions/masks/mask-1.svg");
+          mask: url("../img/sliders/attractions/masks/mask-1.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.slider-attractions__item:nth-child(8) .slider-attractions__info {
+  -webkit-transform: rotateZ(-15deg);
+          transform: rotateZ(-15deg);
+}
+
+.slider-attractions__item:hover .slider-attractions__info {
+  opacity: 1;
+}
+
+.slider-attractions__info {
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.slider-attractions__title {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #F9B22A;
+  border-radius: 4px;
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.slider-attractions__subtitle {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #FC4FC6;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .run-line {
