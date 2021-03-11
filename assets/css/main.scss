@@ -345,7 +345,7 @@ img {
 }
 .screen--9 {
 	background: url("../img/pattern-1.png") $clr_main center;
-	padding-bottom: 100px;
+	padding-bottom: 200px;
 }
 .screen--10 {
 	min-height: unset;
@@ -1211,6 +1211,7 @@ img {
 	display: grid;
 	grid-auto-flow: column;
 	grid-auto-columns: 40%;
+	align-items: center;
 	overflow: hidden;
 	padding: 50px 0 150px;
 	position: relative;
@@ -1314,6 +1315,18 @@ img {
 			}
 			.slider-attractions__info {
 				transform: rotateZ(-15deg);
+			}
+		}
+		&:nth-child(9) {
+			transform: rotateZ(-10deg);
+			.slider-attractions__img {
+				mask: url("../img/sliders/attractions/masks/mask-2.svg");
+				mask-repeat: no-repeat;
+				mask-position: center center;
+				mask-size: contain;
+			}
+			.slider-attractions__info {
+				transform: rotateZ(10deg);
 			}
 		}
 		&:hover {

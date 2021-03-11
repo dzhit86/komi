@@ -417,7 +417,7 @@ img {
 
 .screen--9 {
   background: url("../img/pattern-1.png") #690969 center;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
 }
 
 .screen--10 {
@@ -1483,6 +1483,9 @@ img {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 40%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
   padding: 50px 0 150px;
   position: relative;
@@ -1661,6 +1664,27 @@ img {
 .slider-attractions__item:nth-child(8) .slider-attractions__info {
   -webkit-transform: rotateZ(-15deg);
           transform: rotateZ(-15deg);
+}
+
+.slider-attractions__item:nth-child(9) {
+  -webkit-transform: rotateZ(-10deg);
+          transform: rotateZ(-10deg);
+}
+
+.slider-attractions__item:nth-child(9) .slider-attractions__img {
+  -webkit-mask: url("../img/sliders/attractions/masks/mask-2.svg");
+          mask: url("../img/sliders/attractions/masks/mask-2.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.slider-attractions__item:nth-child(9) .slider-attractions__info {
+  -webkit-transform: rotateZ(10deg);
+          transform: rotateZ(10deg);
 }
 
 .slider-attractions__item:hover .slider-attractions__info {
