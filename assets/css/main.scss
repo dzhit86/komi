@@ -149,6 +149,7 @@ img {
 	}
 
 }
+
 .btn-circle {
 	position: relative;
 	width: 115px;
@@ -311,7 +312,6 @@ img {
 		}
 	}
 }
-
 .screen--1 {
 	display: flex;
 	align-items: center;
@@ -346,6 +346,9 @@ img {
 .screen--9 {
 	background: url("../img/pattern-1.png") $clr_main center;
 	padding-bottom: 200px;
+	.screen__title {
+		margin-bottom: 0;
+	}
 }
 .screen--10 {
 	min-height: unset;
@@ -613,7 +616,7 @@ img {
 .mouse {
 	position: absolute;
 	left: calc(50% - 41px);
-	bottom: 60px;
+	bottom: 1vh;
 	width: 41px;
 	height: 59px;
 }
@@ -1085,13 +1088,13 @@ img {
 	&__item {
 		outline: none;
 		&--yellow {
-			background: $clr_accent--y;
+			background: url("../img/pattern-yellow.png") $clr_accent--y;
 		}
 		&--purple {
-			background: $clr_main
+			background: url("../img/pattern-purple-forest.png") $clr_main
 		}
 		&--pink {
-			background: $clr_accent--p;
+			background: url("../img/pink-sun.png") $clr_accent--p;
 			.slider-projects-main__title--pink {
 				span {
 					background: $clr_accent--y;

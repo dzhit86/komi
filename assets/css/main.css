@@ -420,6 +420,10 @@ img {
   padding-bottom: 200px;
 }
 
+.screen--9 .screen__title {
+  margin-bottom: 0;
+}
+
 .screen--10 {
   min-height: unset;
   padding: 100px 0;
@@ -750,7 +754,7 @@ img {
 .mouse {
   position: absolute;
   left: calc(50% - 41px);
-  bottom: 60px;
+  bottom: 1vh;
   width: 41px;
   height: 59px;
 }
@@ -1324,15 +1328,15 @@ img {
 }
 
 .slider-projects-main__item--yellow {
-  background: #F9B22A;
+  background: url("../img/pattern-yellow.png") #F9B22A;
 }
 
 .slider-projects-main__item--purple {
-  background: #690969;
+  background: url("../img/pattern-purple-forest.png") #690969;
 }
 
 .slider-projects-main__item--pink {
-  background: #FC4FC6;
+  background: url("../img/pink-sun.png") #FC4FC6;
 }
 
 .slider-projects-main__item--pink .slider-projects-main__title--pink span {
