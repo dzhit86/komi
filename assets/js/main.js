@@ -47,7 +47,17 @@ $(document).ready(function () {
 		]
 	});
 
+	//anniv animate
+	const annivBird = $('.anniv__midge--bird'),
+		annivPlanet = $('.anniv__midge--planet'),
+		annivLeader = $('.anniv__midge--leader'),
+		annivStella = $('.anniv__midge--stella');
 
+	//anniv animate - position 0
+	// annivBird.css('bottom', '-' + annivBird.height() + 'px');
+	// annivPlanet.css('bottom', '-' + annivPlanet.height() + 'px');
+	// annivLeader.css('bottom', '-' + annivLeader.height() + 'px');
+	// annivStella.css('bottom', '-' + annivStella.height() + 'px');
 
 });
 

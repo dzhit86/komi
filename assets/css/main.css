@@ -125,6 +125,10 @@ img {
   height: auto;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .fixed {
   overflow: hidden;
 }
@@ -433,6 +437,221 @@ img {
   background: #690969;
   min-height: unset;
   padding: 50px 0;
+}
+
+.anniv {
+  overflow: hidden;
+  position: relative;
+}
+
+.anniv__wrap {
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 50px;
+  -ms-grid-columns: 54% 46%;
+      grid-template-columns: 54% 46%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+
+@media (orientation: landscape) and (max-width: 1445px) {
+  .anniv__wrap {
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1025px) {
+  .anniv__wrap {
+    -ms-grid-columns: 60% 40%;
+        grid-template-columns: 60% 40%;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 780px) {
+  .anniv__wrap {
+    -ms-grid-columns: 55% 45%;
+        grid-template-columns: 55% 45%;
+  }
+}
+
+@media (max-width: 725px) {
+  .anniv__wrap {
+    -ms-grid-columns: 100% 0;
+        grid-template-columns: 100% 0;
+  }
+}
+
+.anniv__item {
+  position: relative;
+  z-index: 2;
+}
+
+.anniv__item--info {
+  padding: 6vmax 0;
+}
+
+.anniv__year {
+  font-size: 2.4vmax;
+  color: #fff;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.anniv__title {
+  font-size: 3.7vmax;
+  line-height: 1.3em;
+  padding-left: 0.2em;
+  margin-bottom: .1em;
+  text-transform: uppercase;
+  font-family: "Reykjavik", serif;
+}
+
+.anniv__title span {
+  display: inline;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.2em 0 0;
+}
+
+.anniv__title--blue span {
+  background: #5C9BF3;
+  -webkit-box-shadow: -0.2em 0 0 #5C9BF3, 0.2em 0 0 #5C9BF3;
+          box-shadow: -0.2em 0 0 #5C9BF3, 0.2em 0 0 #5C9BF3;
+}
+
+.anniv__title--pink span {
+  background: #FC4FC6;
+  -webkit-box-shadow: -0.2em 0 0 #fc4fc6, 0.2em 0 0 #fc4fc6;
+          box-shadow: -0.2em 0 0 #fc4fc6, 0.2em 0 0 #fc4fc6;
+}
+
+.anniv__text {
+  font-size: 1em;
+  color: #242424;
+  border-radius: 4px;
+  padding: 0.25em 1.2em;
+  background: #fff;
+  margin-top: 2em;
+  max-width: 30vmax;
+}
+
+.anniv__text p {
+  font-weight: 500;
+}
+
+.anniv__text b {
+  font-weight: 700;
+}
+
+@media (orientation: landscape) and (max-width: 1025px) {
+  .anniv__text {
+    max-width: 45vmax;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 780px) {
+  .anniv__text {
+    max-width: 35vmax;
+  }
+}
+
+@media (max-width: 725px) {
+  .anniv__text {
+    max-width: 100vmax;
+  }
+}
+
+.anniv__circle {
+  position: relative;
+  border-radius: 50%;
+  background: url("../img/pattern-yellow.png") #F9B22A center center;
+  width: 26.5vmax;
+  height: 26.5vmax;
+  overflow: hidden;
+}
+
+@media (max-width: 725px) {
+  .anniv__circle {
+    display: none;
+  }
+}
+
+.anniv__midge {
+  position: absolute;
+}
+
+.anniv__rect {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  -webkit-transform: skewX(-25deg);
+          transform: skewX(-25deg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.anniv__rect::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  right: 0;
+  bottom: 0;
+  background: url("../img/pattern-yellow.png") #F9B22A center center;
+  -webkit-transform: skewX(25deg);
+          transform: skewX(25deg);
+}
+
+.anniv__rect--left {
+  left: -97%;
+  width: 150%;
+}
+
+@media (orientation: landscape) and (max-width: 1025px) {
+  .anniv__rect--left {
+    left: -90%;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 780px) {
+  .anniv__rect--left {
+    left: -87%;
+  }
+}
+
+@media (max-width: 725px) {
+  .anniv__rect--left {
+    -webkit-transform: none;
+            transform: none;
+    border-radius: 0;
+    left: 0;
+    width: 100%;
+  }
+  .anniv__rect--left::before {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.anniv__rect--right {
+  right: -138vw;
+  width: 150%;
+}
+
+@media (max-width: 1025px) {
+  .anniv__rect--right {
+    right: -170%;
+  }
+}
+
+@media (max-width: 725px) {
+  .anniv__rect--right {
+    display: none;
+  }
 }
 
 .midges {
@@ -757,43 +976,6 @@ img {
   bottom: 1vh;
   width: 41px;
   height: 59px;
-}
-
-.rectangle {
-  height: 70vh;
-  border-radius: 4px;
-  overflow: hidden;
-  -webkit-transform: skew(-20deg);
-          transform: skew(-20deg);
-  position: absolute;
-}
-
-.rectangle__pattern {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  bottom: 0;
-  right: -100%;
-  background: url("../img/rectangle-bg.png") #F9B22A center;
-  -webkit-transform: skew(20deg);
-          transform: skew(20deg);
-}
-
-.rectangle--left {
-  width: 65vw;
-  left: -200px;
-  top: 220px;
-}
-
-.rectangle--right {
-  width: 22vw;
-  right: -200px;
-  top: 220px;
-  z-index: 3;
-}
-
-.rectangle--r2 {
-  width: 75vw;
 }
 
 .symbols {

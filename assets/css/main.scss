@@ -101,7 +101,6 @@ i {
 	}
 }
 
-
 // misc
 p {
 	line-height: 1.5em;
@@ -112,6 +111,9 @@ b {
 img {
 	max-width: 100%;
 	height: auto;
+}
+.inline-block {
+	display: inline-block;
 }
 .fixed {
 	overflow: hidden;
@@ -360,7 +362,171 @@ img {
 	padding: 50px 0;
 }
 
-//midges
+.anniv {
+	overflow: hidden;
+	position: relative;
+	&__wrap {
+		display: grid;
+		grid-column-gap: 50px;
+		grid-template-columns: 54% 46%;
+		align-items: end;
+
+		@media (orientation: landscape) and (max-width: 1445px) {
+			grid-template-columns: 50% 50%;
+		}
+		@media (orientation: landscape) and (max-width: 1025px) {
+			grid-template-columns: 60% 40%;
+		}
+		@media (orientation: portrait) and (max-width: 780px) {
+			grid-template-columns: 55% 45%;
+		}
+		@media (max-width: 725px) {
+			grid-template-columns: 100% 0;
+		}
+	}
+	&__item {
+		position: relative;
+		z-index: 2;
+		&--info {
+			padding: 6vmax 0;
+		}
+	}
+	&__year {
+		font-size: 2.4vmax;
+		color: #fff;		
+		font-weight: 600;
+		line-height: 2em;
+	}
+	&__title {
+		font-size: 3.7vmax;
+		line-height: 1.3em;
+		padding-left: 0.2em;
+		margin-bottom: .1em;
+		text-transform: uppercase;
+		font-family: "Reykjavik", serif;
+		span {			
+			display: inline;
+			color: #fff;
+			border-radius: 4px;
+			padding: 0.2em 0 0;
+		}
+		&--blue {
+			span {
+				background: $clr_accent--b;
+				box-shadow: -0.2em 0 0 $clr_accent--b, 0.2em 0 0 $clr_accent--b;
+			}
+		}
+		&--pink {
+			span {
+				background: #FC4FC6;
+				box-shadow: -0.2em 0 0 #fc4fc6, 0.2em 0 0 #fc4fc6;
+			}
+		}
+	}
+	&__text {
+		font-size: 1em;
+		color: $clr_text;
+		border-radius: 4px;		
+		padding: 0.25em 1.2em;
+		background: #fff;
+		margin-top: 2em;
+		max-width: 30vmax;
+		p {
+			font-weight: 500;
+		}
+		b {
+			font-weight: 700;
+		}
+		@media (orientation: landscape) and (max-width: 1025px) {
+			max-width: 45vmax;
+		}
+		@media (orientation: portrait) and (max-width: 780px) {
+			max-width: 35vmax;
+		}
+		@media (max-width: 725px) {
+			max-width: 100vmax;
+		}
+	}
+	&__circle {
+		position: relative;
+		border-radius: 50%;
+		background: url("../img/pattern-yellow.png") $clr_accent--y center center;
+		width: 26.5vmax;
+		height: 26.5vmax;
+		overflow: hidden;
+
+		@media (max-width: 725px) {
+			display: none;
+		}
+	}
+	&__midge {
+		position: absolute;		
+		&--bird {
+			
+		}
+		&--planet {
+
+		}
+		&--leader {
+
+		}
+		&--stella {
+
+		}
+	}
+	&__rect {
+		position: absolute;
+		z-index: 1;	
+		top: 0;
+		bottom: 0;
+		transform: skewX(-25deg);
+		border-radius: 4px;
+		overflow: hidden;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;			
+			top: -100%;
+			left: -100%;
+			right: 0;
+			bottom: 0;
+			background: url("../img/pattern-yellow.png") $clr_accent--y center center;
+			transform: skewX(25deg);
+		}
+		&--left {
+			left: -97%;
+			width: 150%;
+			
+			@media (orientation: landscape) and (max-width: 1025px) {
+				left: -90%;
+			}
+			@media (orientation: portrait) and (max-width: 780px) {
+				left: -87%;
+			}
+			@media (max-width: 725px) {
+				transform: none;
+				border-radius: 0;
+				left: 0;
+				width: 100%;
+					&::before {
+						transform: none;
+					}
+			}
+		}
+		&--right {
+			right: -138vw;
+			width: 150%;
+
+			@media (max-width: 1025px) {
+				right: -170%;
+			}
+			@media (max-width: 725px) {
+				display: none;
+			}
+		}
+	}
+}
+
 .midges {
 	position: absolute;
 	top: 0;
@@ -473,7 +639,6 @@ img {
 	}
 }
 
-// menu
 .menu {
 	width: 100%;
 	display: flex;
@@ -504,8 +669,6 @@ img {
 		height: 57px;
 	}
 }
-
-// mobile menu
 .mob-menu {
 	position: fixed;
 	top: 0;
@@ -561,7 +724,6 @@ img {
 	}
 }
 
-// btn burger
 .btn-burger {
 	display: none;
 	width: 35px;
@@ -619,37 +781,6 @@ img {
 	bottom: 1vh;
 	width: 41px;
 	height: 59px;
-}
-
-.rectangle {
-	height: 70vh;
-	border-radius: $rad_rect;
-	overflow: hidden;
-	transform: skew(-20deg);
-	position: absolute;
-	&__pattern {
-		position: absolute;
-		top: 0;
-		left: -100%;
-		bottom: 0;
-		right: -100%;
-		background: url("../img/rectangle-bg.png") $clr_accent--y center;
-		transform: skew(20deg);
-	}
-	&--left {
-		width: 65vw;
-		left: -200px;
-		top: 220px;
-	}
-	&--right {
-		width: 22vw;
-		right: -200px;
-		top: 220px;
-		z-index: 3;
-	}
-	&--r2 {
-		width: 75vw;
-	}
 }
 
 .symbols {
@@ -1208,7 +1339,6 @@ img {
 		object-fit: cover;
 	}
 }
-
 
 .slider-attractions {
 	display: grid;
