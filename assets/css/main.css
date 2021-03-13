@@ -270,6 +270,13 @@ img {
   margin-left: auto;
 }
 
+@media (max-width: 580px) {
+  .wrap__item--right {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 .wrap__item--left {
   width: 50%;
 }
@@ -392,12 +399,37 @@ img {
 
 .screen--2 {
   background: #690969;
-  padding-bottom: 10vmax;
+  padding-bottom: 10vmin;
+}
+
+@media (max-width: 1025px) {
+  .screen--2 {
+    padding-bottom: 0;
+  }
 }
 
 .screen--4 {
   background: url("../img/pattern-1.png") #690969 center;
   padding: 20vmax 0;
+  min-height: unset;
+}
+
+@media (max-width: 850px) {
+  .screen--4 {
+    padding: 20vmax 0 10vmax;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 545px) {
+  .screen--4 {
+    padding: 10vmin 0;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 400px) {
+  .screen--4 {
+    padding: 10vmin 0 30vmin;
+  }
 }
 
 .screen--5 {
@@ -1791,15 +1823,53 @@ img {
   z-index: 3;
 }
 
+@media (orientation: portrait) and (max-width: 1025px) {
+  .dude--main {
+    max-width: 45vmin;
+    max-height: 45vmin;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 650px) {
+  .dude--main {
+    max-width: 40vmax;
+    max-height: 40vmax;
+    right: 55vw;
+  }
+}
+
+@media (max-width: 580px) {
+  .dude--main {
+    left: 50%;
+    top: 0;
+    -webkit-transform: translateX(-40%);
+            transform: translateX(-40%);
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 545px) {
+  .dude--main {
+    max-height: 100vmin;
+  }
+}
+
 .dude--1 {
   width: 235px;
   height: 235px;
   max-width: 15vmax;
   max-height: 15vmax;
-  top: 4%;
-  right: 20%;
+  top: 4vmax;
+  right: 18vmax;
   background: url("../img/dude/dude-1.png") no-repeat center center;
   background-size: contain;
+}
+
+@media (max-width: 580px) {
+  .dude--1 {
+    display: none;
+  }
 }
 
 .dude--2 {
@@ -1807,10 +1877,30 @@ img {
   height: 135px;
   max-width: 10vmax;
   max-height: 10vmax;
-  top: 15%;
-  right: 4%;
+  top: 10vmax;
+  right: 4vmax;
   background: url("../img/dude/dude-2.png") no-repeat center center;
   background-size: contain;
+}
+
+@media (orientation: landscape) and (max-width: 1441px) {
+  .dude--2 {
+    top: 9vmax;
+    right: 2vmax;
+  }
+}
+
+@media (max-width: 1025px) {
+  .dude--2 {
+    top: 8vmax;
+    right: 4vmax;
+  }
+}
+
+@media (max-width: 580px) {
+  .dude--2 {
+    display: none;
+  }
 }
 
 .dude--3 {
@@ -1818,10 +1908,36 @@ img {
   height: 245px;
   max-width: 15vmax;
   max-height: 15vmax;
-  bottom: 35%;
-  right: 1%;
+  bottom: 16vmax;
+  right: 1vmax;
   background: url("../img/dude/dude-3.png") no-repeat center center;
   background-size: contain;
+}
+
+@media (orientation: portrait) and (max-width: 1025px) {
+  .dude--3 {
+    bottom: 18vmin;
+    right: 2vmin;
+  }
+}
+
+@media (max-width: 850px) {
+  .dude--3 {
+    bottom: 8vmax;
+    right: 2vmax;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 650px) {
+  .dude--3 {
+    bottom: 17vmax;
+  }
+}
+
+@media (max-width: 580px) {
+  .dude--3 {
+    display: none;
+  }
 }
 
 .info-comment {
@@ -1829,6 +1945,50 @@ img {
   height: 350px;
   max-width: 50vmax;
   position: relative;
+  font-size: 16px;
+}
+
+@media (orientation: portrait) and (max-width: 1025px) {
+  .info-comment {
+    height: auto;
+    font-size: 14px;
+    max-width: 50vmin;
+  }
+}
+
+@media (max-width: 850px) {
+  .info-comment {
+    height: auto;
+    font-size: 14px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 650px) {
+  .info-comment {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 580px) {
+  .info-comment {
+    width: 100%;
+    max-width: unset;
+    padding: 100vmax 20px 0;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 545px) {
+  .info-comment {
+    width: 100%;
+    max-width: unset;
+    padding: 100vmin 20px 0;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 400px) {
+  .info-comment {
+    font-size: 10px;
+  }
 }
 
 .info-comment__outer {
@@ -1898,9 +2058,39 @@ img {
   border-color: #242424;
 }
 
+@media (orientation: landscape) and (max-width: 1025px) {
+  .info-comment__text {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 850px) {
+  .info-comment__text {
+    font-size: .9em;
+  }
+}
+
 .info-comment__title {
   width: 14em;
   height: auto;
+}
+
+@media (max-width: 1025px) {
+  .info-comment__title {
+    width: 10em;
+  }
+}
+
+@media (max-width: 850px) {
+  .info-comment__title {
+    width: 8em;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 400px) {
+  .info-comment__title {
+    width: 7em;
+  }
 }
 
 .peoples {
