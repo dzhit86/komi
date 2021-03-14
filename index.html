@@ -1422,7 +1422,8 @@
 					<div class="invite-2__text">Наиболее крупные из них в сфере добычи и переработки нефти, газа и угля.
 						Предприятия, занимающихся лесозаготовительным, целлюлозно-бумажным, деревообрабатывающим
 						производством и сельским хозяйством. Присоединяйтесь в 100 Коми!</div>
-					<a href="##" class="invite-2__btn btn btn--green">Стать частью команды</a>
+					<a class="invite-2__btn btn btn--green" data-fancybox="invite" data-src="#modalInvite"
+						href="javascript:;">Стать частью команды</a>
 				</div>
 
 				<div class="invite-2__item">
@@ -2023,6 +2024,31 @@
 			</div>
 		</div>
 	</footer>
+
+	<div class="mod-invite" style="display: none;" id="modalInvite">
+		<div class="mod-invite__main">
+			<div class="mod-invite__title">Заявка на участие в проекте 100 Коми</div>
+			<div class="mod-invite__subtitle">Заполните форму и администратор перезвонит в течение 48 часов</div>
+			<form action="" class="form mod-invite__form" id="formInvitePopup">
+				<input type="text" class="form__input form__input--min mod-invite__input" name="invite_name"
+					placeholder="Имя" required>
+				<input type="text" class="form__input form__input--min mod-invite__input" name="invite_message"
+					placeholder="Идея Вашего участия" required>
+				<input type="tel" class="form__input form__input--min mod-invite__input" name="invite_phone"
+					placeholder="Телефон" required>
+				<button class="form__submit form__submit--green form__submit--min mod-invite__btn">Присоединиться</button>
+			</form>
+		</div>
+
+		<div class="mod-invite__sended" style="display: none;">
+			<div class="mod-invite__title">Спасибо за заявку!</div>
+			<div class="mod-invite__subtitle">Проект будет реализовываться на протяжении всего 2021 года. На данный момент
+				мы собираем анкеты людей, которые хотят участвовать в данном проекте. </div>
+			<div class="mod-invite__subtitle">Раз в неделю команда просматривает анкеты и решает, как можно включить
+				заявителя в проект. Если на данный момент включить человека в команду не получается, то анкета заносится в
+				резерв.</div>
+		</div>
+	</div>
 
 	<div class="mod-peoples" style="display: none;" id="people1">
 		<div class="mod-peoples__persona">

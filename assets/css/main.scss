@@ -44,6 +44,39 @@ body {
 		box-shadow: none;
 		font-size: 22px;
 		outline: none;
+		&::-webkit-input-placeholder {
+			line-height: 1em; color:#fff; font-size: 22px;
+		}/* webkit */
+		&::-moz-placeholder {
+			line-height: 1em; color:#fff; font-size: 22px;
+		}/* Firefox 19+ */
+		&:-moz-placeholder {
+			line-height: 1em; color:#fff; font-size: 22px;
+		}/* Firefox 18- */
+		&:-ms-input-placeholder {
+			line-height: 1em; color:#fff; font-size: 22px;
+		}/* IE */
+		&--min {
+			border: none;
+			border-bottom: 1px solid #DFDFDF;
+			color: $clr_text;
+			font-size: 15px;
+			line-height: .8em;
+			padding: 4px 8px;
+			height: 40px;
+			&::-webkit-input-placeholder {
+				line-height: .8em; color:$clr_text; font-size: 15px;
+			}/* webkit */
+			&::-moz-placeholder {
+				line-height: .8em; color:$clr_text; font-size: 15px;
+			}/* Firefox 19+ */
+			&:-moz-placeholder {
+				line-height: .8em; color:$clr_text; font-size: 15px;
+			}/* Firefox 18- */
+			&:-ms-input-placeholder {
+				line-height: .8em; color:$clr_text; font-size: 15px;
+			}/* IE */
+		}
 	}
 	&__submit {
 		min-height: 69px;
@@ -60,6 +93,11 @@ body {
 		&--green {
 			background: $clr_accent--g;
 		}
+		&--min {
+			min-height: 40px;
+			padding: 14px 10px;
+			font-size: 1.1em;
+		}
 		&:hover {
 			transform: translate(10px, -10px);
 		}
@@ -67,18 +105,6 @@ body {
 			background: $clr_accent--dg;
 		}
 	}
-	::-webkit-input-placeholder {
-		line-height: 1em; color:#fff; font-size: 22px;
-	}/* webkit */
-	::-moz-placeholder {
-		line-height: 1em; color:#fff; font-size: 22px;
-	}/* Firefox 19+ */
-	:-moz-placeholder {
-		line-height: 1em; color:#fff; font-size: 22px;
-	}/* Firefox 18- */
-	:-ms-input-placeholder {
-		line-height: 1em; color:#fff; font-size: 22px;
-	}/* IE */
 }
 
 
@@ -2692,5 +2718,36 @@ img {
 		font-size: 1.1em;
 		font-weight: 600;
 		margin-bottom: 5px;
+	}
+}
+
+.mod-invite {
+	width: 640px;
+	max-width: 100%;
+	border-radius: 4px;
+	padding: 40px 25px;
+	text-align: center;
+	&__title {
+		font-weight: 700;
+		font-size: 1.5em;
+		line-height: 1.2em;
+		margin-bottom: 10px;
+	}
+	&__subtitle {
+		font-size: .9em;
+		line-height: 1.2em;
+		margin-bottom: 10px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__form {
+		padding: 30px 0 0;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 30px;
+	}
+	&__btn {
+		justify-self: start;
 	}
 }

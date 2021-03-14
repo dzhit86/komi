@@ -110,6 +110,7 @@ $(document).ready(function () {
 	});
 
 	$("#formInviteMain").on("submit", formSuccesMain);
+	$("#formInvitePopup").on("submit", formSuccesPopup);
 
 	$("input[type='tel']").mask("+7 (999) 999-99-99");
 });
@@ -197,6 +198,22 @@ function formSuccesMain(event) {
 		sended.slideUp("fast");
 	}, 3000);
 	setTimeout(function () {
-		form.slideDown("fast");;
+		form.slideDown("fast");
+	}, 3000);
+}
+function formSuccesPopup(event) {
+	event.preventDefault();
+	const form = $("#formInvitePopup"),
+		container = $(".mod-invite__main");
+	sended = $(".mod-invite__sended");
+	container.slideUp("fast");
+	sended.slideDown("fast");
+	form[0].reset()
+	setTimeout(function () {
+		sended.slideUp("fast");
+	}, 3000);
+	setTimeout(function () {
+		container.slideDown("fast");
+		parent.jQuery.fancybox.getInstance().close();
 	}, 3000);
 }
