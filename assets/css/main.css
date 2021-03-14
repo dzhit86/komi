@@ -3547,9 +3547,9 @@ img {
   }
 }
 
-.coub__item:hover {
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+.coub__item--180 {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .coub__item span {

@@ -109,6 +109,18 @@ $(document).ready(function () {
 		});
 	});
 
+	// Вращение квадратов
+	$(function () {
+		const coub = $(".coub");
+		setInterval(rotateCoub, 2000);
+		function rotateCoub() {
+			let numItem = getRandomFromRange(0, 8).toFixed();
+			let el = coub.find('.coub__item').eq(numItem);
+			el.toggleClass("coub__item--180");
+		}
+	});
+
+	// Отправка данных форм
 	$("#formInviteMain").on("submit", formSuccesMain);
 	$("#formInvitePopup").on("submit", formSuccesPopup);
 
@@ -216,4 +228,10 @@ function formSuccesPopup(event) {
 		container.slideDown("fast");
 		parent.jQuery.fancybox.getInstance().close();
 	}, 3000);
+}
+
+// Генератор чисел
+function getRandomFromRange(min, max) {
+	let int = Math.random() * (max - min) + min;
+	return int;
 }

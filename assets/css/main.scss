@@ -2482,8 +2482,8 @@ img {
 			width: 15vmax;
 			height: 15vmax;
 		}
-		&:hover {
-			transform: rotateY(-180deg);
+		&--180 {
+			transform: rotateY(180deg);
 		}
 		span {
 			color: #fff;
@@ -2567,6 +2567,7 @@ img {
 			font-size: 1.2em;
 		}
 	}
+
 }
 
 .use-logo {
