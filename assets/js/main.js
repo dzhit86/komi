@@ -71,6 +71,8 @@ $(document).ready(function () {
 	// annivLeader.css('bottom', '-' + annivLeader.height() + 'px');
 	// annivStella.css('bottom', '-' + annivStella.height() + 'px');
 
+
+
 });
 
 // Отображение меню

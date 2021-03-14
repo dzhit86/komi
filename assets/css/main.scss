@@ -16,6 +16,7 @@ $clr_accent--y: #F9B22A;
 $clr_accent--b: #5C9BF3;
 $clr_accent--p: #FC4FC6;
 $clr_accent--g: #52920C;
+$clr_accent--dg: #3E7E00;
 
 
 // other var
@@ -55,8 +56,15 @@ body {
 		padding: 20px 25px;
 		font-size: 22px;
 		font-weight: 500;
+		transition: all .3s;
 		&--green {
 			background: $clr_accent--g;
+		}
+		&:hover {
+			transform: translate(10px, -10px);
+		}
+		&:active {
+			background: $clr_accent--dg;
 		}
 	}
 	::-webkit-input-placeholder {
@@ -146,8 +154,16 @@ img {
 	font-size: 22px;
 	font-weight: 500;
 	display: inline-block;
+	transition: all .3s;
+	box-shadow: 0px 3px 7px 0px rgba(0,0,0,.2);
 	&--green {
 		background: $clr_accent--g;
+	}
+	&:hover {
+		transform: translate(10px, -10px);
+	}
+	&:active {
+		background: $clr_accent--dg;
 	}
 
 }
@@ -354,9 +370,7 @@ img {
 	padding-bottom: 10vmin;
 	@media (max-width: 1025px) {
 		padding-bottom: 0;
-	}
-	
-	
+	}	
 }
 .screen--4 {
 	background: url("../img/pattern-1.png") $clr_main center;
@@ -375,6 +389,9 @@ img {
 .screen--5 {
 	background: url("../img/pattern-1.png") $clr_black repeat top center;
 	padding-bottom: 30vmax;
+	@media (orientation: landscape) and (width: 2560px) {
+		padding-bottom: 30vmin;
+	}
 	.arc-screen--eclipse {
 		@media (orientation: landscape) and (max-width: 1025px) {
 			top: -220px;
@@ -399,6 +416,9 @@ img {
 		}
 	}
 	.screen__title {
+		@media (orientation: landscape) and (width: 2560px) {
+			top: -3vmax;
+		}
 		@media (max-width: 400px) {
 			top: 1vmax;
 		}
@@ -443,6 +463,9 @@ img {
 	}
 	.screen__title {
 		margin-top: 0;
+		@media (orientation: landscape) and (width: 2560px) {
+			top: -2vmax;
+		}
 		@media (orientation: landscape) and (max-width: 1445px) {
 			top: 2vmax;
 		}
@@ -490,6 +513,10 @@ img {
 .screen--8 {
 	padding: 10vmax 0;
 	margin-bottom: 10vmax;
+	@media (orientation: landscape) and (width: 2560px) {
+		padding: 15vmin 0;
+		margin-bottom: 0;
+	}
 	@media (max-width: 1445px) {
 		padding: 15vmax 0;
 	}
@@ -603,6 +630,9 @@ img {
 		margin-bottom: .1em;
 		text-transform: uppercase;
 		font-family: "Reykjavik", serif;
+		@media (orientation: landscape) and (width: 2560px) {
+			font-size: 2.7vmax;
+		}
 		span {			
 			display: inline;
 			color: #fff;
@@ -635,6 +665,9 @@ img {
 		}
 		b {
 			font-weight: 700;
+		}
+		@media (orientation: landscape) and (width: 2560px) {
+			max-width: 22vmax;
 		}
 		@media (orientation: landscape) and (max-width: 1025px) {
 			max-width: 45vmax;
@@ -817,6 +850,9 @@ img {
 	right: -8vmax;
 	bottom: -10vmax;
 	left: -12vmax;
+	@media (orientation: landscape) and (width: 2560px) {
+
+	}
 	@media (orientation: landscape) and (max-width: 1445px) {
 		left: 0;
 		right: -5vmax;
@@ -851,6 +887,7 @@ img {
 		z-index: 5;
 		font-size: 16px;
 		cursor: pointer;
+		
 		&::after {
 			content: '';
 			display: block;
@@ -863,6 +900,10 @@ img {
 				display: none;
 			}
 		}
+		svg {
+			transition: all .3s;
+		}
+
 		@media (max-width: 1025px) {
 			font-size: 14px;
 		}
@@ -889,6 +930,12 @@ img {
 			width: 6vmax;
 			height: 3vmax;
 		}
+		&:hover {
+			svg {
+				transform: scale(1.2)
+			}
+		}
+	
 		@media (orientation: landscape) and (max-width: 1445px) {
 			top: 15%;
 		}
@@ -1225,7 +1272,7 @@ img {
 			display: none;
 		}
 	}
-	
+
 
 }
 
@@ -1724,8 +1771,10 @@ img {
 		position: relative;
 		width: 170px;
 		height: 254px;
-		cursor: pointer;
+		transition: all .3s;
+		text-decoration: none;
 		&:hover {
+			transform: scale(1.1);
 			.peoples__info {
 				opacity: 1;
 			}			
@@ -2560,5 +2609,73 @@ img {
 		display: grid;
 		grid-auto-flow: column;
 		grid-gap: 15px;
+	}
+}
+
+// Modals
+.mod-peoples {
+	width: 640px;
+	max-width: 100%;
+	border-radius: 4px;
+	padding: 40px 25px;
+	&__persona {
+		display: grid;
+		grid-column-gap: 20px;
+		grid-template-columns: 1fr 2fr;
+		margin-bottom: 20px;
+	}
+	&__name {
+		font-size: 1.5em;
+		line-height: 1.2em;
+		font-weight: 500;
+		background: $clr_accent--y;
+		color: #fff;
+		display: inline-block;
+		border-radius: 4px;
+		padding: 0 10px;
+		margin-bottom: 10px;
+	}
+	&__position {
+		font-weight: 700;
+		font-size: 1.1em;
+		margin-bottom: 10px;
+	}
+	&__text {
+		font-size: 1.1em;
+		line-height: 1.5em;
+	}
+	&__img {
+		border-radius: 4px;
+		overflow: hidden;
+		height: 265px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		&--proj {
+			height: 110px;
+		}
+	}
+	&__projects {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-row-gap: 20px;
+	}
+	&__item {
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: 1fr 2fr;
+	}
+	&__title {
+		grid-column: 1/2;
+		font-weight: 700;
+		font-size: 1.5em;
+		line-height: 1.2em;
+	}
+	&__subtitle {
+		font-size: 1.1em;
+		font-weight: 600;
+		margin-bottom: 5px;
 	}
 }
