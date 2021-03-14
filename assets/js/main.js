@@ -72,7 +72,21 @@ $(document).ready(function () {
 	// annivStella.css('bottom', '-' + annivStella.height() + 'px');
 
 
-
+	// Плавный скролл к якорю
+	$(function () {
+		let smoothLink = $('a[data-smooth]');
+		smoothLink.on('click', function (event) {
+			event.preventDefault();
+			let sc = $(this).attr("href"); // id цели
+			if ($(sc).length) {
+				let pad = $(sc).outerHeight() - $(sc).height() - 100, // расстояние для позиционирования
+					dn = $(sc).offset().top + pad; // положение цели на странице
+				$('html, body').animate({ scrollTop: dn }, 1000);
+			} else {
+				alert('Нет такой секции, блеа!');
+			}
+		});
+	});
 });
 
 // Отображение меню
