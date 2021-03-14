@@ -1159,12 +1159,20 @@
 				<div class="invite__wrap wrap__item">
 					<div class="invite__title">Принять участие в проекте</div>
 					<div class="invite__subtitle">Хотите стать частью команды?</div>
-					<form action="" class="form invite__form">
-						<input type="text" class="form__input invite__input" placeholder="Имя" required>
-						<input type="text" class="form__input invite__input" placeholder="Идея Вашего участия" required>
-						<input type="tel" class="form__input invite__input" placeholder="+7(___)___-__-__" required>
+					<form action="" class="form invite__form" id="formInviteMain">
+						<input type="text" class="form__input invite__input" name="invite_name" placeholder="Имя" required>
+						<input type="text" class="form__input invite__input" name="invite_message"
+							placeholder="Идея Вашего участия" required>
+						<input type="tel" class="form__input invite__input" name="invite_phone"
+							placeholder="+7 (___) ___-__-__" required>
 						<button class="form__submit form__submit--green invite__btn">Присоединиться</button>
 					</form>
+					<div class="invite__sended" id="formSendedMain" style="display: none;">
+						<div class="invite__subtitle invite__subtitle--2">Спасибо за заявку!</div>
+						<div class="invite__text">Раз в неделю команда просматривает анкеты и решает, как можно включить
+							заявителя в проект.<br>Если на данный момент включить человека в команду не получается, то анкета
+							заносится в резерв.</div>
+					</div>
 				</div>
 
 			</div>
@@ -2171,6 +2179,7 @@
 	<script src="assets/js/slick.min.js"></script>
 	<script src="assets/js/jquery.fancybox.min.js"></script>
 	<script src="assets/js/jquery.marquee.min.js"></script>
+	<script src="assets/js/jquery.maskedinput.min.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 

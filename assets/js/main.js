@@ -107,9 +107,11 @@ $(document).ready(function () {
 			startVisible: true,
 			duplicated: true
 		});
-
-
 	});
+
+	$("#formInviteMain").on("submit", formSuccesMain);
+
+	$("input[type='tel']").mask("+7 (999) 999-99-99");
 });
 
 // Отображение меню
@@ -181,3 +183,20 @@ $(window).resize(function (params) {
 	}
 
 })();
+
+// Функции форм
+
+function formSuccesMain(event) {
+	event.preventDefault();
+	const form = $("#formInviteMain"),
+		sended = $("#formSendedMain");
+	form.slideUp("fast");
+	sended.slideDown("fast");
+	form[0].reset()
+	setTimeout(function () {
+		sended.slideUp("fast");
+	}, 3000);
+	setTimeout(function () {
+		form.slideDown("fast");;
+	}, 3000);
+}

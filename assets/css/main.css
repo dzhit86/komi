@@ -3270,12 +3270,27 @@ img {
   margin-bottom: 45px;
 }
 
+.invite__subtitle--2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 .invite__form {
   display: -ms-grid;
   display: grid;
   grid-column-gap: 20px;
   -ms-grid-columns: 1fr 2fr 1fr 1fr;
       grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+
+.invite__sended {
+  text-align: center;
+}
+
+.invite__text {
+  color: #fff;
+  font-size: .9em;
+  line-height: 1.5em;
 }
 
 .events {

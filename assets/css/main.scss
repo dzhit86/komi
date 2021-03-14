@@ -2289,11 +2289,23 @@ img {
 		font-size: 24px;
 		color: #fff;
 		margin-bottom: 45px;
+		&--2 {
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
 	}
 	&__form {
 		display: grid;
 		grid-column-gap: 20px;
 		grid-template-columns: 1fr 2fr 1fr 1fr;
+	}
+	&__sended {
+		text-align: center;
+	}
+	&__text {
+		color: #fff;
+		font-size: .9em;
+		line-height: 1.5em;
 	}
 }
 
