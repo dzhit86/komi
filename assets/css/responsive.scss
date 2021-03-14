@@ -12,20 +12,8 @@ $clr_accent--p: #FC4FC6;
 	  .info__title--2, .info__title--3 {
 		  font-size: 52px;
 	  }
-	  .arc-screen--eclipse {
-			top: -12%;
-	  }
-	  .screen--6 .screen__title {
-			margin-top: 50px;
-	}
-	.arc-screen {
-		top: -11%;
-	}
 	.slider-attractions {
 		grid-auto-columns: 60%;
-	}
-	.screen--10 .arc-screen {
-		top: -24%;
 	}
 }
 
@@ -61,12 +49,6 @@ $clr_accent--p: #FC4FC6;
 	.use-logo__title {
 		font-size: 40px;
 	}
-  .screen--5 .arc-screen {
-		top: -7%;
-  }
-  .slider-projects-main__wrap {
-	grid-template-columns: 1fr minmax(auto, 500px) minmax(auto, 500px) 1fr;
-  }
   .invite__form {
 		grid-template-columns: 1fr 2fr;
 		grid-template-rows: 1fr 1fr;
@@ -76,15 +58,9 @@ $clr_accent--p: #FC4FC6;
 	  padding-bottom: 0;
 	  min-height: 90vh;
   }
-	.screen--9 .arc-screen {
-		top: -8%;
-	}
 	.slider-attractions {
 		grid-auto-columns: 100%;
 	}
-	.screen--10 .arc-screen {
-		top: -9%;
-  }
 
 }
 @media all and (max-width: 1024px) and (max-height: 800px){
@@ -128,14 +104,8 @@ $clr_accent--p: #FC4FC6;
 	.screen__title span {
 		font-size: 44px;
 	}
-	.screen--10 .arc-screen {
-		top: -6%;
-	}
 	.screen__title {
 		margin: 50px 0;
-	}
-	.screen--9 .arc-screen {
-			top: -7%;
 	}
 	.slider-attractions {
 		justify-items: center;
@@ -152,24 +122,6 @@ $clr_accent--p: #FC4FC6;
   .targets__list {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	.slider-projects-main__title--blue {
-		font-size: 30px;
-  }
-  .slider-projects-main__title--pink, .slider-projects-main__title--blue {
-		font-size: 30px;
-	}
-	.slider-projects-main__wrap {
-		grid-template-columns: 1fr minmax(auto, 350px) minmax(auto, 350px) 1fr;
-  }
-  .slider-projects-main {
-		height: 540px;
-	}
-	.arc-screen {
-		top: -10%;
-  }
-  .arc-screen__arrow {
-		height: 60px;
-	}
 	.peoples__item {
 		width: 100%;
 	}
@@ -179,9 +131,6 @@ $clr_accent--p: #FC4FC6;
 		object-fit: cover;
 		object-position: top;
 	}
-	.screen--5 .arc-screen {
-		top: -4%;
-  }
 	.info__text {
 		max-width: 100%;
   }
@@ -322,41 +271,15 @@ $clr_accent--p: #FC4FC6;
   }
 }
 
-@media all and (max-width: 500px) and (max-height: 750px) {
+@media (orientation: portrait) and (max-width: 500px) {
 	.events {
 		grid-template-columns: 1fr;
 	}
 	.screen__title span {
 		font-size: 25px;
   }
-	.screen--5 .arc-screen {
-		top: -1%;
-	}
-	.arc-screen__arrow {
-		height: 36px;
-		top: 22px;
-  	}
   .screen--5 {
 		padding-bottom: 200px;
-	}
-	.arc-screen {
-		top: -5%;
-	}
-	.slider-projects-main__wrap {
-		grid-template-columns: 20px 1fr 1fr 20px;
-  }
-  .slider-projects-main__title--pink, .slider-projects-main__title--blue {
-		font-size: 18px;
-		line-height: 1.7em;
-	}
-	.slider-projects-main__text {
-		font-size: 16px;
-  }
-  .slider-projects-main__info {
-	  padding: 30px 0;
-  }
-  .slider-projects-main, .slider-projects-main__img {
-		height: 440px;
 	}
 	.run-line__text {
 		font-size: 16px;
@@ -371,18 +294,12 @@ $clr_accent--p: #FC4FC6;
 	.events {
 		padding: 50px 0;
   	}
-	.screen--9 .arc-screen {
-		top: -3%;
-  }
   .slider-attractions {
 	  grid-column-gap: 40px;
   }
   .screen--9 {
 		padding-bottom: 50px;
 	}
-	.screen--10 .arc-screen {
-		top: -4%;
-  }
   .footer__wrap {
 	  grid-gap: 40px;
   }
@@ -392,50 +309,18 @@ $clr_accent--p: #FC4FC6;
 }
 
 @media all and (max-width: 640px) and (max-height: 360px) {
-	.screen--5 .arc-screen {
-		top: -3%;
-  }
-  .arc-screen__arrow {
-	  top: 25px;
-	  height: 45px;
-  }
-  .screen  .arc-screen {
-	top: -9%;
-  }
-  .slider-projects-main, .slider-projects-main__img {
-		height: 440px;
-	}
-	.slider-projects-main__wrap {
-		grid-template-columns: 20px 1fr 1fr 20px;
-  }
-  .slider-projects-main__title--pink, .slider-projects-main__title--blue {
-		font-size: 18px;
-		line-height: 1.7em;
-	}
-	.slider-projects-main__text {
-		font-size: 16px;
-  }
-  .slider-projects-main__info {
-	  padding: 30px 0;
-  }
   .targets {
 		padding: 40px 0;
   }
   .events {
 	  padding-bottom: 50px;
   }
-  .screen .arc-screen {
-		top: -7%;
-	}
 }
 
 @media all and (max-width: 360px) and (max-height: 640px) {
 	.footer__contacts p {
 		font-size: 16px;
 	}
-	.screen--10 .arc-screen {
-		top: -3%;
-  }
   .screen__title span {
 		font-size: 20px;
 	}
@@ -444,9 +329,6 @@ $clr_accent--p: #FC4FC6;
 	}
 	.invite__title {
 		font-size: 32px;
-  }
-  .screen--5 .arc-screen {
-	  top: -58px;
   }
   .pb150 {
 	  padding-bottom: 0;

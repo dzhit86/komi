@@ -33,15 +33,27 @@ $(document).ready(function () {
 		centerMode: true,
 		responsive: [
 			{
-				breakpoint: 1025,
+				breakpoint: 1445,
 				settings: {
 					slidesToShow: 4
+				}
+			},
+			{
+				breakpoint: 1025,
+				settings: {
+					slidesToShow: 3
 				}
 			},
 			{
 				breakpoint: 801,
 				settings: {
 					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 401,
+				settings: {
+					slidesToShow: 1
 				}
 			},
 		]
