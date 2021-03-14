@@ -2204,6 +2204,9 @@ img {
 
 .run-line {
 	margin: 80px 0;
+	&__wrap {
+		overflow: hidden;
+	}
 	&__text {
 		text-transform: uppercase;
 		font-weight: 300;

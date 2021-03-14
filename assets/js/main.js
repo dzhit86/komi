@@ -28,6 +28,7 @@ $(document).ready(function () {
 		slidesToScroll: 1,
 		asNavFor: '.slider-projects-main',
 		dots: false,
+		autoplay: true,
 		arrows: false,
 		focusOnSelect: true,
 		centerMode: true,
@@ -83,9 +84,31 @@ $(document).ready(function () {
 					dn = $(sc).offset().top + pad; // положение цели на странице
 				$('html, body').animate({ scrollTop: dn }, 1000);
 			} else {
-				alert('Нет такой секции, блеа!');
+				alert('Нет такой секции!');
 			}
 		});
+	});
+
+	// Бегущая строка
+	$(function () {
+		$('.run-line__text--1').marquee({
+			duration: 50000,
+			startVisible: true,
+			duplicated: true
+		});
+		$('.run-line__text--2').marquee({
+			duration: 50000,
+			startVisible: true,
+			duplicated: true,
+			direction: 'right'
+		});
+		$('.run-line__text--3').marquee({
+			duration: 35000,
+			startVisible: true,
+			duplicated: true
+		});
+
+
 	});
 });
 

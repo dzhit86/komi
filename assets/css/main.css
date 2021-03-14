@@ -3157,6 +3157,10 @@ img {
   margin: 80px 0;
 }
 
+.run-line__wrap {
+  overflow: hidden;
+}
+
 .run-line__text {
   text-transform: uppercase;
   font-weight: 300;
