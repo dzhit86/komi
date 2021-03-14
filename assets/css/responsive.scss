@@ -9,12 +9,9 @@ $clr_accent--p: #FC4FC6;
 		right: 7%;
 	}
 
-	  .info__title--2, .info__title--3 {
+	.info__title--2, .info__title--3 {
 		  font-size: 52px;
 	  }
-	.slider-attractions {
-		grid-auto-columns: 60%;
-	}
 }
 
 @media all and (max-width: 1024px) {
@@ -34,18 +31,6 @@ $clr_accent--p: #FC4FC6;
 	.info__text {
 		max-width: 360px;		
 	}
-	.invite-2 {
-		grid-template-columns: 1fr;
-		grid-gap: 100px;
-		justify-items: center;
-	}
-	.coub {
-		grid-template: repeat(3, 200px)/repeat(3, 200px);
-	}
-	.coub__item {
-		width: 200px;
-		height: 200px;
-	}
 	.use-logo__title {
 		font-size: 40px;
 	}
@@ -58,9 +43,6 @@ $clr_accent--p: #FC4FC6;
 	  padding-bottom: 0;
 	  min-height: 90vh;
   }
-	.slider-attractions {
-		grid-auto-columns: 100%;
-	}
 
 }
 @media all and (max-width: 1024px) and (max-height: 800px){
@@ -72,7 +54,7 @@ $clr_accent--p: #FC4FC6;
   }
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 820px) {
 	.screen__logo {
 		width: 20em;
   	}
@@ -82,15 +64,8 @@ $clr_accent--p: #FC4FC6;
   .info__text {
 	  max-width: 300px;
   }
-  .footer__wrap {
-	grid-template-columns: 1fr;
-	justify-items: center;
-  }
   .footer__soc {
 	justify-items: center;
-  }
-  .footer__message {
-	  font-size: 32px;
   }
   .use-logo {
 		grid-template-columns: 1fr;
@@ -109,7 +84,6 @@ $clr_accent--p: #FC4FC6;
 	}
 	.slider-attractions {
 		justify-items: center;
-		padding: 20px 0 50px;
 	}
 	.screen--8 {
 		min-height: 100vh;
@@ -117,7 +91,6 @@ $clr_accent--p: #FC4FC6;
 	}
 	.events {
 		grid-template-columns: repeat(2, 1fr);
-		padding: 50px 0 150px
   }
   .targets__list {
 		grid-template-columns: repeat(2, 1fr);
@@ -242,26 +215,10 @@ $clr_accent--p: #FC4FC6;
   .screen__title span {
 	  font-size: 20px;
   }
-  .coub {
-		grid-template: repeat(3, minmax(auto, 1fr)) / repeat(3, minmax(auto, 1fr));
-	}
-	.coub__item {
-		width: 100px;
-		height: 100px;
-  }
-  .coub__item span {
-		font-size: 24px;
-	}
 	.use-logo__img {
 		max-width: 390px;
 		width: 100%;
 		height: auto;
-	}
-	.invite-2__title {
-		font-size: 20px;
-	}
-	.invite__form, .targets__list {
-		grid-template-columns: 1fr;
 	}
 }
 
@@ -292,7 +249,7 @@ $clr_accent--p: #FC4FC6;
 		padding-bottom: 50px;
 	}
 	.events {
-		padding: 50px 0;
+		padding: 0;
   	}
   .slider-attractions {
 	  grid-column-gap: 40px;
@@ -312,9 +269,6 @@ $clr_accent--p: #FC4FC6;
   .targets {
 		padding: 40px 0;
   }
-  .events {
-	  padding-bottom: 50px;
-  }
 }
 
 @media all and (max-width: 360px) and (max-height: 640px) {
@@ -323,9 +277,6 @@ $clr_accent--p: #FC4FC6;
 	}
   .screen__title span {
 		font-size: 20px;
-	}
-	.events {
-		padding: 30px 0;
 	}
 	.invite__title {
 		font-size: 32px;

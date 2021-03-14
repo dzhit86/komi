@@ -120,7 +120,7 @@ $(window).resize(function (params) {
 		// Горизонтальная прокрутка
 		e = window.event || e;
 		var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-		this.scrollLeft -= (delta * 100); // Multiplied by 10
+		this.scrollLeft -= (delta * 70); // Multiplied by 10
 
 		var widthElem = this.scrollWidth; // Ширина всего элемента
 		var widthBrowser = document.documentElement.clientWidth;  // Ширина окна минус размер вертикального скролла
