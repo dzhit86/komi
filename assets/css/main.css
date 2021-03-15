@@ -1007,6 +1007,73 @@ img {
   padding: 50px 0;
 }
 
+.mouse {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 30px;
+  height: 40px;
+  border-radius: 40%;
+  border: 2px solid #fff;
+  -webkit-transform: translateX(-50%) translateZ(0);
+          transform: translateX(-50%) translateZ(0);
+  left: calc(50% - 41px);
+  bottom: 1vh;
+}
+
+.mouse__wheel {
+  position: absolute;
+  left: 50%;
+  margin-left: -2px;
+  top: 8px;
+  width: 4px;
+  height: 9px;
+  background: #fff;
+  border-radius: 2px;
+  -webkit-animation: mouse-wheel 1.25s infinite linear;
+          animation: mouse-wheel 1.25s infinite linear;
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+}
+
+@-webkit-keyframes mouse-wheel {
+  0% {
+    -webkit-transform: scaleY(0.4) translateY(0);
+            transform: scaleY(0.4) translateY(0);
+  }
+  20% {
+    -webkit-transform: scaleY(1) translateY(0);
+            transform: scaleY(1) translateY(0);
+  }
+  60% {
+    -webkit-transform: scaleY(0.4) translateY(12px);
+            transform: scaleY(0.4) translateY(12px);
+  }
+  100% {
+    -webkit-transform: scaleY(0.4) translateY(0);
+            transform: scaleY(0.4) translateY(0);
+  }
+}
+
+@keyframes mouse-wheel {
+  0% {
+    -webkit-transform: scaleY(0.4) translateY(0);
+            transform: scaleY(0.4) translateY(0);
+  }
+  20% {
+    -webkit-transform: scaleY(1) translateY(0);
+            transform: scaleY(1) translateY(0);
+  }
+  60% {
+    -webkit-transform: scaleY(0.4) translateY(12px);
+            transform: scaleY(0.4) translateY(12px);
+  }
+  100% {
+    -webkit-transform: scaleY(0.4) translateY(0);
+            transform: scaleY(0.4) translateY(0);
+  }
+}
+
 .anniv {
   overflow: hidden;
   position: relative;
@@ -1530,6 +1597,11 @@ img {
   height: 6vmax;
 }
 
+.map__inta:hover svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 @media (orientation: landscape) and (max-width: 1445px) {
   .map__inta {
     top: 16%;
@@ -1582,6 +1654,11 @@ img {
 .map__usinsk svg {
   width: 4vmax;
   height: 4vmax;
+}
+
+.map__usinsk:hover svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 @media (orientation: landscape) and (max-width: 1445px) {
@@ -1638,6 +1715,11 @@ img {
   height: 5vmax;
 }
 
+.map__pechora:hover svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 @media (orientation: landscape) and (max-width: 1445px) {
   .map__pechora {
     top: 34%;
@@ -1680,6 +1762,11 @@ img {
   height: 5vmax;
 }
 
+.map__vuktyl:hover svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 @media (max-width: 850px) {
   .map__vuktyl {
     top: 44%;
@@ -1714,6 +1801,11 @@ img {
 .map__uhta svg {
   width: 4vmax;
   height: 4vmax;
+}
+
+.map__uhta:hover svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 @media (max-width: 850px) {
@@ -1754,6 +1846,11 @@ img {
 .map__sosnogorsk svg {
   width: 4vmax;
   height: 4vmax;
+}
+
+.map__sosnogorsk:hover svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 @media (orientation: landscape) and (max-width: 1445px) {
@@ -1824,6 +1921,11 @@ img {
 .map__syktyvkar svg {
   width: 3vmax;
   height: 5vmax;
+}
+
+.map__syktyvkar:hover svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 @media (orientation: landscape) and (max-width: 1445px) {
@@ -2324,14 +2426,6 @@ img {
   -webkit-transform: rotateZ(-45deg);
           transform: rotateZ(-45deg);
   opacity: 1;
-}
-
-.mouse {
-  position: absolute;
-  left: calc(50% - 41px);
-  bottom: 1vh;
-  width: 41px;
-  height: 59px;
 }
 
 .symbols {
@@ -4119,10 +4213,17 @@ img {
 .mod-peoples__persona {
   display: -ms-grid;
   display: grid;
-  grid-column-gap: 20px;
+  grid-gap: 20px;
   -ms-grid-columns: 1fr 2fr;
       grid-template-columns: 1fr 2fr;
   margin-bottom: 20px;
+}
+
+@media (max-width: 450px) {
+  .mod-peoples__persona {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .mod-peoples__name {
@@ -4159,10 +4260,23 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .mod-peoples__img--proj {
-  height: 110px;
+  height: auto;
+}
+
+.mod-peoples__img--proj img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (max-width: 450px) {
+  .mod-peoples__img--proj {
+    height: 200px;
+  }
 }
 
 .mod-peoples__projects {
@@ -4179,6 +4293,13 @@ img {
   grid-gap: 20px;
   -ms-grid-columns: 1fr 2fr;
       grid-template-columns: 1fr 2fr;
+}
+
+@media (max-width: 450px) {
+  .mod-peoples__item {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .mod-peoples__title {
@@ -4228,6 +4349,13 @@ img {
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
+}
+
+@media (max-width: 450px) {
+  .mod-invite__form {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .mod-invite__btn {
