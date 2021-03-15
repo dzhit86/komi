@@ -166,27 +166,19 @@ $(window).resize(function (params) {
 });
 
 (function () {
-
 	function scrollHorizontally(e) {
-
-		var scrollPos = this.scrollLeft;  // Сколько прокручено по горизонтали, до прокрутки (не перемещать эту строку!)
-
+		var scrollPos = this.scrollLeft;  // Сколько прокручено по горизонтали, до прокрутки
 		// Горизонтальная прокрутка
 		e = window.event || e;
 		var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
 		this.scrollLeft -= (delta * 70); // Multiplied by 10
-
 		var widthElem = this.scrollWidth; // Ширина всего элемента
 		var widthBrowser = document.documentElement.clientWidth;  // Ширина окна минус размер вертикального скролла
-
-
 		// Прокрутка вверх, но элемент уже в крайней левой позиции, то двигаемся вверх
 		if ((delta == 1) && (this.scrollLeft == 0)) return;
 		// Прокрутка вниз, но элемент виден полностью. Или элемент до конца прокручен в правый край
 		if ((widthBrowser >= widthElem) || (scrollPos == this.scrollLeft)) return;
-
 		e.preventDefault(); // запрещает прокрутку по вертикали
-
 	}
 
 	var elems = document.querySelectorAll('.slider-attractions');
@@ -194,7 +186,6 @@ $(window).resize(function (params) {
 		elems[a].addEventListener("mousewheel", scrollHorizontally, false);     // IE9, Chrome, Safari, Opera
 		elems[a].addEventListener("DOMMouseScroll", scrollHorizontally, false); // Firefox
 	}
-
 })();
 
 // Функции форм
