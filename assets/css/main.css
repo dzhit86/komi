@@ -1477,6 +1477,8 @@ img {
   z-index: 5;
   font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
+  color: #242424;
 }
 
 .map__item::after {
@@ -2772,6 +2774,7 @@ img {
 .peoples__item:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  z-index: 5;
 }
 
 .peoples__item:hover .peoples__info {
@@ -4203,14 +4206,14 @@ img {
   grid-gap: 15px;
 }
 
-.mod-peoples {
+.mod-peoples, .mod-cities {
   width: 640px;
   max-width: 100%;
   border-radius: 4px;
   padding: 40px 25px;
 }
 
-.mod-peoples__persona {
+.mod-peoples__persona, .mod-peoples__city, .mod-cities__persona, .mod-cities__city {
   display: -ms-grid;
   display: grid;
   grid-gap: 20px;
@@ -4220,13 +4223,13 @@ img {
 }
 
 @media (max-width: 450px) {
-  .mod-peoples__persona {
+  .mod-peoples__persona, .mod-peoples__city, .mod-cities__persona, .mod-cities__city {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
 }
 
-.mod-peoples__name {
+.mod-peoples__name, .mod-cities__name {
   font-size: 1.5em;
   line-height: 1.2em;
   font-weight: 500;
@@ -4238,24 +4241,24 @@ img {
   margin-bottom: 10px;
 }
 
-.mod-peoples__position {
+.mod-peoples__position, .mod-cities__position {
   font-weight: 700;
   font-size: 1.1em;
   margin-bottom: 10px;
 }
 
-.mod-peoples__text {
+.mod-peoples__text, .mod-cities__text {
   font-size: 1.1em;
   line-height: 1.5em;
 }
 
-.mod-peoples__img {
+.mod-peoples__img, .mod-cities__img {
   border-radius: 4px;
   overflow: hidden;
   height: 265px;
 }
 
-.mod-peoples__img img {
+.mod-peoples__img img, .mod-cities__img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -4264,22 +4267,22 @@ img {
      object-position: top;
 }
 
-.mod-peoples__img--proj {
+.mod-peoples__img--proj, .mod-peoples__img--city, .mod-cities__img--proj, .mod-cities__img--city {
   height: auto;
 }
 
-.mod-peoples__img--proj img {
+.mod-peoples__img--proj img, .mod-peoples__img--city img, .mod-cities__img--proj img, .mod-cities__img--city img {
   -o-object-fit: contain;
      object-fit: contain;
 }
 
 @media (max-width: 450px) {
-  .mod-peoples__img--proj {
+  .mod-peoples__img--proj, .mod-peoples__img--city, .mod-cities__img--proj, .mod-cities__img--city {
     height: 200px;
   }
 }
 
-.mod-peoples__projects {
+.mod-peoples__projects, .mod-cities__projects {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -4287,7 +4290,7 @@ img {
   grid-row-gap: 20px;
 }
 
-.mod-peoples__item {
+.mod-peoples__item, .mod-cities__item {
   display: -ms-grid;
   display: grid;
   grid-gap: 20px;
@@ -4296,13 +4299,13 @@ img {
 }
 
 @media (max-width: 450px) {
-  .mod-peoples__item {
+  .mod-peoples__item, .mod-cities__item {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
 }
 
-.mod-peoples__title {
+.mod-peoples__title, .mod-cities__title {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
@@ -4311,7 +4314,13 @@ img {
   line-height: 1.2em;
 }
 
-.mod-peoples__subtitle {
+@media (max-width: 450px) {
+  .mod-peoples__title, .mod-cities__title {
+    font-size: 1.3em;
+  }
+}
+
+.mod-peoples__subtitle, .mod-cities__subtitle {
   font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 5px;

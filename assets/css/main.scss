@@ -1023,7 +1023,8 @@ img {
 		z-index: 5;
 		font-size: 16px;
 		cursor: pointer;
-		
+		text-decoration: none;
+		color: $clr_text;
 		&::after {
 			content: '';
 			display: block;
@@ -1940,6 +1941,7 @@ img {
 		text-decoration: none;
 		&:hover {
 			transform: scale(1.1);
+			z-index: 5;
 			.peoples__info {
 				opacity: 1;
 			}			
@@ -2918,12 +2920,12 @@ img {
 }
 
 // Modals
-.mod-peoples {
+.mod-peoples, .mod-cities {
 	width: 640px;
 	max-width: 100%;
 	border-radius: 4px;
 	padding: 40px 25px;
-	&__persona {
+	&__persona, &__city {
 		display: grid;
 		grid-gap: 20px;
 		grid-template-columns: 1fr 2fr;
@@ -2963,7 +2965,7 @@ img {
 			object-fit: cover;
 			object-position: top;
 		}
-		&--proj {
+		&--proj, &--city {
 			height: auto;
 			img {
 				object-fit: contain;
@@ -2991,6 +2993,9 @@ img {
 		font-weight: 700;
 		font-size: 1.5em;
 		line-height: 1.2em;
+		@media (max-width:450px) {
+			font-size: 1.3em;
+		}
 	}
 	&__subtitle {
 		font-size: 1.1em;
