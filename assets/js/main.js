@@ -72,9 +72,6 @@ $(document).ready(function () {
 	// annivLeader.css('bottom', '-' + annivLeader.height() + 'px');
 	// annivStella.css('bottom', '-' + annivStella.height() + 'px');
 
-	$(function () {
-		let inviteMidge = $(".invite__midges");
-	});
 
 	// Плавный скролл к якорю
 	$(function () {
