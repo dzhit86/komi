@@ -2759,6 +2759,8 @@ img {
 			path {
 				opacity: 1;
 			}
+			min-height: 60px;
+			min-width: 60px;
 		}
 		&:nth-child(1),
 		&:nth-child(3),
@@ -2916,6 +2918,10 @@ img {
 		display: grid;
 		grid-auto-flow: column;
 		grid-gap: 15px;
+		svg {
+			min-height: 15px;
+			min-width: 21px;
+		}
 	}
 }
 

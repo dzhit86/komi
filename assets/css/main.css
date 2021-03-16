@@ -4022,6 +4022,11 @@ img {
   text-align: center;
 }
 
+.coub__item svg {
+  min-height: 60px;
+  min-width: 60px;
+}
+
 .coub__item svg path {
   opacity: 1;
 }
@@ -4204,6 +4209,11 @@ img {
   display: grid;
   grid-auto-flow: column;
   grid-gap: 15px;
+}
+
+.footer__soc svg {
+  min-height: 15px;
+  min-width: 21px;
 }
 
 .mod-peoples, .mod-cities {
