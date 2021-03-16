@@ -31,7 +31,6 @@ body {
 	color: $clr_text;
 }
 
-// forms
 .form {
 	&__input {
 		height: 68px;
@@ -99,7 +98,7 @@ body {
 			font-size: 1.1em;
 		}
 		&:hover {
-			transform: translate(10px, -10px);
+			transform: translate(2px, -2px);
 		}
 		&:active {
 			background: $clr_accent--dg;
@@ -107,8 +106,6 @@ body {
 	}
 }
 
-
-// social
 i {
 	&.icon {
 		display: flex;
@@ -135,7 +132,6 @@ i {
 	}
 }
 
-// misc
 p {
 	line-height: 1.5em;
 }
@@ -169,8 +165,6 @@ img {
 .pb150 {
 	padding-bottom: 150px;
 }
-
-// btn
 .btn {
 	min-height: 56px;
 	text-decoration: none;
@@ -185,8 +179,11 @@ img {
 	&--green {
 		background: $clr_accent--g;
 	}
+	&--blue {
+		background: $clr_accent--b;
+	}
 	&:hover {
-		transform: translate(10px, -10px);
+		transform: translate(2px, -2px);
 	}
 	&:active {
 		background: $clr_accent--dg;
@@ -201,6 +198,8 @@ img {
 	transform: translateX(-50%);
 	width: 115px;
 	height: 115px;
+	max-width: 20vmin;
+	max-height: 20vmin;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -275,7 +274,6 @@ img {
 		opacity: 0;
   }
 }
-
 .peoples__item--new {
 	overflow: hidden;
 	&:hover {
@@ -296,7 +294,6 @@ img {
 		}
 	}
 }
-
 .cross {
 	position: absolute;
 	&__item {
@@ -314,8 +311,6 @@ img {
 		}
 	}
 }
-
-// grids
 .wrap {
 	display: grid;
 	grid-template-columns: 1fr minmax(auto, 1340px) 1fr;
@@ -346,11 +341,12 @@ img {
 		}
 	}
 }
-
-// screens
 .screen {
 	position: relative;
 	min-height: 100vh;
+	&__logo {
+		max-width: 30vmax;
+	}
 	&__title {
 		position: relative;
 		justify-self: center;		
@@ -360,7 +356,7 @@ img {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		top: -5vmax;
+		z-index: 4;
 		span {
 			color: $clr_text;
 			display: inline-block;
@@ -407,47 +403,59 @@ img {
 }
 .arc-screen {
 	width: 100%;
-	height: 220px;
+	height: 200px;
 	position: absolute;	
 	left: 0;
 	right: 0;
-	mask: url("../img/mask-ark-top.svg") no-repeat top center;
-	mask-size: cover;
-	top: -220px;
-	&--eclipse {
-		mask: url("../img/mask-ark-top-eclipse.svg") no-repeat top center;
-		height: 320px;
-		top: -300px;
-		@media (orientation: landscape) and (max-width: 1025px) {
-			height: 260px;
-			top: -170px;
-		}
+	top: -200px;
+	opacity: 0;
+	transition: height .2s, opacity .3s;
+	&__bg {
+		width: 100%;
+		height: 100%;
+	}
+	&__eclipse {		
+		border-radius: 50%;
+		height: 260px;
+		width: 260px;
+		position: absolute;
+		bottom: 50%;
+		left: calc(50% - 130px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 3;
+		padding: 20px;
 	}
 	&--purple {
-		background: url("../img/pattern-1.png") $clr_main -100% 100%;
-		mask-size: cover;
+		.arc-screen__bg {
+			background: url("../img/pattern-1.png") $clr_main bottom center;
+		}
+		.arc-screen__eclipse {
+			background: $clr_main;
+		}
 	}
-	&--black {
-		background: url("../img/pattern-1.png") $clr_black center 100%;
-		mask-size: cover;
+	&--black {		
+		.arc-screen__bg {
+			background: url("../img/pattern-1.png") $clr_black bottom center;			
+		}
+		.arc-screen__eclipse {
+			background: $clr_black;
+		}
 	}
 	&--white {
-		background: url("../img/pattern-1.png") #fff center 100%;
-		mask-size: cover;
+		.arc-screen__bg {
+			background: #fff;
+		}
+		.arc-screen__eclipse {
+			background: #fff;
+		}
 	}
 	&__arrow {
-		width: 52px;
-		height: 98px;
-		max-width: 5vmax;
-		position: absolute;
-		top: 48px;
-		transform: translateX(-50%);
-		left: 50%;
+		width: 12px;
+		height: 40px;
 		path {
 			fill: $clr_accent--y;
-		}
-		@media (orientation: landscape) and (max-width: 1025px) {
-			max-width: 4vmax;
 		}
 	}
 }
@@ -480,32 +488,9 @@ img {
 }
 .screen--5 {
 	background: url("../img/pattern-1.png") $clr_black repeat top center;
-	padding-bottom: 30vmax;
+	padding-bottom: 20vmax;
 	@media (orientation: landscape) and (width: 2560px) {
-		padding-bottom: 30vmin;
-	}
-	.arc-screen--eclipse {
-		@media (orientation: landscape) and (max-width: 1025px) {
-			top: -220px;
-		}
-		@media (orientation: landscape) and (max-width: 700px) {
-			top: -150px;
-    		height: 190px;
-		}
-		@media (orientation: portrait) and (max-width: 800px) {
-			
-			top: -200px;
-		}
-		@media (max-width: 450px) {
-			top: -160px;
-			height: 170px;
-			width: 100%;
-		}
-		@media (max-width: 400px) {
-			top: -75px;
-			height: 150px;
-			width: 100%;
-		}
+		padding-bottom: 20vmin;
 	}
 	.screen__title {
 		@media (orientation: landscape) and (width: 2560px) {
@@ -515,44 +500,9 @@ img {
 			top: 1vmax;
 		}
 	}
-	.arc-screen__arrow {
-		@media (max-width: 700px) {
-			max-width: 4vmax;
-			top: 20px;
-		}
-  }
 }
 .screen--6 {
-	.arc-screen--eclipse {
-		@media (orientation: landscape) and (max-width: 1445px) {
-			top: -200px;
-		}
-		@media (orientation: landscape) and (max-width: 1025px) {
-			top: -170px;
-		}
-		@media (orientation: landscape) and (max-width: 750px) {
-			top: -120px;
-		}
-		@media (orientation: portrait) and (max-width: 1025px) {
-			top: -170px;
-		}
-		@media (orientation: portrait) and (max-width: 800px) {
-			top: -200px;
-		}
-		@media (max-width: 700px) {
-			top: -100px;
-		}
-		@media (max-width: 450px) {
-			top: -160px;
-			height: 170px;
-			width: 100%;
-		}
-		@media (max-width: 400px) {
-			top: -75px;
-			height: 150px;
-			width: 100%;
-		}
-	}
+	padding: 2vmax 0;
 	.screen__title {
 		margin-top: 0;
 		@media (orientation: landscape) and (width: 2560px) {
@@ -586,16 +536,6 @@ img {
 			}
 		}
 	}
-	.arc-screen__arrow {
-		@media (orientation: landscape) and (max-width: 750px) {
-			max-width: 4vmax;
-			top: 20px;
-		}
-		@media (max-width: 700px) {
-			max-width: 4vmax;
-			top: 10px;
-		}
-  }
   @media (max-width: 650px) {
 		min-height: unset;
 	}
@@ -608,7 +548,6 @@ img {
 }
 .screen--8 {
 	padding: 10vmax 0;
-	margin-bottom: 10vmax;
 	@media (orientation: landscape) and (width: 2560px) {
 		padding: 15vmin 0;
 		margin-bottom: 0;
@@ -633,7 +572,7 @@ img {
 	}
 }
 .screen--9 {
-	background: url("../img/pattern-1.png") $clr_main center;
+	background: url("../img/pattern-1.png") $clr_main top center;
 	.screen__title {
 		margin-bottom: 0;
 		@media (max-width: 550px) {
@@ -660,11 +599,6 @@ img {
 		margin-top: 10vmax;
 		padding-bottom: 35vmax;
 	}
-	.arc-screen {
-		@media (max-width: 1445px) {
-			top: -16vmax;
-		}
-	}
 }
 .screen--10 {
 	min-height: unset;
@@ -672,19 +606,12 @@ img {
 	@media (max-width: 1445px) {
 		padding-top: 0;
 	}
-	.arc-screen {
-		@media (max-width: 1445px) {
-			top: -15vmax;
-		}
-	}
 }
 .screen--11 {
 	background: $clr_main;
 	min-height: unset;
 	padding: 50px 0;
 }
-
-
 .mouse {
 	position: absolute;
 	box-sizing: border-box;
@@ -708,10 +635,6 @@ img {
 		transform-origin: 50% 0%
 	 }
  }
- 
-
-
-
  @keyframes mouse-wheel {
 	0% {
 	  transform: scaleY(.4) translateY(0)
@@ -726,7 +649,6 @@ img {
 	  transform: scaleY(.4) translateY(0)
 	}
  }
-
 .anniv {
 	overflow: hidden;
 	position: relative;
@@ -1447,7 +1369,6 @@ img {
 
 
 }
-
 .midges {
 	position: absolute;
 	top: 0;
@@ -1559,7 +1480,6 @@ img {
 		width: 100px;
 	}
 }
-
 .menu {
 	width: 100%;
 	display: flex;
@@ -1644,7 +1564,6 @@ img {
 		margin-right: 20px;
 	}
 }
-
 .btn-burger {
 	display: none;
 	width: 35px;
@@ -1695,14 +1614,11 @@ img {
 	}
 
 }
-
-
 .symbols {
 	position: absolute;
 	top: 130px;
 	right: 14%;
 }
-
 .dude {
 	position: absolute;
 	&--main {
@@ -1773,6 +1689,14 @@ img {
 		right: 18vmax;
 		background: url("../img/dude/dude-1.png") no-repeat center center;
 		background-size: contain;
+		animation-name: dude1;
+		animation-duration: 9000ms;
+		animation-delay: 0ms;
+		animation-fill-mode: forwards;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		transform-origin: 0 0;
+		z-index: 4;
 		@media (max-width: 580px) {
 			display: none;
 		}
@@ -1786,6 +1710,14 @@ img {
 		right: 4vmax;
 		background: url("../img/dude/dude-2.png") no-repeat center center;
 		background-size: contain;
+		animation-name: dude2;
+		animation-duration: 7000ms;
+		animation-delay: 0s;
+		animation-fill-mode: forwards;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		transform-origin: 0 0;
+		z-index: 4;
 		@media (orientation: landscape) and (max-width: 1441px) {
 			top: 9vmax;
 			right: 2vmax;
@@ -1806,8 +1738,16 @@ img {
 		max-height: 15vmax;
 		bottom: 16vmax;
 		right: 1vmax;
+		z-index: 4;
 		background: url("../img/dude/dude-3.png") no-repeat center center;
 		background-size: contain;
+		animation-name: dude3;
+		animation-duration: 7000ms;
+		animation-delay: 0s;
+		animation-fill-mode: forwards;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		transform-origin: 0 0;
 		@media (orientation: portrait) and (max-width: 1025px) {
 			bottom: 18vmin;
 			right: 2vmin;
@@ -1822,6 +1762,60 @@ img {
 		@media (max-width: 580px) {
 			display: none;
 		}
+	}
+}
+@keyframes dude1 {
+	0%, 100% {
+		transform:translate(0px, 0px) scale(1) rotateZ(0deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+	25% {
+		transform:translate(-24px, 28px) scale(1) rotateZ(30deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+	50% {
+		transform:translate(44px, 48px) scale(1) rotateZ(0deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+	75% {
+		transform:translate(-1px, -1px) scale(1) rotateZ(-30deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+}
+@keyframes dude2 {
+	0%, 100% {
+		transform:translate(0px, 0px) scale(1) rotateZ(0deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+	25% {
+		transform:translate(44px, -30px) scale(1) rotateZ(-30deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+	50% {
+		transform:translate(-30px, 52px) scale(1) rotateZ(0deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+	75% {
+		transform:translate(-10px, -10px) scale(1) rotateZ(30deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+}
+@keyframes dude3 {
+	0%, 100% {
+		transform:translate(0px, 0px) scale(1) rotateZ(0deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+	25% {
+		transform:translate(-25px, 55px) scale(1) rotateZ(15deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+	50% {
+		transform:translate(-10px, 20px) scale(1) rotateZ(0deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
+	}
+	75% {
+		transform:translate(-20px, 40px) scale(1) rotateZ(-25deg) translate(-50%, -50%);
+		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 }
 .info-comment {
@@ -1926,12 +1920,14 @@ img {
 		}
 	}
 }
-
 .peoples {
 	display: grid;
 	grid-gap: 20px;	
 	grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-
+	padding: 5vmax 0;
+	@media (max-width: 660px) {
+		grid-template-columns: repeat(3, minmax(auto, 1fr));
+	}
 	&__item {
 		border-radius: 4px;
 		position: relative;
@@ -1948,10 +1944,16 @@ img {
 		}
 		&--new {
 			background: #fff;
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-end;
+			display: none;
 			padding: 40px 15px;
+			@media (min-width: 660px) {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+			}
+		}
+		@media (max-width: 450px) {
+			height: 130px;
 		}
 	}
 	&__add {
@@ -1968,7 +1970,11 @@ img {
 	}
 	&__img {
 		border-radius: 4px;
-		object-fit: contain;
+		object-fit: cover;
+		object-position: top;
+		@media (max-width: 450px) {
+			
+		}
 	}
 	&__info {
 		position: absolute;
@@ -1987,10 +1993,19 @@ img {
 			white-space: nowrap;
 		}
 	}
+	&-toggle {
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: 1fr;
+		justify-items: center;
+		@media (min-width: 660px) {
+			display: none;
+		}
+	}
 }
-
 .slider-projects-main {
 	height: 600px;
+	margin-top: 5vmax;
 	@media (max-width: 1445px) {
 		padding-top: 5vmax;
 	}
@@ -2148,8 +2163,8 @@ img {
 		}
 	}
 }
-
 .slider-projects-nav {
+	margin-bottom: 5vmax;
 	background: #fff;
 	&__item {
 		position: relative;
@@ -2193,7 +2208,6 @@ img {
 		}
 	}
 }
-
 .slider-attractions {
 	display: grid;
 	grid-auto-flow: column;
@@ -2368,7 +2382,6 @@ img {
 		font-weight: 500;
 	}
 }
-
 .run-line {
 	margin: 80px 0;
 	&__wrap {
@@ -2392,12 +2405,9 @@ img {
 		margin-bottom: 0;
 	}
 }
-
 .targets {
-	padding: 80px 0;
-	@media (max-width: 1445px) {
-		padding: 5vmax 0;
-	}
+	padding: 2vmax 0 5vmax;
+
 	&__title {
 		font-size: 24px;
 		font-weight: 700;
@@ -2468,7 +2478,6 @@ img {
 		transform: translateY(-10px);
 	}
 }
-
 .invite {
 	padding: 100px 0;
 	background: $clr_main;
@@ -2526,73 +2535,84 @@ img {
 		svg {
 			height: 35px;
 			width: 35px;
-			position: absolute;			
-			bottom: -35px;
-			opacity: 0;
-			animation: invite-midges 20s ease infinite;
+			position: absolute;
 			&:nth-child(1) {
-				left: calc(100% - 35px);
-				animation-delay: 0;
+				animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate; 
+				left: 5;
+				top: 5%;
+				transform: scale(0.6);
 			}
 			&:nth-child(2) {
-				left: calc(76% - 35px);
-				animation-delay: 10s;
+				animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate; 
+				left: 5%;
+				top: 80%;
+				transform: scale(0.9);
 			}
 			&:nth-child(3) {
-				left: calc(54% - 35px);
-				animation-delay: 2s;
+				animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+				left: 10%;
+				top: 40%;
+				transform: scale(0.7);
 			}
 			&:nth-child(4) {
-				left: calc(94% - 35px);
-				animation-delay: 8s;
+				animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+				left: 20%;
+				top: 0;
+				transform: scale(1);
 			}
 			&:nth-child(5) {
-				left: calc(82% - 35px);
-				animation-delay: 3s;
+				animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+				left: 30%;
+				top: 50%;
+				transform: scale(0.6);
 			}
 			&:nth-child(6) {
-				left: calc(64% - 35px);
-				animation-delay: 4s;
+				animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+				left: 50%;
+				top: 0;
+				transform: scale(0.8);
 			}
 			&:nth-child(7) {
-				left: calc(22% - 35px);
-				animation-delay: 13s;
+				animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate; 
+				left: 65%;
+				top: 70%;
+				transform: scale(0.4);
 			}
 			&:nth-child(8) {
-				left: calc(40% - 35px);
-				animation-delay: 2s;
+				animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+				left: 80%;
+				top: 10%;
+				transform: scale(1);
 			}
 			&:nth-child(9) {
-				left: calc(15% - 35px);
-				animation-delay: 5s;
+				animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate; 
+				left: 90%;
+				top: 50%; 
+				transform: scale(0.6);
 			}
 			&:nth-child(10) {
-				left: calc(0% + 35px);
-				animation-delay: 1s;
+				animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate; 
+				left: 80%;
+				top: 80%;
+				transform: scale(0.4);
 			}
 		}
 	}
 }
-
-@keyframes invite-midges {
+@keyframes animateBubble {
 	0% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-	50% {
-		opacity: .8;
-		transform: translateY(-250px) translateX(40px) rotate(180deg);
-	}
-	98% {
-		opacity: .4;
-		transform: translateY(-500px) translateX(-40px) rotate(360deg);
-	}
-	99% {
-		opacity: 0;
+		 margin-top: 450px;
 	}
 	100% {
-		opacity: 0;
-		transform: translateY(0);
+		 margin-top: -10%;
+	}
+}
+@keyframes sideWays { 
+	0% { 
+		 margin-left:0px;
+	}
+	100% { 
+		 margin-left:50px;
 	}
 }
 
@@ -2600,7 +2620,8 @@ img {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 50px 25px;
-	grid-auto-flow: row;	
+	grid-auto-flow: row;
+	padding: 5vmax 0;
 	&__item {
 		position: relative;
 		&--empty {
@@ -2671,7 +2692,6 @@ img {
 	}
 
 }
-
 .invite-2 {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -2722,7 +2742,6 @@ img {
 	}
 	
 }
-
 .coub {
 	display: grid;
 	grid-template: repeat(3, 150px) / repeat(3, 150px);
@@ -2836,7 +2855,6 @@ img {
 	}
 
 }
-
 .use-logo {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -2869,7 +2887,6 @@ img {
 		margin-bottom: 25px;
 	}
 }
-
 .footer {
 	padding: 80px 0;
 	background: $clr_black;
@@ -3009,7 +3026,6 @@ img {
 		margin-bottom: 5px;
 	}
 }
-
 .mod-invite {
 	width: 640px;
 	max-width: 100%;

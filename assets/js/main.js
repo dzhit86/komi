@@ -51,12 +51,6 @@ $(document).ready(function () {
 					slidesToShow: 2
 				}
 			},
-			{
-				breakpoint: 401,
-				settings: {
-					slidesToShow: 1
-				}
-			},
 		]
 	});
 
@@ -72,6 +66,72 @@ $(document).ready(function () {
 	// annivLeader.css('bottom', '-' + annivLeader.height() + 'px');
 	// annivStella.css('bottom', '-' + annivStella.height() + 'px');
 
+	function calcArc() {
+		let arcWidth = $(window).width(),
+			arcHeight = 0,
+			height = $(window).height();
+		if (arcWidth > height) {
+			arcHeight = +(arcWidth / 16).toFixed();
+		} else {
+			arcHeight = +(height / 16).toFixed();
+		}
+		return { arcWidth: arcWidth, arcHeight: arcHeight };
+	};
+
+	function insertAcr() {
+		let arcWidth = calcArc().arcWidth,
+			arcHeight = calcArc().arcHeight,
+			arcEclipse = (arcWidth / 7).toFixed(),
+			arcEl = `url("data:image/svg+xml,%3Csvg width='${arcWidth}' height='${arcHeight}' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${arcWidth} ${arcHeight}'%3E%3Cpath d='M${arcWidth},${arcHeight}a${arcWidth * 2},${arcWidth * 2},0,0,0-${arcWidth},0v1H${arcWidth}Z'%3E%3C/path%3E%3C/svg%3E")`;
+
+		$('.arc-screen__bg').css('mask-image', arcEl);
+		$('.arc-screen').css({
+			'opacity': 1,
+			'height': arcHeight + 'px',
+			'top': -arcHeight + 'px'
+		});
+		$('.arc-screen__eclipse').css({
+			'width': arcEclipse + 'px',
+			'height': arcEclipse + 'px',
+			'left': (arcWidth / 2) - (arcEclipse / 2) + 'px',
+			'bottom': 0,
+		});
+		$('.arc-screen__arrow').css({
+			'height': '6vmax',
+			'width': '19.2vmax',
+		});
+	}
+
+	insertAcr();
+
+	function peoplesDisplay() {
+		if ($(document).width() < 661) {
+			$('.peoples__item').each(function (items, el) {
+				if (items > 11 && !$(this).hasClass('peoples__item--new')) {
+					$(this).hide();
+				}
+			});
+		} else {
+			$('.peoples__item').each(function (items, el) {
+				$(this).show('fast');
+			});
+		}
+	}
+	peoplesDisplay();
+
+	$('#peoplesShow').on('click', function (e) {
+		e.preventDefault();
+		$('.peoples__item').each(function (items, el) {
+			if (!$(this).hasClass('peoples__item--new')) {
+				$(this).slideDown('fast');
+			}
+		});
+	});
+
+	$(window).resize(function () {
+		insertAcr();
+		peoplesDisplay();
+	});
 
 	// Плавный скролл к якорю
 	$(function () {
@@ -189,7 +249,6 @@ $(window).resize(function (params) {
 })();
 
 // Функции форм
-
 function formSuccesMain(event) {
 	event.preventDefault();
 	const form = $("#formInviteMain"),
