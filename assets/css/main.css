@@ -843,7 +843,7 @@ img {
 
 @media (max-width: 750px) {
   .screen--8 {
-    margin-bottom: 0vmax;
+    margin-bottom: 10vmax;
   }
 }
 
@@ -1016,8 +1016,8 @@ img {
 
 @media (orientation: portrait) and (max-width: 780px) {
   .anniv__wrap, .unific__wrap {
-    -ms-grid-columns: 55% 45%;
-        grid-template-columns: 55% 45%;
+    -ms-grid-columns: 58% 42%;
+        grid-template-columns: 58% 42%;
   }
 }
 
@@ -1114,9 +1114,9 @@ img {
   }
 }
 
-@media (orientation: portrait) and (max-width: 780px) {
+@media (max-width: 840px) {
   .anniv__text, .unific__text {
-    max-width: 35vmax;
+    max-width: 44vmax;
     font-size: .8em;
   }
 }
@@ -1305,14 +1305,20 @@ img {
   z-index: 2;
 }
 
+@media (max-width: 840px) {
+  .unific__text {
+    max-width: unset;
+  }
+}
+
 .unific__rect--right {
-  right: -49vw;
+  right: -46vw;
   width: 100vmax;
 }
 
 @media (orientation: landscape) and (max-width: 1445px) {
   .unific__rect--right {
-    right: -37vw;
+    right: -39vw;
   }
 }
 
@@ -1449,6 +1455,12 @@ img {
   font-weight: 600;
 }
 
+@media (max-width: 420px) {
+  .map__name {
+    font-size: .8em;
+  }
+}
+
 .map__vorkuta {
   top: 12%;
   right: 8%;
@@ -1483,27 +1495,35 @@ img {
 
 @media (orientation: landscape) and (max-width: 850px) {
   .map__vorkuta {
-    top: 23%;
+    top: 18%;
   }
 }
 
 @media (max-width: 780px) {
   .map__vorkuta {
-    top: 26%;
+    top: 20%;
+    right: 12%;
   }
 }
 
-@media (orientation: landscape) and (max-width: 723px) {
+@media (orientation: landscape) and (max-width: 740px) {
   .map__vorkuta {
-    top: 11%;
+    top: 22%;
+    right: 11%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 670px) {
+  .map__vorkuta {
+    top: 10%;
     right: 26%;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 540px) {
   .map__vorkuta {
     top: 10%;
-    right: 6%;
+    right: 7%;
   }
 }
 
@@ -1542,24 +1562,31 @@ img {
 
 @media (orientation: landscape) and (max-width: 850px) {
   .map__inta {
-    top: 22%;
+    top: 19%;
   }
 }
 
 @media (max-width: 780px) {
   .map__inta {
-    top: 25%;
+    top: 17%;
   }
 }
 
-@media (orientation: landscape) and (max-width: 723px) {
+@media (orientation: landscape) and (max-width: 740px) {
   .map__inta {
-    top: 12%;
-    right: 36%;
+    top: 19%;
+    right: 27%;
   }
 }
 
-@media (max-width: 420px) {
+@media (orientation: landscape) and (max-width: 670px) {
+  .map__inta {
+    top: 11%;
+    right: 35%;
+  }
+}
+
+@media (max-width: 540px) {
   .map__inta {
     top: 13%;
     right: 24%;
@@ -1601,18 +1628,32 @@ img {
 
 @media (max-width: 850px) {
   .map__usinsk {
-    top: 30%;
+    top: 27%;
   }
 }
 
-@media (orientation: landscape) and (max-width: 723px) {
+@media (orientation: portrait) and (max-width: 780px) {
+  .map__usinsk {
+    top: 24%;
+    left: 42%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 740px) {
+  .map__usinsk {
+    top: 26%;
+    left: 40%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 670px) {
   .map__usinsk {
     top: 22%;
-    left: 44%;
+    left: 50%;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 540px) {
   .map__usinsk {
     top: 18%;
     left: 45%;
@@ -1658,6 +1699,13 @@ img {
   }
 }
 
+@media (orientation: portrait) and (max-width: 780px) {
+  .map__pechora {
+    top: 37%;
+    left: 42%;
+  }
+}
+
 @media (orientation: landscape) and (max-width: 723px) {
   .map__pechora {
     top: 33%;
@@ -1665,7 +1713,14 @@ img {
   }
 }
 
-@media (max-width: 420px) {
+@media (orientation: landscape) and (max-width: 670px) {
+  .map__pechora {
+    top: 36%;
+    left: 50%;
+  }
+}
+
+@media (max-width: 540px) {
   .map__pechora {
     top: 33%;
     left: 47%;
@@ -1699,17 +1754,24 @@ img {
   }
 }
 
-@media (orientation: landscape) and (max-width: 723px) {
+@media (orientation: landscape) and (max-width: 740px) {
   .map__vuktyl {
     top: 48%;
-    right: 43%;
+    right: 30%;
   }
 }
 
-@media (max-width: 420px) {
+@media (orientation: landscape) and (max-width: 670px) {
+  .map__vuktyl {
+    top: 52%;
+    right: 40%;
+  }
+}
+
+@media (max-width: 540px) {
   .map__vuktyl {
     top: 48%;
-    right: 43%;
+    right: 34%;
   }
 }
 
@@ -1762,6 +1824,12 @@ img {
   }
 }
 
+@media (orientation: landscape) and (max-width: 850px) {
+  .map__sosnogorsk::after {
+    left: -20%;
+  }
+}
+
 @media (orientation: landscape) and (max-width: 750px) {
   .map__sosnogorsk::after {
     left: -30%;
@@ -1801,28 +1869,35 @@ img {
 @media (max-width: 850px) {
   .map__sosnogorsk {
     bottom: 34%;
-    right: 26%;
+    right: 32%;
   }
 }
 
 @media (max-width: 780px) {
   .map__sosnogorsk {
-    bottom: 37%;
-    right: 28%;
+    bottom: 30%;
+    right: 34%;
   }
 }
 
-@media (orientation: landscape) and (max-width: 723px) {
+@media (orientation: landscape) and (max-width: 740px) {
   .map__sosnogorsk {
-    bottom: 31%;
-    right: 47%;
+    bottom: 35%;
+    right: 30%;
   }
 }
 
-@media (max-width: 420px) {
+@media (orientation: landscape) and (max-width: 670px) {
   .map__sosnogorsk {
-    bottom: 26%;
-    right: 35%;
+    bottom: 30%;
+    right: 44%;
+  }
+}
+
+@media (max-width: 540px) {
+  .map__sosnogorsk {
+    bottom: 30%;
+    right: 40%;
   }
 }
 
@@ -1868,18 +1943,25 @@ img {
 
 @media (max-width: 850px) {
   .map__syktyvkar {
-    bottom: 36%;
+    bottom: 33%;
   }
 }
 
-@media (orientation: landscape) and (max-width: 723px) {
+@media (orientation: landscape) and (max-width: 740px) {
   .map__syktyvkar {
-    bottom: 23%;
-    left: 35%;
+    bottom: 33%;
+    left: 26%;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 670px) {
+  .map__syktyvkar {
+    bottom: 28%;
+    left: 34%;
+  }
+}
+
+@media (max-width: 540px) {
   .map__syktyvkar {
     bottom: 24%;
     left: 24%;
@@ -1927,13 +2009,34 @@ img {
 
 @media (max-width: 850px) {
   .map__tree--1 {
-    top: 37%;
+    top: 34%;
   }
 }
 
-@media (orientation: landscape) and (max-width: 750px) {
+@media (orientation: portrait) and (max-width: 780px) {
   .map__tree--1 {
-    top: 39%;
+    top: 35%;
+    right: 28%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 740px) {
+  .map__tree--1 {
+    top: 35%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 670px) {
+  .map__tree--1 {
+    top: 31%;
+    right: 37%;
+  }
+}
+
+@media (max-width: 540px) {
+  .map__tree--1 {
+    top: 29%;
+    right: 26%;
   }
 }
 
@@ -1960,6 +2063,27 @@ img {
   }
 }
 
+@media (orientation: landscape) and (max-width: 740px) {
+  .map__tree--2 {
+    top: 33%;
+    left: 25%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 670px) {
+  .map__tree--2 {
+    top: 23%;
+    left: 36%;
+  }
+}
+
+@media (max-width: 540px) {
+  .map__tree--2 {
+    top: 30%;
+    left: 24%;
+  }
+}
+
 .map__tree--3 {
   top: 53%;
   left: 15%;
@@ -1970,6 +2094,13 @@ img {
 @media (max-width: 800px) {
   .map__tree--3 {
     top: 51%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 670px) {
+  .map__tree--3 {
+    top: 53%;
+    left: 30%;
   }
 }
 
@@ -1992,13 +2123,27 @@ img {
 
 @media (max-width: 850px) {
   .map__tree--4 {
-    bottom: 25%;
+    bottom: 19%;
   }
 }
 
-@media (orientation: landscape) and (max-width: 750px) {
+@media (orientation: landscape) and (max-width: 740px) {
   .map__tree--4 {
-    bottom: 28%;
+    bottom: 20%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 670px) {
+  .map__tree--4 {
+    bottom: 13%;
+    left: 34%;
+  }
+}
+
+@media (max-width: 540px) {
+  .map__tree--4 {
+    bottom: 12%;
+    left: 21%;
   }
 }
 
@@ -2021,19 +2166,27 @@ img {
 
 @media (max-width: 850px) {
   .map__tree--5 {
-    bottom: 24%;
+    bottom: 20%;
   }
 }
 
-@media (orientation: landscape) and (max-width: 750px) {
+@media (orientation: landscape) and (max-width: 740px) {
   .map__tree--5 {
-    bottom: 26%;
+    bottom: 22%;
   }
 }
 
-@media (max-width: 723px) {
-  .map__tree {
-    display: none;
+@media (orientation: landscape) and (max-width: 670px) {
+  .map__tree--5 {
+    bottom: 14%;
+    left: 30%;
+  }
+}
+
+@media (max-width: 540px) {
+  .map__tree--5 {
+    bottom: 14%;
+    left: 12%;
   }
 }
 
