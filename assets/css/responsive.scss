@@ -76,7 +76,6 @@ $clr_accent--p: #FC4FC6;
 	}
 	.events {
 		grid-template-columns: repeat(2, 1fr);
-
 		padding: 4vmax 0;
   }
 	.peoples__item {
@@ -224,11 +223,7 @@ $clr_accent--p: #FC4FC6;
   	}
 	.screen--8 {
 		min-height: unset;
-		padding-bottom: 50px;
 	}
-	.events {
-		padding: 0;
-  	}
   .slider-attractions {
 	  grid-column-gap: 40px;
   }

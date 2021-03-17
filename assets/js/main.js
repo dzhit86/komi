@@ -27,7 +27,7 @@ $(document).ready(function () {
 		slidesToScroll: 1,
 		asNavFor: '.slider-projects-main',
 		dots: false,
-		//autoplay: true,
+		autoplay: true,
 		arrows: false,
 		focusOnSelect: true,
 		centerMode: true,
@@ -45,7 +45,13 @@ $(document).ready(function () {
 				}
 			},
 			{
-				breakpoint: 801,
+				breakpoint: 769,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 581,
 				settings: {
 					slidesToShow: 2
 				}
@@ -71,7 +77,9 @@ $(document).ready(function () {
 				if (($(window).scrollTop() > animItemOffset - animItemPoint) && ($(window).scrollTop() < animItemOffset + animItemHeight)) {
 					animItem.addClass('_active');
 				} else {
-					animItem.removeClass('_active');
+					if (!animItem.hasClass('animation--uno')) {
+						animItem.removeClass('_active');
+					}
 				}
 			});
 		}
@@ -124,7 +132,6 @@ $(document).ready(function () {
 			'width': '19.2vmax',
 		});
 	}
-
 
 
 	insertAcr();

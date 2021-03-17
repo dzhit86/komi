@@ -210,10 +210,6 @@
   }
   .screen--8 {
     min-height: unset;
-    padding-bottom: 50px;
-  }
-  .events {
-    padding: 0;
   }
   .slider-attractions {
     grid-column-gap: 40px;
