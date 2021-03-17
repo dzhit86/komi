@@ -58,23 +58,27 @@ body {
 		&--min {
 			border: none;
 			border-bottom: 1px solid #DFDFDF;
+			border-radius: 0;
 			color: $clr_text;
-			font-size: 15px;
-			line-height: .8em;
+			font-size: 16px;
+			line-height: 1em;
 			padding: 4px 8px;
 			height: 40px;
 			&::-webkit-input-placeholder {
-				line-height: .8em; color:$clr_text; font-size: 15px;
+				line-height: 1em; color:$clr_text; font-size: 16px;
 			}/* webkit */
 			&::-moz-placeholder {
-				line-height: .8em; color:$clr_text; font-size: 15px;
+				line-height: 1em; color:$clr_text; font-size: 16px;
 			}/* Firefox 19+ */
 			&:-moz-placeholder {
-				line-height: .8em; color:$clr_text; font-size: 15px;
+				line-height: 1em; color:$clr_text; font-size: 16px;
 			}/* Firefox 18- */
 			&:-ms-input-placeholder {
-				line-height: .8em; color:$clr_text; font-size: 15px;
+				line-height: 1em; color:$clr_text; font-size: 16px;
 			}/* IE */
+		}
+		@media (max-width: 360px) {
+			font-size: 19px;
 		}
 	}
 	&__submit {
@@ -164,6 +168,9 @@ img {
 }
 .pb150 {
 	padding-bottom: 150px;
+	@media (max-width: 769px) {
+		padding-bottom: 90px;
+	}
 }
 .btn {
 	min-height: 56px;
@@ -479,6 +486,9 @@ img {
 	@media (max-width: 850px) {
 		padding: 20vmax 0;
 	}
+	@media (max-width: 769px) {
+		padding: 14vmax 0;
+	}
 	@media (orientation: portrait) and (max-width: 545px) {
 		padding: 10vmin 0;
 	}
@@ -557,7 +567,7 @@ img {
 	}
 	@media (max-width: 850px) {
 		padding: 10vmax 0;
-		margin-bottom: 20vmax;
+		margin-bottom: 15vmax;
 	}
 	@media (max-width: 750px) {
 		margin-bottom: 0vmax;
@@ -593,7 +603,7 @@ img {
 		min-height: unset;
 	}
 	@media (orientation: portrait) and (max-width: 850px) {
-		padding-bottom: 10vmax;
+		padding: 5vmax 0 10vmax;
 	}
 	@media (orientation: portrait) and (max-width: 550px) {
 		margin-top: 10vmax;
@@ -603,9 +613,6 @@ img {
 .screen--10 {
 	min-height: unset;
 	padding: 100px 0;
-	@media (max-width: 1445px) {
-		padding-top: 0;
-	}
 }
 .screen--11 {
 	background: $clr_main;
@@ -676,6 +683,9 @@ img {
 		z-index: 2;
 		&--info {
 			padding: 6vmax 0;
+			@media (max-width: 769px) {
+				padding: 3vmax 0;
+			}
 		}
 	}
 	&__year {
@@ -735,6 +745,7 @@ img {
 		}
 		@media (orientation: portrait) and (max-width: 780px) {
 			max-width: 35vmax;
+			font-size: .8em;
 		}
 		@media (max-width: 725px) {
 			max-width: 100vmax;
@@ -846,6 +857,9 @@ img {
 		&--info {
 			padding: 6vmax 0;
 			position: relative;
+			@media (max-width: 769px) {
+				padding: 3vmax 0;
+			}
 		}
 		&--map {
 			width: 100%;
@@ -980,7 +994,7 @@ img {
 	}
 	&__vorkuta {
 		top: 12%;
-		right: 10%;
+		right: 8%;
 		&::after {
 			top: -15%;
 			right: -20%;
@@ -1664,10 +1678,15 @@ img {
 			max-width: 45vmin;
 			max-height: 45vmin;
 		}
+		@media (max-width: 769px) {
+			max-width: 35vmax;
+			max-height: 35vmax;
+			right: unset;
+			left: 20px;
+		}
 		@media (orientation: landscape) and (max-width: 650px) {
 			max-width: 40vmax;
 			max-height: 40vmax;
-			right: 55vw;
 		}
 		@media (max-width: 580px) {
 			left: 50%;
@@ -1685,7 +1704,7 @@ img {
 		height: 235px;
 		max-width: 15vmax;
 		max-height: 15vmax;
-		top: 4vmax;
+		top: 8vmax;
 		right: 18vmax;
 		background: url("../img/dude/dude-1.png") no-repeat center center;
 		background-size: contain;
@@ -1697,6 +1716,10 @@ img {
 		animation-iteration-count: infinite;
 		transform-origin: 0 0;
 		z-index: 4;
+		@media (max-width: 769px) {
+			max-width: 13vmax;
+			max-height: 13vmax;
+		}
 		@media (max-width: 580px) {
 			display: none;
 		}
@@ -1726,6 +1749,10 @@ img {
 			top: 8vmax;
 			right: 4vmax;
 		}
+		@media (max-width: 769px) {
+			max-width: 8vmax;
+			max-height: 8vmax;
+		}
 		@media (max-width: 580px) {
 			display: none;
 		}
@@ -1736,7 +1763,7 @@ img {
 		height: 245px;
 		max-width: 15vmax;
 		max-height: 15vmax;
-		bottom: 16vmax;
+		bottom: 8vmax;
 		right: 1vmax;
 		z-index: 4;
 		background: url("../img/dude/dude-3.png") no-repeat center center;
@@ -1753,8 +1780,12 @@ img {
 			right: 2vmin;
 		}
 		@media (max-width: 850px) {
-			bottom: 20vmax;
+			bottom: 4vmax;
 			right: 2vmax;
+		}
+		@media (max-width: 769px) {
+			max-width: 13vmax;
+			max-height: 13vmax;
 		}
 		@media (orientation: landscape) and (max-width: 650px) {
 			bottom: 17vmax;
@@ -1848,8 +1879,7 @@ img {
 	}
 	@media (orientation: portrait) and (max-width: 400px) {
 		font-size: 10px;
-	}
-	
+	}	
 	&__outer {
 		transform: skewX(-12deg);
 		background: #E7E7E7;
@@ -1883,6 +1913,9 @@ img {
 		width: 100%;
 		height: 100%;
 		padding: 2em 4em;
+		@media (max-width: 769px) {			
+			padding: 1em 3em;
+		}
 	}
 	&__content {
 		transform: skewX(12deg);
@@ -2214,7 +2247,7 @@ img {
 	grid-auto-columns: 40%;
 	align-items: center;
 	overflow: hidden;
-	padding: 50px 0 150px;
+	padding: 50px 0 100px;
 	position: relative;
 	@media (max-width: 1445px) {
 		grid-auto-columns: 40%;
@@ -2489,6 +2522,12 @@ img {
 		font-weight: 700;
 		margin-bottom: 15px;
 		color: #fff;
+		@media (max-width: 500px) {
+			font-size: 36px;
+		}
+		@media (max-width: 360px) {
+			font-size: 30px;
+		}
 	}
 	&__subtitle {
 		text-align: center;
@@ -2598,6 +2637,12 @@ img {
 			}
 		}
 	}
+	&__input {
+		max-width: 100%;
+	}
+	&__btn {
+		max-width: 100%;
+	}
 }
 @keyframes animateBubble {
 	0% {
@@ -2615,7 +2660,6 @@ img {
 		 margin-left:50px;
 	}
 }
-
 .events {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -2941,7 +2985,6 @@ img {
 		}
 	}
 }
-
 // Modals
 .mod-peoples, .mod-cities {
 	width: 640px;

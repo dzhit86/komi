@@ -29,16 +29,12 @@
   }
   .screen--8 {
     padding-bottom: 0;
-    min-height: 90vh;
   }
 }
 
 @media all and (max-width: 1024px) and (max-height: 800px) {
   .symbols {
     right: 5%;
-  }
-  .screen--8 {
-    padding-bottom: 200px;
   }
 }
 
@@ -77,9 +73,6 @@
   }
   .slider-attractions {
     justify-items: center;
-  }
-  .screen--8 {
-    min-height: 100vh;
   }
   .events {
     -ms-grid-columns: (1fr)[2];
@@ -209,9 +202,6 @@
   .screen__title span {
     font-size: 25px;
   }
-  .screen--5 {
-    padding-bottom: 200px;
-  }
   .run-line__text {
     font-size: 16px;
   }
@@ -234,9 +224,6 @@
   .footer__wrap {
     grid-gap: 40px;
   }
-  .invite__title {
-    font-size: 38px;
-  }
 }
 
 @media all and (max-width: 640px) and (max-height: 360px) {
@@ -251,9 +238,6 @@
   }
   .screen__title span {
     font-size: 20px;
-  }
-  .invite__title {
-    font-size: 32px;
   }
   .pb150 {
     padding-bottom: 0;

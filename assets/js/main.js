@@ -88,7 +88,7 @@ $(document).ready(function () {
 		$('.arc-screen').css({
 			'opacity': 1,
 			'height': arcHeight + 'px',
-			'top': -arcHeight + 'px'
+			'top': -arcHeight + 1 + 'px'
 		});
 		$('.arc-screen__eclipse').css({
 			'width': arcEclipse + 'px',
