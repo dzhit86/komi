@@ -15,7 +15,6 @@ $(document).ready(function () {
 	});
 
 	// Слайдеры
-
 	$('.slider-projects-main').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -28,7 +27,7 @@ $(document).ready(function () {
 		slidesToScroll: 1,
 		asNavFor: '.slider-projects-main',
 		dots: false,
-		autoplay: true,
+		//autoplay: true,
 		arrows: false,
 		focusOnSelect: true,
 		centerMode: true,
@@ -53,6 +52,30 @@ $(document).ready(function () {
 			},
 		]
 	});
+
+	// Управление классами при скролле
+	const animItems = $('.animation');
+	if (animItems.length > 0) {
+		$(window).on('scroll', animScroll);
+		animScroll();
+		function animScroll(params) {
+			animItems.each(function (index, el) {
+				const animItem = $(this);
+				const animItemHeight = animItem.innerHeight();
+				const animItemOffset = animItem.offset().top;
+				const animStart = 4;
+				let animItemPoint = $(window).innerHeight() - animItemHeight / animStart;
+				if (animItemHeight > $(window).innerHeight()) {
+					animItemPoint = $(window).innerHeight() - $(window).innerHeight() / animStart;
+				}
+				if (($(window).scrollTop() > animItemOffset - animItemPoint) && ($(window).scrollTop() < animItemOffset + animItemHeight)) {
+					animItem.addClass('_active');
+				} else {
+					animItem.removeClass('_active');
+				}
+			});
+		}
+	}
 
 	//anniv animate
 	const annivBird = $('.anniv__midge--bird'),
@@ -101,6 +124,8 @@ $(document).ready(function () {
 			'width': '19.2vmax',
 		});
 	}
+
+
 
 	insertAcr();
 
