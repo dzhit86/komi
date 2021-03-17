@@ -1760,12 +1760,7 @@ img {
 		width: 780px;
 		height: 780px;
 		max-width: 45vmax;
-		max-height: 45vmax;
-		&:hover {
-			.dude--main-1 {
-				opacity: 0;
-			}
-		}
+		max-height: 45vmax;		
 		&-1 {
 			width: 100%;
 			height: 100%;
@@ -1778,7 +1773,6 @@ img {
 			top: 0;
 			left: 0;
 			z-index: 4;
-
 		}
 		&-2 {
 			width: 100%;
@@ -1816,6 +1810,11 @@ img {
 		}
 		@media (orientation: portrait) and (max-width: 545px) {
 			max-height: 100vmin;
+		}
+	}
+	&._active {
+		.dude--main-1 {
+			animation: dude-main 4s linear infinite;
 		}
 	}
 	&--1 {
@@ -1914,21 +1913,38 @@ img {
 		}
 	}
 }
+@keyframes dude-main {
+	0% {
+		opacity: 0;
+	}
+	1% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 1;
+	}
+	51% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
 @keyframes dude1 {
 	0%, 100% {
 		transform:translate(0px, 0px) scale(1) rotateZ(0deg) translate(-50%, -50%);
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 	25% {
-		transform:translate(-24px, 28px) scale(1) rotateZ(30deg) translate(-50%, -50%);
+		transform:translate(-12px, 14px) scale(1) rotateZ(20deg) translate(-50%, -50%);
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 	50% {
-		transform:translate(44px, 48px) scale(1) rotateZ(0deg) translate(-50%, -50%);
+		transform:translate(22px, 24px) scale(1) rotateZ(0deg) translate(-50%, -50%);
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 	75% {
-		transform:translate(-1px, -1px) scale(1) rotateZ(-30deg) translate(-50%, -50%);
+		transform:translate(-1px, -1px) scale(1) rotateZ(-20deg) translate(-50%, -50%);
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 }
@@ -1938,15 +1954,15 @@ img {
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 	25% {
-		transform:translate(44px, -30px) scale(1) rotateZ(-30deg) translate(-50%, -50%);
+		transform:translate(22px, -15px) scale(1) rotateZ(-25deg) translate(-50%, -50%);
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 	50% {
-		transform:translate(-30px, 52px) scale(1) rotateZ(0deg) translate(-50%, -50%);
+		transform:translate(-15px, 26px) scale(1) rotateZ(0deg) translate(-50%, -50%);
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 	75% {
-		transform:translate(-10px, -10px) scale(1) rotateZ(30deg) translate(-50%, -50%);
+		transform:translate(-10px, -10px) scale(1) rotateZ(25deg) translate(-50%, -50%);
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 }
@@ -1956,15 +1972,15 @@ img {
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 	25% {
-		transform:translate(-25px, 55px) scale(1) rotateZ(15deg) translate(-50%, -50%);
+		transform:translate(-12px, 27px) scale(1) rotateZ(30deg) translate(-50%, -50%);
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 	50% {
-		transform:translate(-10px, 20px) scale(1) rotateZ(0deg) translate(-50%, -50%);
+		transform:translate(-5px, 10px) scale(1) rotateZ(0deg) translate(-50%, -50%);
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 	75% {
-		transform:translate(-20px, 40px) scale(1) rotateZ(-25deg) translate(-50%, -50%);
+		transform:translate(-10px, 20px) scale(1) rotateZ(-15deg) translate(-50%, -50%);
 		animation-timing-function: cubic-bezier(.25,.25,.75,.75);
 	}
 }
