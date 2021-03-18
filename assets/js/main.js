@@ -14,51 +14,6 @@ $(document).ready(function () {
 		});
 	});
 
-	// Слайдеры
-	$('.slider-projects-main').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		fade: true,
-		asNavFor: '.slider-projects-nav'
-	});
-	$('.slider-projects-nav').slick({
-		slidesToShow: 6,
-		slidesToScroll: 1,
-		asNavFor: '.slider-projects-main',
-		dots: false,
-		autoplay: true,
-		arrows: false,
-		focusOnSelect: true,
-		centerMode: true,
-		responsive: [
-			{
-				breakpoint: 1445,
-				settings: {
-					slidesToShow: 4
-				}
-			},
-			{
-				breakpoint: 1025,
-				settings: {
-					slidesToShow: 3
-				}
-			},
-			{
-				breakpoint: 769,
-				settings: {
-					slidesToShow: 3
-				}
-			},
-			{
-				breakpoint: 581,
-				settings: {
-					slidesToShow: 2
-				}
-			},
-		]
-	});
-
 	// Управление классами при скролле
 	const animItems = $('.animation');
 	if (animItems.length > 0) {
@@ -85,18 +40,121 @@ $(document).ready(function () {
 		}
 	}
 
-	//anniv animate
-	const annivBird = $('.anniv__midge--bird'),
-		annivPlanet = $('.anniv__midge--planet'),
-		annivLeader = $('.anniv__midge--leader'),
-		annivStella = $('.anniv__midge--stella');
+	// anniv animate
+	const circle = $('.anniv__circle'),
+		circleParent = $('.anniv'),
+		ghostCircleClass = 'anniv__ghost-circle',
+		annivBird = '<img src="assets/img/anniv/bird.png" class="anniv__midge anniv__midge--bird">',
+		annivPlanet = '<img src="assets/img/anniv/planet.png" class="anniv__midge anniv__midge--planet">',
+		annivLeader = '<img src="assets/img/anniv/leader.png" class="anniv__midge anniv__midge--leader">',
+		annivStella = '<img src="assets/img/anniv/stella.png" class="anniv__midge anniv__midge--stella">',
+		stellaH = circle.height() * 1.5,
+		annivStellaVector = '<img src="assets/img/anniv/stella-vector.png" class="anniv__midge anniv__midge--stella-vector">';
 
-	//anniv animate - position 0
-	// annivBird.css('bottom', '-' + annivBird.height() + 'px');
-	// annivPlanet.css('bottom', '-' + annivPlanet.height() + 'px');
-	// annivLeader.css('bottom', '-' + annivLeader.height() + 'px');
-	// annivStella.css('bottom', '-' + annivStella.height() + 'px');
+	// Создаём маску
+	function addCircleMask() {
+		let circleTop = circle.offset().top;
+		let circleLeft = circle.offset().left;
+		let ghostCircleH = circle.height() * 2;
+		let ghostCircleW = circle.width() * 1.2;
+		let ghostCircleLeft = (ghostCircleW - circle.width()) / 2;
+		const ghostCircle = `<div class="${ghostCircleClass}"></div>`;
+		if ($('.' + ghostCircleClass).length > 0) {
+			$('.' + ghostCircleClass).replaceWith(ghostCircle);
+		} else {
+			circleParent.append(ghostCircle);
+		}
+		$('.anniv__ghost-circle')
+			.offset({ top: circleTop - circle.height(), left: circleLeft - ghostCircleLeft })
+			.css({
+				'width': ghostCircleW + 'px',
+				'height': ghostCircleH + 'px',
+				'border-bottom-left-radius': circle.width() + 'px',
+				'border-bottom-right-radius': circle.width() + 'px',
+			});
+	}
 
+	let paramStella = {};
+	// Добавляем элементы в маску
+	function addCircleMidges() {
+		const midgeCircleClass = 'anniv__midge';
+
+		if ($('.' + midgeCircleClass).length > 0) {
+			$('.' + ghostCircleClass).empty();
+		}
+		$('.' + ghostCircleClass).append(annivBird);
+		$('.' + ghostCircleClass).append(annivPlanet);
+		$('.' + ghostCircleClass).append(annivLeader);
+		$('.' + ghostCircleClass).append(annivStella);
+
+		$('.anniv__midge--stella').css({
+			'height': stellaH,
+			'width': 'auto',
+			'bottom': -stellaH,
+			'right': '-10%'
+		});
+		$('.anniv__midge--bird').css({
+			'height': stellaH / 1.4,
+			'width': stellaH / 1.4,
+			'bottom': -stellaH / 1.4,
+			'right': -stellaH / 1.4
+		});
+		$('.anniv__midge--planet').css({
+			'height': stellaH / 3.7,
+			'width': stellaH / 2.3,
+			'bottom': -stellaH / 3.7,
+			'left': -stellaH / 2.3
+		});
+		$('.anniv__midge--leader').css({
+			'height': stellaH / 4.6,
+			'width': stellaH / 4.6,
+			'bottom': -stellaH / 4.6,
+			'left': '0%'
+		});
+
+	}
+
+	// Анимируем стеллу
+	function animateStella() {
+		let minStella = $('.map__syktyvkar svg'),
+			minStellaTop = minStella.offset().top,
+			minStellaLeft = minStella.offset().left,
+			minStellaHeight = minStella.height(),
+			minStellaWidth = minStella.width();
+
+		if ($('.anniv__midge--stella').length > 0) {
+			let hS = $('.anniv__midge--stella').height(),
+				wS = $('.anniv__midge--stella').width(),
+				tpS = $('.anniv__midge--stella').offset().top,
+				lpS = $('.anniv__midge--stella').offset().left;
+
+			$('.anniv__midge--stella-vector').remove();
+			$('body').append(annivStellaVector);
+			$('.anniv__midge--stella-vector').offset({ left: lpS, top: tpS }).css({
+				'height': hS,
+				'width': wS,
+			});
+			$('.anniv__midge--stella-vector').animate({
+				'left': minStellaLeft,
+				'top': minStellaTop,
+				'height': minStellaHeight,
+				'width': minStellaWidth,
+			}, {
+				done: function (now, fx) {
+					$(this).css('transform', 'rotate(-10deg)');
+					$('.map__syktyvkar').css('opacity', '1');
+					$(this).css('opacity', '0');
+					$('.map').addClass('animComplete');
+				},
+				duration: 2000
+			});
+		} else {
+			alert('Error');
+		}
+		console.log('MiniLeft - ' + minStellaLeft);
+		console.log('MiniTop - ' + minStellaTop);
+
+	}
 	function calcArc() {
 		let arcWidth = $(window).width(),
 			arcHeight = 0,
@@ -133,7 +191,8 @@ $(document).ready(function () {
 		});
 	}
 
-
+	addCircleMask();
+	addCircleMidges();
 	insertAcr();
 
 	function peoplesDisplay() {
@@ -163,6 +222,8 @@ $(document).ready(function () {
 	$(window).resize(function () {
 		insertAcr();
 		peoplesDisplay();
+		addCircleMask();
+		addCircleMidges();
 	});
 
 	// Плавный скролл к якорю
@@ -217,6 +278,55 @@ $(document).ready(function () {
 	$("#formInvitePopup").on("submit", formSuccesPopup);
 
 	$("input[type='tel']").mask("+7 (999) 999-99-99");
+
+	// Слайдеры
+	$('.slider-projects-main').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.slider-projects-nav'
+	});
+
+	$('.slider-projects-nav').slick({
+		slidesToShow: 6,
+		slidesToScroll: 1,
+		asNavFor: '.slider-projects-main',
+		dots: false,
+		autoplay: true,
+		arrows: false,
+		focusOnSelect: true,
+		centerMode: true,
+		responsive: [
+			{
+				breakpoint: 1445,
+				settings: {
+					slidesToShow: 4
+				}
+			},
+			{
+				breakpoint: 1025,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 769,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 581,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+		]
+	});
+
+
+	$('.anniv__midge--stella').on('animationend', animateStella);
 });
 
 // Отображение меню
