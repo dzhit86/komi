@@ -602,6 +602,12 @@ img {
   }
 }
 
+@media (max-width: 450px) {
+  .screen__subtitle {
+    font-size: 1em;
+  }
+}
+
 .arc-screen {
   width: 100%;
   height: 200px;
@@ -944,11 +950,11 @@ img {
   position: absolute;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 3vmax;
-  height: 5vmax;
+  width: 2vmax;
+  height: 3vmax;
   border-radius: 40%;
   border: 2px solid #fff;
-  left: calc(50% - 3vmax);
+  left: calc(50% - 2vmax);
   bottom: 1vh;
 }
 
@@ -2608,7 +2614,7 @@ img {
 
 .stick--yellow-1 {
   right: 25%;
-  bottom: 1000px;
+  bottom: 1400px;
   width: 150px;
   -webkit-animation-duration: 6s;
           animation-duration: 6s;
@@ -2617,7 +2623,7 @@ img {
 }
 
 .stick--yellow-2 {
-  bottom: 1000px;
+  bottom: 1400px;
   left: -25%;
   width: 250px;
   -webkit-animation-duration: 10s;
@@ -2629,7 +2635,7 @@ img {
 .stick--blue {
   background: #5C9BF3;
   width: 150px;
-  bottom: 1000px;
+  bottom: 1400px;
   left: 15%;
   -webkit-animation: stick-transform-keyframes 10s 2s linear infinite forwards;
           animation: stick-transform-keyframes 10s 2s linear infinite forwards;
@@ -2637,7 +2643,7 @@ img {
 
 .stick--blue-1 {
   right: 40%;
-  bottom: 1000px;
+  bottom: 1400px;
   width: 350px;
   -webkit-animation-duration: 15s;
           animation-duration: 15s;
@@ -2646,7 +2652,7 @@ img {
 }
 
 .stick--blue-2 {
-  bottom: 1000px;
+  bottom: 1400px;
   left: 15%;
   width: 100px;
   -webkit-animation-duration: 4s;
@@ -2658,7 +2664,7 @@ img {
 .stick--pink {
   background: #FC4FC6;
   width: 340px;
-  bottom: 1000px;
+  bottom: 1400px;
   left: 0%;
   width: 100px;
   -webkit-animation: stick-transform-keyframes 8s 1s linear infinite forwards;
@@ -2667,7 +2673,7 @@ img {
 
 .stick--pink-1 {
   right: 50%;
-  bottom: 1000px;
+  bottom: 1400px;
   width: 270px;
   -webkit-animation-duration: 18s;
           animation-duration: 18s;
@@ -2676,7 +2682,7 @@ img {
 }
 
 .stick--pink-2 {
-  bottom: 1000px;
+  bottom: 1400px;
   left: 20%;
   width: 320px;
   -webkit-animation-duration: 7s;
@@ -2687,8 +2693,8 @@ img {
 
 @-webkit-keyframes stick-transform-keyframes {
   from {
-    -webkit-transform: translate(1000px, 1000px) translate(-50%, -50%) rotateZ(45deg);
-            transform: translate(1000px, 1000px) translate(-50%, -50%) rotateZ(45deg);
+    -webkit-transform: translate(1400px, 1400px) translate(-50%, -50%) rotateZ(45deg);
+            transform: translate(1400px, 1400px) translate(-50%, -50%) rotateZ(45deg);
     -webkit-animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
             animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
   }
@@ -2700,8 +2706,8 @@ img {
 
 @keyframes stick-transform-keyframes {
   from {
-    -webkit-transform: translate(1000px, 1000px) translate(-50%, -50%) rotateZ(45deg);
-            transform: translate(1000px, 1000px) translate(-50%, -50%) rotateZ(45deg);
+    -webkit-transform: translate(1400px, 1400px) translate(-50%, -50%) rotateZ(45deg);
+            transform: translate(1400px, 1400px) translate(-50%, -50%) rotateZ(45deg);
     -webkit-animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
             animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
   }
@@ -4502,6 +4508,12 @@ img {
   font-weight: 500;
 }
 
+@media (max-width: 450px) {
+  .targets__text {
+    font-size: 1em;
+  }
+}
+
 @-webkit-keyframes bounce {
   0%, 20%, 60%, 100% {
     -webkit-transform: translateY(0);
@@ -4543,6 +4555,12 @@ img {
   background: #690969;
   overflow: hidden;
   position: relative;
+}
+
+@media (max-width: 450px) {
+  .invite {
+    padding: 50px 0;
+  }
 }
 
 .invite__title {
@@ -5138,6 +5156,18 @@ img {
   font-size: 50px;
   font-family: Reykjavik, serif;
   margin-bottom: 25px;
+}
+
+@media (max-width: 1025px) {
+  .use-logo__title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 641px) {
+  .use-logo__title {
+    font-size: 26px;
+  }
 }
 
 .footer {
