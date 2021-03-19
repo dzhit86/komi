@@ -658,7 +658,7 @@ img {
 }
 
 .arc-screen--black .arc-screen__eclipse {
-  background: #020015;
+  background: url("../img/pattern-1.png") #020015 bottom center;
 }
 
 .arc-screen--white .arc-screen__bg {

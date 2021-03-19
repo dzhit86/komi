@@ -14,6 +14,12 @@ $(document).ready(function () {
 		});
 	});
 
+	let minStella = $('.map__syktyvkar svg'),
+		minStellaTop = minStella.offset().top,
+		minStellaLeft = minStella.offset().left,
+		minStellaHeight = minStella.height(),
+		minStellaWidth = minStella.width();
+
 	// Управление классами при скролле
 	const animItems = $('.animation');
 	if (animItems.length > 0) {
@@ -31,6 +37,24 @@ $(document).ready(function () {
 				}
 				if (($(window).scrollTop() > animItemOffset - animItemPoint) && ($(window).scrollTop() < animItemOffset + animItemHeight)) {
 					animItem.addClass('_active');
+					if ($(this).hasClass('unific')) {
+						$('.anniv__midge--stella-vector').animate({
+							'left': minStellaLeft,
+							'top': minStellaTop,
+							'height': minStellaHeight,
+							'width': minStellaWidth,
+							'opacity': 1
+						}, {
+							done: function (now, fx) {
+								$(this).css('transform', 'rotate(-10deg)');
+								$('.map__syktyvkar').css('opacity', '1');
+								$(this).css('opacity', '0');
+								$('.map').addClass('animComplete');
+							},
+							duration: 2000
+						});
+					}
+
 				} else {
 					if (!animItem.hasClass('animation--uno')) {
 						animItem.removeClass('_active');
@@ -74,7 +98,7 @@ $(document).ready(function () {
 			});
 	}
 
-	let paramStella = {};
+
 	// Добавляем элементы в маску
 	function addCircleMidges() {
 		const midgeCircleClass = 'anniv__midge';
@@ -116,12 +140,6 @@ $(document).ready(function () {
 
 	// Анимируем стеллу
 	function animateStella() {
-		let minStella = $('.map__syktyvkar svg'),
-			minStellaTop = minStella.offset().top,
-			minStellaLeft = minStella.offset().left,
-			minStellaHeight = minStella.height(),
-			minStellaWidth = minStella.width();
-
 		if ($('.anniv__midge--stella').length > 0) {
 			let hS = $('.anniv__midge--stella').height(),
 				wS = $('.anniv__midge--stella').width(),
@@ -133,28 +151,16 @@ $(document).ready(function () {
 			$('.anniv__midge--stella-vector').offset({ left: lpS, top: tpS }).css({
 				'height': hS,
 				'width': wS,
+				'opacity': 0
 			});
-			$('.anniv__midge--stella-vector').animate({
-				'left': minStellaLeft,
-				'top': minStellaTop,
-				'height': minStellaHeight,
-				'width': minStellaWidth,
-			}, {
-				done: function (now, fx) {
-					$(this).css('transform', 'rotate(-10deg)');
-					$('.map__syktyvkar').css('opacity', '1');
-					$(this).css('opacity', '0');
-					$('.map').addClass('animComplete');
-				},
-				duration: 2000
-			});
+
 		} else {
 			alert('Error');
 		}
-		console.log('MiniLeft - ' + minStellaLeft);
-		console.log('MiniTop - ' + minStellaTop);
 
 	}
+
+	// Добавление арок к блокам
 	function calcArc() {
 		let arcWidth = $(window).width(),
 			arcHeight = 0,
@@ -166,7 +172,6 @@ $(document).ready(function () {
 		}
 		return { arcWidth: arcWidth, arcHeight: arcHeight };
 	};
-
 	function insertAcr() {
 		let arcWidth = calcArc().arcWidth,
 			arcHeight = calcArc().arcHeight,

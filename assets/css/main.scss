@@ -450,7 +450,8 @@ img {
 			background: url("../img/pattern-1.png") $clr_black bottom center;			
 		}
 		.arc-screen__eclipse {
-			background: $clr_black;
+			background: url("../img/pattern-1.png") $clr_black bottom center;
+
 		}
 	}
 	&--white {
