@@ -651,7 +651,11 @@ img {
 		border-radius: 2px;
 		animation: mouse-wheel 1.25s infinite linear;
 		transform-origin: 50% 0%
-	 }
+	}
+	@media (max-width: 850px) {
+		width: 4vmax;
+		height: 6vmax;
+	}
  }
  @keyframes mouse-wheel {
 	0% {
@@ -2529,8 +2533,9 @@ img {
 				line-height: 1.8em;
 			}
 			@media (max-width: 450px) {
-				font-size: .9em;
+				font-size: .8em;
 				line-height: 1.8em;
+				margin-bottom: 0;
 			}
 		}
 		&--blue {
@@ -2632,7 +2637,7 @@ img {
 		}
 		
 		@media (max-width: 450px) {
-			height: 15vmax;
+			height: 13vmax;			
 		}
 	}
 }

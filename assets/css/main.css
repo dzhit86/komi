@@ -973,6 +973,13 @@ img {
           transform-origin: 50% 0%;
 }
 
+@media (max-width: 850px) {
+  .mouse {
+    width: 4vmax;
+    height: 6vmax;
+  }
+}
+
 @-webkit-keyframes mouse-wheel {
   0% {
     -webkit-transform: scaleY(0.4) translateY(0);
@@ -3952,8 +3959,9 @@ img {
 
 @media (max-width: 450px) {
   .slider-projects-main__title--pink, .slider-projects-main__title--blue {
-    font-size: .9em;
+    font-size: .8em;
     line-height: 1.8em;
+    margin-bottom: 0;
   }
 }
 
@@ -4109,7 +4117,7 @@ img {
 
 @media (max-width: 450px) {
   .slider-projects-nav__img {
-    height: 15vmax;
+    height: 13vmax;
   }
 }
 
