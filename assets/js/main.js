@@ -37,7 +37,8 @@ $(document).ready(function () {
 				}
 				if (($(window).scrollTop() > animItemOffset - animItemPoint) && ($(window).scrollTop() < animItemOffset + animItemHeight)) {
 					animItem.addClass('_active');
-					if ($(this).hasClass('unific')) {
+					if ($(this).hasClass('unific') && ($(window).width() > 750)) {
+						console.log($(window).width());
 						$('.anniv__midge--stella-vector').animate({
 							'left': minStellaLeft,
 							'top': minStellaTop,
