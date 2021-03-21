@@ -14,6 +14,11 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.events__img').css({
+		'height': $('.events__img').width() / 1.6
+	});
+
+
 	let minStella = $('.map__syktyvkar svg'),
 		minStellaTop = minStella.offset().top,
 		minStellaLeft = minStella.offset().left,
@@ -371,6 +376,10 @@ $(window).resize(function (params) {
 	if ($(window).outerWidth() > 700 && $('.mob-menu').css('transform') == 'translateX(0)') {
 		$('.mob-menu').css('transform', 'translateX(100%)');
 	}
+	$('.events__img').css({
+		'height': $('.events__img').width() / 1.6
+	});
+
 });
 
 (function () {
