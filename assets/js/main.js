@@ -104,7 +104,6 @@ $(document).ready(function () {
 			});
 	}
 
-
 	// Добавляем элементы в маску
 	function addCircleMidges() {
 		const midgeCircleClass = 'anniv__midge';
@@ -213,10 +212,12 @@ $(document).ready(function () {
 					$(this).hide();
 				}
 			});
+			$('#peoplesShow').show();
 		} else {
 			$('.peoples__item').each(function (items, el) {
 				$(this).show('fast');
 			});
+			$('#peoplesShow').hide();
 		}
 	}
 	peoplesDisplay();
@@ -228,6 +229,7 @@ $(document).ready(function () {
 				$(this).slideDown('fast');
 			}
 		});
+		$(this).hide();
 	});
 
 	$(window).resize(function () {
