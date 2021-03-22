@@ -1174,6 +1174,10 @@ img {
   background: url("../img/pattern-yellow.png") #F9B22A center center;
   width: 26.5vmax;
   height: 26.5vmax;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 @media (max-width: 725px) {
@@ -1301,8 +1305,13 @@ img {
 }
 
 .anniv._active .anniv__midge--leader {
-  -webkit-animation: midge-leader 3s 1s ease-in-out both;
-          animation: midge-leader 3s 1s ease-in-out both;
+  -webkit-animation: midge-leader 2s 1s ease-in-out both;
+          animation: midge-leader 2s 1s ease-in-out both;
+}
+
+.anniv._active .anniv__circle {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 @-webkit-keyframes midge-stella {
@@ -2490,6 +2499,46 @@ img {
   }
 }
 
+.map.mapGo .map__item:nth-child(1) {
+  -webkit-animation: map-item-city 1s 0.4s ease-in forwards;
+          animation: map-item-city 1s 0.4s ease-in forwards;
+}
+
+.map.mapGo .map__item:nth-child(2) {
+  -webkit-animation: map-item-city 1s 0.6s ease-in forwards;
+          animation: map-item-city 1s 0.6s ease-in forwards;
+}
+
+.map.mapGo .map__item:nth-child(3) {
+  -webkit-animation: map-item-city 1s 0.8s ease-in forwards;
+          animation: map-item-city 1s 0.8s ease-in forwards;
+}
+
+.map.mapGo .map__item:nth-child(4) {
+  -webkit-animation: map-item-city 1s 1s ease-in forwards;
+          animation: map-item-city 1s 1s ease-in forwards;
+}
+
+.map.mapGo .map__item:nth-child(5) {
+  -webkit-animation: map-item-city 1s 1.2s ease-in forwards;
+          animation: map-item-city 1s 1.2s ease-in forwards;
+}
+
+.map.mapGo .map__item:nth-child(6) {
+  -webkit-animation: map-item-city 1s 1.4s ease-in forwards;
+          animation: map-item-city 1s 1.4s ease-in forwards;
+}
+
+.map.mapGo .map__item:nth-child(7) {
+  -webkit-animation: map-item-city 1s 1.6s ease-in forwards;
+          animation: map-item-city 1s 1.6s ease-in forwards;
+}
+
+.map.mapGo .map__item:nth-child(8) {
+  -webkit-animation: map-item-city 1s 1.8s ease-in forwards;
+          animation: map-item-city 1s 1.8s ease-in forwards;
+}
+
 @-webkit-keyframes map-item-city {
   from {
     -webkit-transform: scale(0);
@@ -2500,6 +2549,7 @@ img {
   to {
     -webkit-transform: scale(1);
             transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -2513,6 +2563,7 @@ img {
   to {
     -webkit-transform: scale(1);
             transform: scale(1);
+    opacity: 1;
   }
 }
 

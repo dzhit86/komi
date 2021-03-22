@@ -14,22 +14,17 @@ $(document).ready(function () {
 		});
 	});
 
+	// Пропорции для картинок раздела событий
 	$('.events__img').css({
 		'height': $('.events__img').width() / 1.6
 	});
-
-
-	let minStella = $('.map__syktyvkar svg'),
-		minStellaTop = minStella.offset().top,
-		minStellaLeft = minStella.offset().left,
-		minStellaHeight = minStella.height(),
-		minStellaWidth = minStella.width();
 
 	// Управление классами при скролле
 	const animItems = $('.animation');
 	if (animItems.length > 0) {
 		$(window).on('scroll', animScroll);
 		animScroll();
+		displayMapItem(2);
 		function animScroll(params) {
 			animItems.each(function (index, el) {
 				const animItem = $(this);
@@ -42,25 +37,9 @@ $(document).ready(function () {
 				}
 				if (($(window).scrollTop() > animItemOffset - animItemPoint) && ($(window).scrollTop() < animItemOffset + animItemHeight)) {
 					animItem.addClass('_active');
-					if ($(this).hasClass('unific') && ($(window).width() > 750)) {
-						console.log($(window).width());
-						$('.anniv__midge--stella-vector').animate({
-							'left': minStellaLeft,
-							'top': minStellaTop,
-							'height': minStellaHeight,
-							'width': minStellaWidth,
-							'opacity': 1
-						}, {
-							done: function (now, fx) {
-								$(this).css('transform', 'rotate(-10deg)');
-								$('.map__syktyvkar').css('opacity', '1');
-								$(this).css('opacity', '0');
-								$('.map').addClass('animComplete');
-							},
-							duration: 2000
-						});
+					if (animItem.hasClass('map')) {
+						displayMapItem(1);
 					}
-
 				} else {
 					if (!animItem.hasClass('animation--uno')) {
 						animItem.removeClass('_active');
@@ -70,19 +49,23 @@ $(document).ready(function () {
 		}
 	}
 
-	// anniv animate
-	const circle = $('.anniv__circle'),
-		circleParent = $('.anniv'),
-		ghostCircleClass = 'anniv__ghost-circle',
+	// Объекты для анимации 2,3 экранов
+	const ghostCircleClass = 'anniv__ghost-circle',
 		annivBird = '<img src="assets/img/anniv/bird.png" class="anniv__midge anniv__midge--bird">',
 		annivPlanet = '<img src="assets/img/anniv/planet.png" class="anniv__midge anniv__midge--planet">',
 		annivLeader = '<img src="assets/img/anniv/leader.png" class="anniv__midge anniv__midge--leader">',
-		annivStella = '<img src="assets/img/anniv/stella.png" class="anniv__midge anniv__midge--stella">',
-		stellaH = circle.height() * 1.5,
-		annivStellaVector = '<img src="assets/img/anniv/stella-vector.png" class="anniv__midge anniv__midge--stella-vector">';
+		annivStella = '<img src="assets/img/anniv/stella.png" class="anniv__midge anniv__midge--stella">';
 
-	// Создаём маску
+	let minStella = $('.map__syktyvkar svg'),
+		minStellaTop = minStella.offset().top,
+		minStellaLeft = minStella.offset().left,
+		minStellaHeight = minStella.height(),
+		minStellaWidth = minStella.width();
+
+	// Создаём маску для элементов 2-го экрана
 	function addCircleMask() {
+		let circle = $('.anniv__circle'),
+			circleParent = $('.anniv');
 		let circleTop = circle.offset().top;
 		let circleLeft = circle.offset().left;
 		let ghostCircleH = circle.height() * 2;
@@ -95,7 +78,10 @@ $(document).ready(function () {
 			circleParent.append(ghostCircle);
 		}
 		$('.anniv__ghost-circle')
-			.offset({ top: circleTop - circle.height(), left: circleLeft - ghostCircleLeft })
+			.offset({
+				top: circleTop - circle.height(),
+				left: circleLeft - ghostCircleLeft
+			})
 			.css({
 				'width': ghostCircleW + 'px',
 				'height': ghostCircleH + 'px',
@@ -106,8 +92,9 @@ $(document).ready(function () {
 
 	// Добавляем элементы в маску
 	function addCircleMidges() {
+		let circle = $('.anniv__circle');
 		const midgeCircleClass = 'anniv__midge';
-
+		let stellaH = circle.height() * 1.4;
 		if ($('.' + midgeCircleClass).length > 0) {
 			$('.' + ghostCircleClass).empty();
 		}
@@ -120,7 +107,7 @@ $(document).ready(function () {
 			'height': stellaH,
 			'width': 'auto',
 			'bottom': -stellaH,
-			'right': '-10%'
+			'right': '-6%'
 		});
 		$('.anniv__midge--bird').css({
 			'height': stellaH / 1.4,
@@ -141,28 +128,46 @@ $(document).ready(function () {
 			'left': '0%'
 		});
 
+		if (($(window).width() > 750) && (!$('.map').hasClass('_active'))) {
+			$('.anniv__midge--stella').on('animationend', animateStella);
+		}
 	}
 
-	// Анимируем стеллу
+	// Полёт стеллы к карту
 	function animateStella() {
-		if ($('.anniv__midge--stella').length > 0) {
-			let hS = $('.anniv__midge--stella').height(),
-				wS = $('.anniv__midge--stella').width(),
-				tpS = $('.anniv__midge--stella').offset().top,
-				lpS = $('.anniv__midge--stella').offset().left;
-
-			$('.anniv__midge--stella-vector').remove();
-			$('body').append(annivStellaVector);
-			$('.anniv__midge--stella-vector').offset({ left: lpS, top: tpS }).css({
+		const annivStellaVector = '<img src="assets/img/anniv/stella-vector.png" class="anniv__midge anniv__midge--stella-vector">';
+		$('.anniv__midge--stella-vector').remove();
+		let hS = $('.anniv__midge--stella').height(),
+			wS = $('.anniv__midge--stella').width(),
+			tpS = $('.anniv__midge--stella').offset().top,
+			lpS = $('.anniv__midge--stella').offset().left;
+		$('body').append(annivStellaVector);
+		$('.anniv__midge--stella-vector')
+			.css({
+				'top': tpS + 15,
+				'left': lpS,
 				'height': hS,
 				'width': wS,
 				'opacity': 0
 			});
-
-		} else {
-			alert('Error');
-		}
-
+		$('.anniv__midge--stella-vector')
+			.animate({
+				'opacity': 1
+			}, 1000)
+			.animate({
+				'left': minStellaLeft,
+				'top': minStellaTop,
+				'height': minStellaHeight,
+				'width': minStellaWidth
+			}, {
+				done: function (now, fx) {
+					$(this).css('transform', 'rotate(-10deg)');
+					$('.map__syktyvkar').css('opacity', '1');
+					$(this).css('opacity', '0');
+					$('.map').addClass('animComplete');
+				},
+				duration: 2000
+			});
 	}
 
 	// Добавление арок к блокам
@@ -201,10 +206,15 @@ $(document).ready(function () {
 		});
 	}
 
-	addCircleMask();
-	addCircleMidges();
+	$('.anniv__circle').on('transitionend', animGo);
+	function animGo() {
+		addCircleMask();
+		addCircleMidges();
+	}
 	insertAcr();
 
+
+	// Отображение карточек участников на малых разрешениях
 	function peoplesDisplay() {
 		if ($(document).width() < 661) {
 			$('.peoples__item').each(function (items, el) {
@@ -230,13 +240,6 @@ $(document).ready(function () {
 			}
 		});
 		$(this).hide();
-	});
-
-	$(window).resize(function () {
-		insertAcr();
-		peoplesDisplay();
-		addCircleMask();
-		addCircleMidges();
 	});
 
 	// Плавный скролл к якорю
@@ -300,7 +303,6 @@ $(document).ready(function () {
 		fade: true,
 		asNavFor: '.slider-projects-nav'
 	});
-
 	$('.slider-projects-nav').slick({
 		slidesToShow: 6,
 		slidesToScroll: 1,
@@ -339,8 +341,23 @@ $(document).ready(function () {
 	});
 
 
-	$('.anniv__midge--stella').on('animationend', animateStella);
+
+	$(window).resize(function () {
+		displayMapItem(2);
+		insertAcr();
+		peoplesDisplay();
+		addCircleMask();
+		addCircleMidges();
+		if ($(window).outerWidth() > 700 && $('.mob-menu').css('transform') == 'translateX(0)') {
+			$('.mob-menu').css('transform', 'translateX(100%)');
+		}
+		$('.events__img').css({
+			'height': $('.events__img').width() / 1.6
+		});
+	});
 });
+
+
 
 // Отображение меню
 function displayMenu(status = false) {
@@ -374,16 +391,7 @@ function animationMenu(id, direction) {
 	}
 }
 
-$(window).resize(function (params) {
-	if ($(window).outerWidth() > 700 && $('.mob-menu').css('transform') == 'translateX(0)') {
-		$('.mob-menu').css('transform', 'translateX(100%)');
-	}
-	$('.events__img').css({
-		'height': $('.events__img').width() / 1.6
-	});
-
-});
-
+// Горизонтальный скролл
 (function () {
 	function scrollHorizontally(e) {
 		var scrollPos = this.scrollLeft;  // Сколько прокручено по горизонтали, до прокрутки
@@ -443,4 +451,17 @@ function formSuccesPopup(event) {
 function getRandomFromRange(min, max) {
 	let int = Math.random() * (max - min) + min;
 	return int;
+}
+
+function displayMapItem(type) {
+	if (type == 1) {
+		if ($('.map').hasClass('_active') && !($('.anniv').hasClass('_active'))) {
+			$('.map').addClass('mapGo');
+		}
+	}
+	if (type == 2) {
+		if ($('.map').hasClass('_active') && $('.anniv').hasClass('_active')) {
+			$('.map').addClass('mapGo');
+		}
+	}
 }

@@ -776,10 +776,13 @@ img {
 		background: url("../img/pattern-yellow.png") $clr_accent--y center center;
 		width: 26.5vmax;
 		height: 26.5vmax;
+		transform: scale(0);
+		transition: all 1s;
 		@media (max-width: 725px) {
 			display: none;
 		}
 	}
+
 	&__ghost-circle {
 		display: block;
 		z-index: 9;
@@ -867,7 +870,10 @@ img {
 			animation: midge-bird 4s ease-in-out both;
 		}
 		.anniv__midge--leader {
-			animation: midge-leader 3s 1s ease-in-out both;
+			animation: midge-leader 2s 1s ease-in-out both;
+		}
+		.anniv__circle {
+			transform: scale(1);
 		}
 	}
 }
@@ -1631,6 +1637,35 @@ img {
 		}
 	}
 }
+
+.map.mapGo .map__item {
+	&:nth-child(1) {
+		animation: map-item-city 1s 0.4s ease-in forwards;
+	}
+	&:nth-child(2) {
+		animation: map-item-city 1s 0.6s ease-in forwards;
+	}
+	&:nth-child(3) {
+		animation: map-item-city 1s 0.8s ease-in forwards;
+	}
+	&:nth-child(4) {
+		animation: map-item-city 1s 1s ease-in forwards;
+	}
+	&:nth-child(5) {
+		animation: map-item-city 1s 1.2s ease-in forwards;
+	}
+	&:nth-child(6) {
+		animation: map-item-city 1s 1.4s ease-in forwards;
+	}
+	&:nth-child(7) {
+		animation: map-item-city 1s 1.6s ease-in forwards;
+	}
+	&:nth-child(8) {
+		animation: map-item-city 1s 1.8s ease-in forwards;
+		
+	}
+}
+
 @keyframes map-item-city {
 	from {
 		transform: scale(0);
@@ -1638,6 +1673,7 @@ img {
 	}
 	to {
 		transform: scale(1);
+		opacity: 1;
 	}
 }
 
