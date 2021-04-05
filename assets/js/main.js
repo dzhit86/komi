@@ -128,7 +128,7 @@ $(document).ready(function () {
 			'left': '0%'
 		});
 
-		if (($(window).width() > 750) && (!$('.map').hasClass('_active'))) {
+		if (($(window).width() > 750) && (!$('.map').hasClass('animComplete')) && (!$('.map').hasClass('mapGo'))) {
 			$('.anniv__midge--stella').on('animationend', animateStella);
 		}
 	}
@@ -153,7 +153,7 @@ $(document).ready(function () {
 		$('.anniv__midge--stella-vector')
 			.animate({
 				'opacity': 1
-			}, 1000)
+			}, 500)
 			.animate({
 				'left': minStellaLeft,
 				'top': minStellaTop,
@@ -166,9 +166,10 @@ $(document).ready(function () {
 					$(this).css('opacity', '0');
 					$('.map').addClass('animComplete');
 				},
-				duration: 2000
+				duration: 1000
 			});
 	}
+
 
 	// Добавление арок к блокам
 	function calcArc() {
@@ -340,8 +341,6 @@ $(document).ready(function () {
 		]
 	});
 
-
-
 	$(window).resize(function () {
 		displayMapItem(2);
 		insertAcr();
@@ -356,8 +355,6 @@ $(document).ready(function () {
 		});
 	});
 });
-
-
 
 // Отображение меню
 function displayMenu(status = false) {
