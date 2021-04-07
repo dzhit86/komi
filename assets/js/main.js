@@ -141,6 +141,7 @@ $(document).ready(function () {
 
 	// Полёт стеллы на карту
 	function animateStella() {
+		let circle = $('.anniv__circle');
 		const annivStellaVector = '<img src="assets/img/anniv/stella-vector.png" class="anniv__midge anniv__midge--stella-vector">';
 		$('.anniv__midge--stella-vector').remove();
 		let hS = $('.anniv__midge--stella').height(),
@@ -152,8 +153,8 @@ $(document).ready(function () {
 			.css({
 				'top': tpS - 120,
 				'left': lpS,
-				'height': 695,
-				'width': 545,
+				'height': circle.height() * 1.5,
+				'width': 'auto',
 				'opacity': 0
 			});
 		$('.anniv__midge--stella-vector')
