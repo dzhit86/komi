@@ -791,7 +791,6 @@ img {
 			display: none;
 		}
 	}
-
 	&__ghost-circle {
 		display: block;
 		z-index: 9;
@@ -869,17 +868,17 @@ img {
 			}
 		}
 		.anniv__midge--stella {
-			animation: midge-stella 2s ease-in-out both;
+			animation: midge-stella 1s ease-in-out both;
 		}
 		.anniv__midge--planet {
-			animation: midge-planet 4s ease-in-out both;
+			animation: midge-planet 2s ease-in-out both;
 			z-index: 10;
 		}
 		.anniv__midge--bird {
-			animation: midge-bird 4s ease-in-out both;
+			animation: midge-bird 2s ease-in-out both;
 		}
 		.anniv__midge--leader {
-			animation: midge-leader 2s 1s ease-in-out both;
+			animation: midge-leader 1s 1s ease-in-out both;
 		}
 		.anniv__circle {
 			transform: scale(1);
@@ -3219,10 +3218,10 @@ img {
 		grid-template-columns: 1.2fr .8fr;
 	}
 	@media (max-width: 850px) {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 2fr 1fr;
 		grid-column-gap: 40px;
 	}
-	@media (max-width: 700px) {
+	@media (max-width: 580px) {
 		grid-template-columns: 1fr;
 		grid-row-gap: 40px;
 		justify-items: left;
@@ -3301,12 +3300,6 @@ img {
 	@media (max-width: 850px) {
 		grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 	}
-	@media (max-width: 700px) {
-		grid-template: repeat(3, minmax(auto,15vmax)) / repeat(3, minmax(auto, 15vmax));
-	}
-	@media (max-width: 380px) {
-		grid-template: repeat(3, minmax(auto,10vmax)) / repeat(3, minmax(auto, 10vmax));
-	}
 
 	&__item {		
 		width: 150px;
@@ -3322,13 +3315,9 @@ img {
 			width: 10vmax;
 			height: 10vmax;
 		}
-		@media (max-width: 700px) {
-			width: 15vmax;
-			height: 15vmax;
-		}
-		@media (max-width: 380px) {
-			width: 10vmax;
-			height: 10vmax;
+		@media (max-width: 580px) {
+			width: 20vmax;
+			height: 20vmax;
 			justify-self: center;
 		}
 		&--180 {

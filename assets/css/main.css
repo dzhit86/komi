@@ -1307,24 +1307,24 @@ img {
 }
 
 .anniv._active .anniv__midge--stella {
-  -webkit-animation: midge-stella 2s ease-in-out both;
-          animation: midge-stella 2s ease-in-out both;
+  -webkit-animation: midge-stella 1s ease-in-out both;
+          animation: midge-stella 1s ease-in-out both;
 }
 
 .anniv._active .anniv__midge--planet {
-  -webkit-animation: midge-planet 4s ease-in-out both;
-          animation: midge-planet 4s ease-in-out both;
+  -webkit-animation: midge-planet 2s ease-in-out both;
+          animation: midge-planet 2s ease-in-out both;
   z-index: 10;
 }
 
 .anniv._active .anniv__midge--bird {
-  -webkit-animation: midge-bird 4s ease-in-out both;
-          animation: midge-bird 4s ease-in-out both;
+  -webkit-animation: midge-bird 2s ease-in-out both;
+          animation: midge-bird 2s ease-in-out both;
 }
 
 .anniv._active .anniv__midge--leader {
-  -webkit-animation: midge-leader 2s 1s ease-in-out both;
-          animation: midge-leader 2s 1s ease-in-out both;
+  -webkit-animation: midge-leader 1s 1s ease-in-out both;
+          animation: midge-leader 1s 1s ease-in-out both;
 }
 
 .anniv._active .anniv__circle {
@@ -4828,13 +4828,13 @@ img {
 
 @media (max-width: 850px) {
   .invite-2 {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
     grid-column-gap: 40px;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 580px) {
   .invite-2 {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -4963,22 +4963,6 @@ img {
   }
 }
 
-@media (max-width: 700px) {
-  .coub {
-    -ms-grid-rows: (minmax(auto, 15vmax))[3];
-    -ms-grid-columns: (minmax(auto, 15vmax))[3];
-        grid-template: repeat(3, minmax(auto, 15vmax))/repeat(3, minmax(auto, 15vmax));
-  }
-}
-
-@media (max-width: 380px) {
-  .coub {
-    -ms-grid-rows: (minmax(auto, 10vmax))[3];
-    -ms-grid-columns: (minmax(auto, 10vmax))[3];
-        grid-template: repeat(3, minmax(auto, 10vmax))/repeat(3, minmax(auto, 10vmax));
-  }
-}
-
 .coub__item {
   width: 150px;
   height: 150px;
@@ -5003,17 +4987,10 @@ img {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 580px) {
   .coub__item {
-    width: 15vmax;
-    height: 15vmax;
-  }
-}
-
-@media (max-width: 380px) {
-  .coub__item {
-    width: 10vmax;
-    height: 10vmax;
+    width: 20vmax;
+    height: 20vmax;
     -ms-grid-column-align: center;
         justify-self: center;
   }

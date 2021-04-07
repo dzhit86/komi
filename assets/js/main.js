@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+	let instance = $.fancybox.getInstance();
+
+
 	// Главное меню
 	$(function () {
 		let menu = $('.mob-menu'),
@@ -39,6 +42,7 @@ $(document).ready(function () {
 					animItem.addClass('_active');
 					if (animItem.hasClass('map')) {
 						displayMapItem(1);
+
 					}
 				} else {
 					if (!animItem.hasClass('animation--uno')) {
@@ -171,6 +175,7 @@ $(document).ready(function () {
 	}
 
 
+
 	// Добавление арок к блокам
 	function calcArc() {
 		let arcWidth = $(window).width(),
@@ -280,14 +285,27 @@ $(document).ready(function () {
 	});
 
 	// Вращение квадратов
-	$(function () {
-		const coub = $(".coub");
-		setInterval(rotateCoub, 2000);
-		function rotateCoub() {
-			let numItem = getRandomFromRange(0, 8).toFixed();
-			let el = coub.find('.coub__item').eq(numItem);
-			el.toggleClass("coub__item--180");
-		}
+	const coub = $(".coub");
+	let coubAnimate = setInterval(rotateCoub, 2000);
+	function rotateCoub() {
+		let numItem = getRandomFromRange(0, 8).toFixed();
+		let el = coub.find('.coub__item').eq(numItem);
+		el.toggleClass("coub__item--180");
+	}
+
+	$('#invite2').on('click', function () {
+		$.fancybox.open({
+			src: '#modalInvite',
+			type: 'inline',
+			opts: {
+				afterShow: function (instance, current) {
+					clearInterval(coubAnimate);
+				},
+				afterClose: function (instance, current) {
+					setInterval(rotateCoub, 2000);
+				},
+			}
+		});
 	});
 
 	// Отправка данных форм
@@ -462,3 +480,7 @@ function displayMapItem(type) {
 		}
 	}
 }
+
+$(window).on('scroll', function () {
+	console.log($(document).scrollTop());
+});
